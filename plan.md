@@ -1,7 +1,7 @@
 ---
 name: Figma Riocity-MCP tokens
 overview: >-
-  Multi-brand html.to.design captures in Figma file UAdiwF7uYbVMqq8ky3Fn0n:
+  Multi-brand html.to.design captures in the Riocity-MCP Figma file (file key stored privately, not in repo):
   primitives (non-chromatic names), 02 Semantic per brand mode, bindings,
   RioCity9 layout-scoped section variables. Use use_figma (figma-use skill) to continue.
 todos:
@@ -35,8 +35,7 @@ todos:
 
 ## File
 
-- **URL:** https://www.figma.com/design/UAdiwF7uYbVMqq8ky3Fn0n/Riocity-MCP?node-id=0-1
-- **fileKey:** `UAdiwF7uYbVMqq8ky3Fn0n`
+- **URL / fileKey:** Not stored in this repository. Copy the link from Figma (Share → Copy link) or read the key from the URL segment after `/design/` — keep it in a password manager or `FIGMA_FILE_KEY` (local env) for MCP / API scripts only.
 - **Page:** `0:1` (Page 1)
 - **Tool:** Figma MCP `use_figma` — load **figma-use** (and figma-generate-library) skill before each call; sequential calls only; `skillNames: "figma-use,figma-generate-library"`.
 
