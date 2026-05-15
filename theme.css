@@ -1,0 +1,53 @@
+/**
+ * Theme CSS generated from export-done.json
+ * Scope: RioCity9 first pass only
+ * Future theme modes will be added after this theme is cleaned up
+ */
+
+:root {
+  /* Raw palette - RioCity9 tokens only, intent/source names, no color words */
+  --raw-border-rio: #292929;
+  --raw-brand-rio: #45ff8b;
+  --raw-foundation-ink: #000000;
+  --raw-foundation-paper: #ffffff;
+  --raw-link-standard: #4a90e2;
+  --raw-prize-highlight: #fff500;
+  --raw-promo-highlight: #f8d840;
+  --raw-surface-rio-raised: #282828;
+
+  /* Original Figma primitive names - RioCity9 compatibility aliases */
+  --accent-jackpot-500: var(--raw-prize-highlight);
+  --accent-link-500: var(--raw-link-standard);
+  --accent-promo-400: var(--raw-promo-highlight);
+  --base-ink: var(--raw-foundation-ink);
+  --base-paper: var(--raw-foundation-paper);
+  --brand-pulse: var(--raw-brand-rio);
+  --mono-700: var(--raw-border-rio);
+  --mono-800: var(--raw-surface-rio-raised);
+
+  /* 02 Semantic - RioCity9 default */
+  --color-primary: var(--raw-brand-rio);
+  --color-accent: var(--raw-brand-rio);
+  --color-surface: var(--raw-foundation-ink);
+  --color-surface-elevated: var(--raw-surface-rio-raised);
+  --color-text-primary: var(--raw-foundation-paper);
+  --color-text-on-emphasis: var(--raw-foundation-ink);
+  --color-border: var(--raw-border-rio);
+  --color-text-promo-highlight: var(--raw-promo-highlight);
+  --color-text-link: var(--raw-link-standard);
+  --color-text-prize-highlight: var(--raw-prize-highlight);
+}
+
+/* 02 Semantic - explicit RioCity9 hook */
+[data-theme="rio-city9"] {
+  --color-primary: var(--raw-brand-rio);
+  --color-accent: var(--raw-brand-rio);
+  --color-surface: var(--raw-foundation-ink);
+  --color-surface-elevated: var(--raw-surface-rio-raised);
+  --color-text-primary: var(--raw-foundation-paper);
+  --color-text-on-emphasis: var(--raw-foundation-ink);
+  --color-border: var(--raw-border-rio);
+  --color-text-promo-highlight: var(--raw-promo-highlight);
+  --color-text-link: var(--raw-link-standard);
+  --color-text-prize-highlight: var(--raw-prize-highlight);
+}

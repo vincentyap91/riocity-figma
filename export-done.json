@@ -1,0 +1,744 @@
+[
+  {
+    "01 Primitives": {
+      "modes": {
+        "Value": {
+          "raw-action-leng-peak": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-action-leng-peak)"
+            },
+            "$type": "color",
+            "$value": "#ff0000"
+          },
+          "raw-alert-caution": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-alert-caution)"
+            },
+            "$type": "color",
+            "$value": "#eab308"
+          },
+          "raw-alert-soft": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-alert-soft)"
+            },
+            "$type": "color",
+            "$value": "#dd6044"
+          },
+          "raw-border-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-border-highlight)"
+            },
+            "$type": "color",
+            "$value": "#8a6b2a"
+          },
+          "raw-border-kh": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-border-kh)"
+            },
+            "$type": "color",
+            "$value": "#252525"
+          },
+          "raw-border-leng": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-border-leng)"
+            },
+            "$type": "color",
+            "$value": "#2a1a00"
+          },
+          "raw-border-rio": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-border-rio)"
+            },
+            "$type": "color",
+            "$value": "#292929"
+          },
+          "raw-brand-cam": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-brand-cam)"
+            },
+            "$type": "color",
+            "$value": "#032ea1"
+          },
+          "raw-brand-kh": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-brand-kh)"
+            },
+            "$type": "color",
+            "$value": "#c8102e"
+          },
+          "raw-brand-leng": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-brand-leng)"
+            },
+            "$type": "color",
+            "$value": "#b91c1c"
+          },
+          "raw-brand-rio": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-brand-rio)"
+            },
+            "$type": "color",
+            "$value": "#45ff8b"
+          },
+          "raw-foundation-ink": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-foundation-ink)"
+            },
+            "$type": "color",
+            "$value": "#000000"
+          },
+          "raw-foundation-paper": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-foundation-paper)"
+            },
+            "$type": "color",
+            "$value": "#ffffff"
+          },
+          "raw-link-standard": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-link-standard)"
+            },
+            "$type": "color",
+            "$value": "#4a90e2"
+          },
+          "raw-partner-mark": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-partner-mark)"
+            },
+            "$type": "color",
+            "$value": "#012169"
+          },
+          "raw-prize-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-prize-highlight)"
+            },
+            "$type": "color",
+            "$value": "#fff500"
+          },
+          "raw-promo-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-promo-highlight)"
+            },
+            "$type": "color",
+            "$value": "#f8d840"
+          },
+          "raw-promo-muted": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-promo-muted)"
+            },
+            "$type": "color",
+            "$value": "#d4af37"
+          },
+          "raw-promo-strong": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-promo-strong)"
+            },
+            "$type": "color",
+            "$value": "#f4cf08"
+          },
+          "raw-status-success": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-status-success)"
+            },
+            "$type": "color",
+            "$value": "#10b981"
+          },
+          "raw-surface-cam-base": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-cam-base)"
+            },
+            "$type": "color",
+            "$value": "#0c162f"
+          },
+          "raw-surface-cam-raised": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-cam-raised)"
+            },
+            "$type": "color",
+            "$value": "#1a1755"
+          },
+          "raw-surface-kh-base": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-kh-base)"
+            },
+            "$type": "color",
+            "$value": "#0f1424"
+          },
+          "raw-surface-kh-raised": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-kh-raised)"
+            },
+            "$type": "color",
+            "$value": "#1a2138"
+          },
+          "raw-surface-leng-base": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-leng-base)"
+            },
+            "$type": "color",
+            "$value": "#3a1515"
+          },
+          "raw-surface-leng-raised": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-leng-raised)"
+            },
+            "$type": "color",
+            "$value": "#991b1b"
+          },
+          "raw-surface-rio-raised": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-surface-rio-raised)"
+            },
+            "$type": "color",
+            "$value": "#282828"
+          },
+          "raw-text-muted": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-text-muted)"
+            },
+            "$type": "color",
+            "$value": "#6b7280"
+          },
+          "raw-text-subtle": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-text-subtle)"
+            },
+            "$type": "color",
+            "$value": "#94a3b8"
+          },
+          "raw-utility-soft": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-utility-soft)"
+            },
+            "$type": "color",
+            "$value": "#dbdad8"
+          },
+          "raw-utility-subtle": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-utility-subtle)"
+            },
+            "$type": "color",
+            "$value": "#d8d8d8"
+          },
+          "raw-wash-soft": {
+            "$codeSyntax": {
+              "WEB": "var(--raw-wash-soft)"
+            },
+            "$type": "color",
+            "$value": "#b0baed"
+          }
+        }
+      }
+    }
+  },
+  {
+    "02 Semantic": {
+      "modes": {
+        "RioCity9": {
+          "brand-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-primary)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-rio}"
+          },
+          "action-cta": {
+            "$codeSyntax": {
+              "WEB": "var(--color-accent)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-rio}"
+          },
+          "surface-base": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-ink}"
+          },
+          "surface-container": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface-elevated)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-rio-raised}"
+          },
+          "text-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-primary)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "text-on-emphasis": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-on-emphasis)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-ink}"
+          },
+          "border-default": {
+            "$codeSyntax": {
+              "WEB": "var(--color-border)"
+            },
+            "$scopes": [
+              "STROKE_COLOR"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-border-rio}"
+          },
+          "text-promo-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-promo-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-promo-highlight}"
+          },
+          "text-link": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-link)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-link-standard}"
+          },
+          "text-prize-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-prize-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-prize-highlight}"
+          }
+        },
+        "KH168": {
+          "brand-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-primary)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-kh}"
+          },
+          "action-cta": {
+            "$codeSyntax": {
+              "WEB": "var(--color-accent)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-kh}"
+          },
+          "surface-base": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-kh-base}"
+          },
+          "surface-container": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface-elevated)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-kh-raised}"
+          },
+          "text-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-primary)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "text-on-emphasis": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-on-emphasis)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "border-default": {
+            "$codeSyntax": {
+              "WEB": "var(--color-border)"
+            },
+            "$scopes": [
+              "STROKE_COLOR"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-border-kh}"
+          },
+          "text-promo-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-promo-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-promo-strong}"
+          },
+          "text-link": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-link)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-kh}"
+          },
+          "text-prize-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-prize-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-promo-strong}"
+          }
+        },
+        "CAM88": {
+          "brand-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-primary)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-cam}"
+          },
+          "action-cta": {
+            "$codeSyntax": {
+              "WEB": "var(--color-accent)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-cam}"
+          },
+          "surface-base": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-cam-base}"
+          },
+          "surface-container": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface-elevated)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-cam-raised}"
+          },
+          "text-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-primary)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "text-on-emphasis": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-on-emphasis)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "border-default": {
+            "$codeSyntax": {
+              "WEB": "var(--color-border)"
+            },
+            "$scopes": [
+              "STROKE_COLOR"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-cam-base}"
+          },
+          "text-promo-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-promo-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-alert-soft}"
+          },
+          "text-link": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-link)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-cam}"
+          },
+          "text-prize-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-prize-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-alert-caution}"
+          }
+        },
+        "Leng855": {
+          "brand-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-primary)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-leng}"
+          },
+          "action-cta": {
+            "$codeSyntax": {
+              "WEB": "var(--color-accent)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-action-leng-peak}"
+          },
+          "surface-base": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-leng-base}"
+          },
+          "surface-container": {
+            "$codeSyntax": {
+              "WEB": "var(--color-surface-elevated)"
+            },
+            "$scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-surface-leng-raised}"
+          },
+          "text-primary": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-primary)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "text-on-emphasis": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-on-emphasis)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-foundation-paper}"
+          },
+          "border-default": {
+            "$codeSyntax": {
+              "WEB": "var(--color-border)"
+            },
+            "$scopes": [
+              "STROKE_COLOR"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-border-leng}"
+          },
+          "text-promo-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-promo-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-promo-muted}"
+          },
+          "text-link": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-link)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-brand-leng}"
+          },
+          "text-prize-highlight": {
+            "$codeSyntax": {
+              "WEB": "var(--color-text-prize-highlight)"
+            },
+            "$scopes": [
+              "TEXT_FILL"
+            ],
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "01 Primitives",
+            "$value": "{raw-promo-muted}"
+          }
+        }
+      }
+    }
+  }
+]
