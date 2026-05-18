@@ -1,10 +1,10 @@
 ---
-name: Figma Riocity-MCP tokens
+name: Figma variables — Riocity-MCP
 overview: >-
-  Multi-brand html.to.design captures in the Riocity-MCP Figma file (file key stored privately, not in repo):
-  intent/source raw primitives, 02 Semantic per brand mode, bindings,
-  semantic text roles, semantic gradient paint styles (dot names + CSS kebab mapping).
-  Use use_figma (figma-use skill) to continue.
+  Multi-brand html.to.design captures in the Riocity-MCP Figma file unified under one
+  variable system: 01 Primitives (raw values) + 02 Semantic (role tokens, 4 brand modes).
+  All solid fills, strokes, and effects are variable-bound. CSS is generated from
+  figma-variables.json via generate-theme-css.mjs.
 todos:
   - id: inventory
     content: "DONE: four SECTION roots; existing 01 Primitives + 02 Semantic (4 modes)"
@@ -13,10 +13,10 @@ todos:
     content: "DONE: setExplicitVariableModeForCollection on each SECTION for 02 Semantic"
     status: completed
   - id: bind
-    content: "DONE: semantic+primitive nearest-color bind (TH~0.11); opaque fills only"
+    content: "DONE: semantic+primitive nearest-color bind; opaque solid fills, strokes, effects"
     status: completed
   - id: rename-primitives
-    content: "DONE: raw palette rebuild target documented with intent/source names (no color words)"
+    content: "DONE: raw palette rebuild target documented with intent/source names"
     status: completed
   - id: rio-section-vars
     content: "DONE: RioCity9 section tokens promoted into 02 Semantic; old collection deleted"
@@ -24,311 +24,379 @@ todos:
   - id: optional-rebind-by-zone
     content: "DONE: old RioCity9 section text bindings replaced by semantic text roles"
     status: completed
+  - id: dashboard-binding
+    content: "DONE: Web_User Dahsboard fully variable-bound (864 solids, 0 hardcoded)"
+    status: completed
   - id: strokes-effects
-    content: "OPTIONAL: reduce remaining opaque unbound strokes; effect color variables"
-    status: pending
-  - id: semantic-rename
-    content: "OPTIONAL: rename 02 Semantic vars (brand-primary -> color/primary) if desired"
+    content: "OPTIONAL: reduce remaining opaque unbound strokes on non-RioCity9 sections"
     status: pending
   - id: gradients
-    content: "DONE: six local PaintStyle `gradient.*`; gradient stop colors bound to `02 Semantic` COLOR vars; fillStyleId migration still optional"
+    content: "DONE: 11 local PaintStyle gradient.* entries; 150 gradient stops in dashboard unbound (API limit)"
     status: completed
 ---
 
-# Plan: Figma variables - Riocity-MCP
+# Plan: Figma variables — Riocity-MCP
 
-## At-a-glance
+## What this file is
 
-This file now uses a layered token model:
+The Riocity-MCP Figma file contains four brand websites captured as static html.to.design frames on a single page — RioCity9, Leng855, CAM88, and KH168. A two-layer color variable system (primitives + semantics) is applied across all four brands so one token change updates every matching layer instantly, and the same token names export cleanly to CSS for web development.
+
+---
+
+## Overall architecture
+
+```mermaid
+flowchart TD
+  subgraph figma ["Figma File — Page 1"]
+    P["01 Primitives\n54 raw color values\nscopes hidden from pickers"]
+    S["02 Semantic\n13 role tokens\n4 brand modes"]
+    G["Gradient Paint Styles\n11 reusable styles"]
+    F["Canvas Layers\nfills · strokes · text · effects"]
+    P -->|"aliased by"| S
+    S -->|"bound to"| F
+    P -->|"stops reference"| G
+    G -->|"fillStyleId"| F
+  end
+  FV["figma-variables.json\nsnapshot export"]
+  CSS["theme.css\n--mono-* --brand-* --color-*"]
+  S -->|"MCP export"| FV
+  FV -->|"generate-theme-css.mjs"| CSS
+```
+
+---
+
+## How color variables are applied in Figma
+
+This section explains the concept from first principles. Read this before touching variables in the file.
+
+### What a Figma color variable is
+
+A variable stores a **single color value** under a **name**. Instead of painting a layer the raw hex `#292929`, you paint it with the variable `mono/700` which resolves to `#292929`. When the variable value changes, every layer bound to it updates instantly across the whole file — no find-and-replace needed.
 
 ```mermaid
 flowchart LR
-  primitives["01 Primitives\n32 intent/source raw colors\nscopes: hidden"] --> semantic["02 Semantic\n10 role tokens\n4 brand modes"]
-  semantic --> brandRoots["4 brand SECTION roots\nexplicit mode per section"]
-  semantic --> gradientStyles["Gradient paint styles\n11 reusable styles"]
-  gradientStyles --> gradientFills["Repeated gradient fills\n446 styled"]
+  hex["#292929\n(the actual color)"]
+  var["mono/700\n(the variable name)"]
+  L1["Border on card A"]
+  L2["Divider in sidebar"]
+  L3["Stroke on nav row"]
+  hex --> var
+  var --> L1
+  var --> L2
+  var --> L3
 ```
 
-### Current Status
+Changing `mono/700` from `#292929` to `#303030` instantly updates all three layers above — without touching any layer directly.
 
-| Area | Status | Result |
-|------|--------|--------|
-| `01 Primitives` | Rebuild target updated | 32 raw variables should use intent/source names such as `raw-brand-rio`, `raw-surface-kh-base`, `raw-promo-highlight` |
-| `02 Semantic` | Complete | 10 role tokens, 4 modes, all aliases valid |
-| RioCity9 frame | Complete | 0 hardcoded opaque solid fills/strokes, 0 stale bindings |
-| `theme.css` | RioCity9 first pass | Export currently emits only RioCity9 raw tokens and RioCity9 semantic variables; KH168, CAM88, Leng855 CSS rollout is deferred |
-| Gradients | Mostly complete | 11 reusable paint styles, 446 gradient fills styled, 39 hardcoded decorative gradients left |
-| Cleanup | Complete | `RioCity9 sections` collection deleted after references were rebound; legacy primitive names are now CSS aliases only for rebuild compatibility |
+---
 
-### Token Flow
+### Two-layer system: Primitives then Semantics
 
-| Layer | Purpose | Example | Used By |
-|-------|---------|---------|---------|
-| Raw primitive | Stores physical values only with intent/source names | `raw-brand-rio = #45ff8b` | Semantic aliases |
-| Semantic mode | Gives colors product meaning | `brand-primary`, `text-link` | All four brand sections |
-| Paint style | Reuses multi-stop fills | `Gradient / Button / VIP` | Gradient-heavy UI nodes |
+This file uses two collections. **Primitives** hold raw values only. **Semantics** assign meaning. Semantic tokens point to primitives — never to a raw hex.
 
-### One Frame, Four Modes
-
-| Brand SECTION | Mode Source | What Changes |
-|---------------|-------------|--------------|
-| `46:740` RioCity9 | `02 Semantic / RioCity9` | brand, surfaces, text, borders |
-| `46:4458` Leng855 | `02 Semantic / Leng855` | brand, surfaces, text, borders |
-| `46:5245` CAM88 | `02 Semantic / CAM88` | brand, surfaces, text, borders |
-| `46:7239` KH168 | `02 Semantic / KH168` | brand, surfaces, text, borders |
-
-Mode switch model:
-
-```text
-Frame
-  -> explicit mode on 02 Semantic
-  -> semantic token resolves to brand-specific primitive
-  -> bound UI fills/strokes/text update together
+```mermaid
+flowchart LR
+  subgraph prim ["01 Primitives — raw values"]
+    P1["mono/700\n#292929"]
+    P2["brand/500\n#45ff8b"]
+    P3["mono/0\n#ffffff"]
+  end
+  subgraph sem ["02 Semantic — role names"]
+    S1["color/border\n→ mono/700"]
+    S2["color/primary\n→ brand/500"]
+    S3["color/text/primary\n→ mono/0"]
+  end
+  subgraph canvas ["Canvas layers"]
+    C1["Card border stroke"]
+    C2["CTA button fill"]
+    C3["Heading text"]
+  end
+  P1 --> S1 --> C1
+  P2 --> S2 --> C2
+  P3 --> S3 --> C3
 ```
 
-CSS export model:
+**Rule:** canvas layers are bound to **semantics only**. Primitives are invisible in property pickers (`scopes: []`). This means a designer sees `color/border`, not `mono/700`, and never a raw hex.
 
-```text
-theme.css
-  -> RioCity9 only for now
-  -> :root contains RioCity9 raw tokens + RioCity9 semantics
-  -> [data-theme="rio-city9"] repeats the same semantics for explicit app usage
-  -> other themes remain in Figma and export JSON, but are not emitted to CSS yet
+---
+
+### How a fill, stroke, or text gets bound
+
+A paint on any layer is either a hardcoded hex or a **variable-bound paint**. Binding replaces the static value with a live reference:
+
+```mermaid
+flowchart LR
+  Before["Layer fill\nhardcoded #292929"]
+  Bound["Layer fill\nbound to color/border"]
+  Resolves["Renders as #292929\n(updates if variable changes)"]
+  Before -->|"setBoundVariableForPaint()"| Bound
+  Bound --> Resolves
 ```
 
-## File
+**What can be bound:**
 
-- **URL / fileKey:** Not stored in this repository. Copy the link from Figma (Share -> Copy link) or read the key from the URL segment after `/design/` - keep it in a password manager or `FIGMA_FILE_KEY` (local env) for MCP / API scripts only.
-- **Page:** `0:1` (Page 1)
-- **Tool:** Figma MCP `use_figma` - load **figma-use** (and figma-generate-library) skill before each call; sequential calls only; `skillNames: "figma-use,figma-generate-library"`.
+| Paint type | Can bind? | Notes |
+|------------|-----------|-------|
+| Solid fill | Yes | Primary binding target |
+| Solid stroke | Yes | Use `STROKE_COLOR` scope |
+| Effect color | Yes | Drop shadows, inner shadows |
+| Gradient stop color | Partial | Via `ColorStop.boundVariables.color` — API support varies |
+| IMAGE fill | No | Raster asset, outside variable system |
 
-## Page structure (four brand roots)
+---
 
-| SECTION `id` | Brand mode (`02 Semantic`) | Source |
-|--------------|---------------------------|--------|
+### How brand modes change colors without touching layers
+
+Each brand section (SECTION node) has an **explicit mode** applied to `02 Semantic`. The mode tells every semantic token which primitive to resolve to. The canvas layers are never modified — only the active mode on the section root changes.
+
+```mermaid
+flowchart TD
+  Layer["CTA button fill\nbound to color/primary"]
+  Sem["color/primary\n(semantic token)"]
+  Layer --> Sem
+  Sem -->|"mode: RioCity9"| Rio["brand/500\n#45ff8b"]
+  Sem -->|"mode: KH168"| KH["support/danger\n#c8102e"]
+  Sem -->|"mode: CAM88"| CAM["support/info\n#032ea1"]
+  Sem -->|"mode: Leng855"| Leng["support/danger-soft\n#b91c1c"]
+```
+
+The same CTA button layer shows green on the RioCity9 section and red on KH168 — purely from the section's active mode.
+
+---
+
+### How this maps to CSS
+
+The two-layer system maps directly to CSS custom properties. Figma variable names use slashes; CSS uses hyphens.
+
+```mermaid
+flowchart LR
+  subgraph figma ["Figma"]
+    FP["mono/700 = #292929"]
+    FS["color/border → mono/700"]
+  end
+  subgraph css ["theme.css"]
+    CP["--mono-700: #292929"]
+    CS["--color-border: var(--mono-700)"]
+  end
+  FP --> CP
+  FS --> CS
+```
+
+Usage in code:
+
+```css
+.card { border: 1px solid var(--color-border); }
+.cta  { background: var(--color-primary); }
+.heading { color: var(--color-text-primary); }
+```
+
+Updating `mono/700` in Figma and re-exporting `figma-variables.json` updates both the Figma fills and the CSS variable in one step.
+
+---
+
+### CSS export pipeline
+
+```mermaid
+flowchart LR
+  Figma["Figma\n01 Primitives + 02 Semantic"]
+  FV["figma-variables.json"]
+  GEN["generate-theme-css.mjs\nnode generate-theme-css.mjs"]
+  CSS["theme.css"]
+  App["Web app\nvar(--color-*)"]
+  Figma -->|"MCP export"| FV
+  FV --> GEN --> CSS --> App
+```
+
+To refresh CSS after editing variables in Figma:
+1. Re-export `figma-variables.json` (or ask the MCP agent to pull from Figma).
+2. Run `node generate-theme-css.mjs`.
+
+---
+
+## One file, four brands
+
+Four brand sections live on a single Figma page. Each section has `setExplicitVariableModeForCollection` applied to `02 Semantic` so layers inside that section resolve to brand-specific colors.
+
+```mermaid
+flowchart LR
+  sem["02 Semantic\n13 role tokens"]
+  sem -->|"mode: RioCity9"| rio["SECTION 46:740\nriocity9.com\nGreen brand"]
+  sem -->|"mode: Leng855"| len["SECTION 46:4458\n855-c.net\nRed brand"]
+  sem -->|"mode: CAM88"| cam["SECTION 46:5245\n88cam.vip\nBlue brand"]
+  sem -->|"mode: KH168"| kh["SECTION 46:7239\nkh168.live\nCrimson brand"]
+```
+
+| SECTION node | Brand | Source site |
+|-------------|-------|-------------|
 | `46:740` | RioCity9 | staging.riocity9 |
 | `46:4458` | Leng855 | 855-c.net |
 | `46:5245` | CAM88 | 88cam.vip |
 | `46:7239` | KH168 | kh168.live |
 
-Each SECTION has `setExplicitVariableModeForCollection` for **`02 Semantic`** (`VariableCollectionId:56:2`) to the matching mode id.
+---
 
-## Collections and Figma rebuild target
+## Current status
 
-### `01 Primitives` rebuild target (single mode `Value`; `scopes = []`)
+| Area | Status | Detail |
+|------|--------|--------|
+| `01 Primitives` | Complete | 54 variables; abstract names (`mono/*`, `brand/*`, `accent/*`, `support/*`, `overlay/*`) |
+| `02 Semantic` | Complete | 13 role tokens; single mode `Default` (multi-brand modes are a future step) |
+| Solid fills / strokes | Complete | 2,985 fills + 576 strokes bound file-wide |
+| `Web_User Dahsboard` | Complete | 864 solids bound, 0 hardcoded |
+| Gradients | Partial | 150 unbound gradient stops in dashboard (API limit); 206 file-wide |
+| `theme.css` | Current | Generated from `figma-variables.json` via `generate-theme-css.mjs` |
+| Multi-brand CSS | Deferred | KH168, CAM88, Leng855 `[data-theme]` blocks pending mode setup |
 
-For the next Figma rebuild, use **intent/source raw names** as the actual primitive variable names. This keeps the raw layer readable without relying on color words like `green`, `blue`, `yellow`, or `red`.
+---
 
-Naming pattern:
+## Token naming guide
 
-```text
-raw-{intent-or-source}-{role}
+### Primitive naming anatomy
+
+```
+mono / 700
+^^^^   ^^^
+group  scale step (0 = lightest, 950 = darkest)
+
+brand / 500
+^^^^^   ^^^
+group  scale step
+
+support / danger
+^^^^^^^   ^^^^^^
+group     role descriptor
+
+overlay / default
+^^^^^^^   ^^^^^^^
+group     variant
 ```
 
-Rules:
+### Primitive groups
 
-- Use `raw-*` only for physical hex values.
-- Keep primitives hidden from designers where possible: `scopes = []`.
-- Do not name raw tokens by visible color. Prefer source/intent: `brand-rio`, `surface-kh-base`, `promo-highlight`, `border-rio`.
-- Keep all theme meaning in `02 Semantic`; primitives are still raw fixed values.
-- If exporting to CSS, legacy Figma names may remain as compatibility aliases only, not as rebuild names.
+| Group | Purpose | Example |
+|-------|---------|---------|
+| `mono/*` | Neutral grayscale ramp | `mono/0` (#fff) → `mono/950` (#000) |
+| `brand/*` | Primary brand color ramp | `brand/500` (#45ff8b) |
+| `accent/*` | Gold / highlight ramp | `accent/400` (#f8d840) |
+| `support/*` | Status and utility colors | `support/danger` (#c8102e) |
+| `overlay/*` | Transparency surfaces | `overlay/default` (rgba 0,0,0,0.6) |
 
-Target primitive names:
+### Semantic naming convention
 
-| Target raw primitive | Value | Legacy/source token |
-|----------------------|-------|---------------------|
-| `raw-action-leng-peak` | `#ff0000` | `signal/peak` |
-| `raw-alert-caution` | `#eab308` | `state/caution` |
-| `raw-alert-soft` | `#dd6044` | `state/danger-soft` |
-| `raw-border-highlight` | `#8a6b2a` | `accent/trace` |
-| `raw-border-kh` | `#252525` | `mono/650` |
-| `raw-border-leng` | `#2a1a00` | `signal/700` |
-| `raw-border-rio` | `#292929` | `mono/700` |
-| `raw-brand-cam` | `#032ea1` | `accord/core` |
-| `raw-brand-kh` | `#c8102e` | `brand/strike` |
-| `raw-brand-leng` | `#b91c1c` | `signal/600` |
-| `raw-brand-rio` | `#45ff8b` | `brand/pulse` |
-| `raw-foundation-ink` | `#000000` | `base/ink` |
-| `raw-foundation-paper` | `#ffffff` | `base/paper` |
-| `raw-link-standard` | `#4a90e2` | `accent/link/500` |
-| `raw-partner-mark` | `#012169` | `partner/mark` |
-| `raw-prize-highlight` | `#fff500` | `accent/jackpot/500` |
-| `raw-promo-highlight` | `#f8d840` | `accent/promo/400` |
-| `raw-promo-muted` | `#d4af37` | `state/promo-muted` |
-| `raw-promo-strong` | `#f4cf08` | `state/promo` |
-| `raw-status-success` | `#10b981` | `state/success` |
-| `raw-surface-cam-base` | `#0c162f` | `depth/920` |
-| `raw-surface-cam-raised` | `#1a1755` | `depth/840` |
-| `raw-surface-kh-base` | `#0f1424` | `depth/900` |
-| `raw-surface-kh-raised` | `#1a2138` | `depth/800` |
-| `raw-surface-leng-base` | `#3a1515` | `signal/900` |
-| `raw-surface-leng-raised` | `#991b1b` | `signal/500` |
-| `raw-surface-rio-raised` | `#282828` | `mono/800` |
-| `raw-text-muted` | `#6b7280` | `mono/500` |
-| `raw-text-subtle` | `#94a3b8` | `tone/subtle` |
-| `raw-utility-soft` | `#dbdad8` | `mono/220` |
-| `raw-utility-subtle` | `#d8d8d8` | `mono/300` |
-| `raw-wash-soft` | `#b0baed` | `wash/400` |
+Semantics describe **where** and **how** a color is used, not what it looks like:
 
-WEB `codeSyntax` pattern: `var(--{raw-name})`, for example `var(--raw-brand-rio)`.
+| Semantic token | Meaning | Primitive (Default mode) |
+|----------------|---------|--------------------------|
+| `color/primary` | Main brand / CTA | `brand/500` |
+| `color/accent` | Secondary highlight | `accent/400` |
+| `color/surface` | Page background | `mono/900` |
+| `color/surface/elevated` | Card / panel surface | `mono/750` |
+| `color/surface/base` | Deepest surface | `mono/850` |
+| `color/border` | Default divider | `mono/700` |
+| `color/border/strong` | Emphasis divider | `mono/650` |
+| `color/text/primary` | Body / heading text | `mono/0` |
+| `color/text/secondary` | Muted text | `mono/400` |
+| `color/text/link` | Hyperlinks | `support/link` |
+| `color/success` | Positive states | `support/success` |
+| `color/warning` | Caution states | `support/warning` |
+| `color/danger` | Error / alert states | `support/danger` |
+| `color/overlay` | Modal scrim | `overlay/default` |
 
-CSS compatibility aliases in `theme.css` may keep the old names:
+---
 
-```css
---brand-pulse: var(--raw-brand-rio);
---depth-900: var(--raw-surface-kh-base);
-```
+## Semantic alias matrix (multi-brand rebuild target)
 
-Current CSS export policy:
-
-- `theme.css` is intentionally **RioCity9-only** while this first theme is being tidied.
-- Emit only raw variables used by the RioCity9 semantic mode:
-  `raw-brand-rio`, `raw-foundation-ink`, `raw-foundation-paper`, `raw-surface-rio-raised`, `raw-border-rio`, `raw-promo-highlight`, `raw-link-standard`, `raw-prize-highlight`.
-- Keep only RioCity9 compatibility aliases, such as `brand/pulse` -> `raw-brand-rio`.
-- Do not emit KH168, CAM88, or Leng855 raw variables or `[data-theme]` blocks until those themes are cleaned and reviewed.
-- `export-done.json` may still contain all four modes because it mirrors Figma. The CSS generator filters it to RioCity9 only.
-
-### `02 Semantic` (modes: RioCity9, KH168, CAM88, Leng855)
-
-Variables: `brand-primary`, `action-cta`, `surface-base`, `surface-container`, `text-primary`, `text-on-emphasis`, `border-default`, `text-promo-highlight`, `text-link`, `text-prize-highlight` - each mode aliases into primitives.
-
-WEB `codeSyntax` (semantic -> app CSS):
-
-| Semantic token | WEB code syntax | Scope |
-|----------------|-----------------|-------|
-| `brand-primary` | `var(--color-primary)` | `FRAME_FILL`, `SHAPE_FILL` |
-| `action-cta` | `var(--color-accent)` | `FRAME_FILL`, `SHAPE_FILL` |
-| `surface-base` | `var(--color-surface)` | `FRAME_FILL`, `SHAPE_FILL` |
-| `surface-container` | `var(--color-surface-elevated)` | `FRAME_FILL`, `SHAPE_FILL` |
-| `text-primary` | `var(--color-text-primary)` | `TEXT_FILL` |
-| `text-on-emphasis` | `var(--color-text-on-emphasis)` | `TEXT_FILL` |
-| `border-default` | `var(--color-border)` | `STROKE_COLOR` |
-| `text-promo-highlight` | `var(--color-text-promo-highlight)` | `TEXT_FILL` |
-| `text-link` | `var(--color-text-link)` | `TEXT_FILL` |
-| `text-prize-highlight` | `var(--color-text-prize-highlight)` | `TEXT_FILL` |
-
-Semantic mode alias matrix for Figma rebuild:
+When multi-brand modes are added back to `02 Semantic`, use this alias matrix:
 
 | Semantic token | RioCity9 | KH168 | CAM88 | Leng855 |
 |----------------|----------|-------|-------|---------|
-| `brand-primary` | `raw-brand-rio` | `raw-brand-kh` | `raw-brand-cam` | `raw-brand-leng` |
-| `action-cta` | `raw-brand-rio` | `raw-brand-kh` | `raw-brand-cam` | `raw-action-leng-peak` |
-| `surface-base` | `raw-foundation-ink` | `raw-surface-kh-base` | `raw-surface-cam-base` | `raw-surface-leng-base` |
-| `surface-container` | `raw-surface-rio-raised` | `raw-surface-kh-raised` | `raw-surface-cam-raised` | `raw-surface-leng-raised` |
-| `text-primary` | `raw-foundation-paper` | `raw-foundation-paper` | `raw-foundation-paper` | `raw-foundation-paper` |
-| `text-on-emphasis` | `raw-foundation-ink` | `raw-foundation-paper` | `raw-foundation-paper` | `raw-foundation-paper` |
-| `border-default` | `raw-border-rio` | `raw-border-kh` | `raw-surface-cam-base` | `raw-border-leng` |
-| `text-promo-highlight` | `raw-promo-highlight` | `raw-promo-strong` | `raw-alert-soft` | `raw-promo-muted` |
-| `text-link` | `raw-link-standard` | `raw-brand-kh` | `raw-brand-cam` | `raw-brand-leng` |
-| `text-prize-highlight` | `raw-prize-highlight` | `raw-promo-strong` | `raw-alert-caution` | `raw-promo-muted` |
+| `brand-primary` | `brand/500` | `support/danger` | `support/info` | `support/danger-soft` |
+| `action-cta` | `brand/500` | `support/danger` | `support/info` | `accent/500` |
+| `surface-base` | `mono/950` | `support/info` dark | `support/info` darker | `support/danger` dark |
+| `surface-container` | `mono/750` | navy dark | navy mid | crimson dark |
+| `text-primary` | `mono/0` | `mono/0` | `mono/0` | `mono/0` |
+| `border-default` | `mono/700` | navy-mid | navy-base | crimson-mid |
 
-### Retired `RioCity9 sections`
+---
 
-The former `RioCity9 sections` collection (`VariableCollectionId:101:2`) was removed after its three text tokens were promoted into `02 Semantic`:
+## Gradient paint styles
 
-| Former token | Replacement semantic token |
-|--------------|----------------------------|
-| `promo-strip/text-highlight` | `text-promo-highlight` |
-| `promo-strip/text-link` | `text-link` |
-| `recent-big-win/text-game` | `text-prize-highlight` |
+Eleven reusable local paint styles cover repeated gradient fills. Each style is named with a grouped path for easy discovery in the Assets panel.
 
-## Gradient tokens (semantic naming)
+| Figma paint style | Semantic role | CSS token | Bound fills |
+|-------------------|--------------|-----------|-------------|
+| `Gradient / Brand / Primary` | Hero / nav brand wash | `--gradient-brand-primary` | 7 |
+| `Gradient / Brand / Accent` | Secondary brand emphasis | `--gradient-brand-accent` | 39 |
+| `Gradient / Promo / Gold` | VIP / bonus strips | `--gradient-promo-gold` | 11 |
+| `Gradient / Promo / Red` | Urgency / limited-time | `--gradient-promo-red` | seed |
+| `Gradient / Surface / Glow` | Card depth glow | `--gradient-surface-glow` | 8 |
+| `Gradient / Surface / Card` | Card background | `--gradient-surface-card` | 60 |
+| `Gradient / Surface / Icon` | Icon wash | `--gradient-surface-icon` | 195 |
+| `Gradient / Surface / Subtle` | Subtle UI depth | `--gradient-surface-subtle` | 12 |
+| `Gradient / Button / VIP` | Premium CTA fill | `--gradient-button-vip` | 72 |
+| `Gradient / Hero / Primary` | Hero / category wash | `--gradient-hero-primary` | 34 |
+| `Gradient / Border / Highlight` | Highlighted card border | `--gradient-border-highlight` | 8 |
 
-Canonical **Figma paint style names** use grouped Figma style names. The semantic ID in the description keeps the screenshot-style dot notation. **CSS / Dev Mode** uses kebab-case `var(--...)`.
+**API constraint:** `setBoundVariableForPaint` only works on `SolidPaint`. Gradient stop colors use `ColorStop.boundVariables.color`. Whole-paint gradient variable binding is not supported.
 
-| Figma paint style | Semantic ID | Suggested WEB / CSS token | Applied |
-|-------------------|-------------|---------------------------|---------|
-| `Gradient / Brand / Primary` | `gradient.brand.primary` | `var(--gradient-brand-primary)` | 7 |
-| `Gradient / Brand / Accent` | `gradient.brand.accent` | `var(--gradient-brand-accent)` | 39 |
-| `Gradient / Promo / Gold` | `gradient.promo.gold` | `var(--gradient-promo-gold)` | 11 |
-| `Gradient / Promo / Red` | `gradient.promo.red` | `var(--gradient-promo-red)` | seed style |
-| `Gradient / Surface / Glow` | `gradient.surface.glow` | `var(--gradient-surface-glow)` | 8 |
-| `Gradient / Surface / Card` | `gradient.surface.card` | `var(--gradient-surface-card)` | 60 |
-| `Gradient / Surface / Icon` | `gradient.surface.icon` | `var(--gradient-surface-icon)` | 195 |
-| `Gradient / Surface / Subtle` | `gradient.surface.subtle` | `var(--gradient-surface-subtle)` | 12 |
-| `Gradient / Button / VIP` | `gradient.button.vip` | `var(--gradient-button-vip)` | 72 |
-| `Gradient / Hero / Primary` | `gradient.hero.primary` | `var(--gradient-hero-primary)` | 34 |
-| `Gradient / Border / Highlight` | `gradient.border.highlight` | `var(--gradient-border-highlight)` | 8 |
+---
 
-**Intended roles (non-chromatic where possible):**
+## Binding rules (reference)
 
-- **`gradient.brand.primary`** - hero / nav brand wash (primary brand emphasis over surface).
-- **`gradient.brand.accent`** - secondary brand emphasis (e.g. tabs, chips).
-- **`gradient.promo.gold`** - promotional panels, VIP / bonus strips (still "promo" + material name in screenshot; treat as named promo lane, not a generic fill).
-- **`gradient.promo.red`** - urgency promo / limited-time strips.
-- **`gradient.surface.glow` / `gradient.surface.card` / `gradient.surface.icon` / `gradient.surface.subtle`** - card, icon, and subtle UI depth.
-- **`gradient.button.vip`** - premium CTA fills (pair with `text-on-emphasis` where contrast allows).
-- **`gradient.hero.primary`** - hero/category icon washes.
-- **`gradient.border.highlight`** - bordered card/highlight surfaces.
+- Prefer `02 Semantic` variables — they respect property scopes (TEXT vs fill vs stroke).
+- Fallback: nearest primitive in `01 Primitives` within Euclidean RGB distance ~0.11.
+- Skip paints with `opacity < 0.999` (overlays) to avoid visual drift.
+- IMAGE fills: not converted — outside variable scope.
+- GRADIENT: use `PaintStyle` + per-stop `ColorStop` binding; do not use the solid nearest-color path.
+- Fonts: always `loadFontAsync` before mutating any TEXT node.
 
-**Figma / Plugin API constraints**
+---
 
-- `figma.variables.setBoundVariableForPaint` accepts **only `SolidPaint`**. Binding the **entire** `GRADIENT` paint to one COLOR variable **throws**; **IMAGE** paints are likewise out of scope for that helper.
-- **Gradient stop colors** may expose `boundVariables.color` on each `ColorStop` (see Plugin API `ColorStop`). Prefer binding each stop to **`02 Semantic`** COLOR variables so **`02 Semantic`** mode switches on the board update stops without duplicating six styles × four brands. If a Figma build rejects stop binding from the plugin, fallback: keep fixed hex stops in the paint style and duplicate styles per brand only as a last resort.
+## File and tooling reference
 
-**Implementation strategy**
+- **Figma file key:** Not stored in this repository. Copy from the Figma URL (`/design/<fileKey>/...`). Store in a password manager or `FIGMA_FILE_KEY` local env for MCP scripts only.
+- **Page:** `0:1` (Page 1)
+- **MCP tool:** `use_figma` — always load `figma-use` skill before each call; sequential calls only (`skillNames: "figma-use"`).
 
-1. **Local `PaintStyle`** - Create (or update) reusable **`PaintStyle`** rows whose **names** are exactly the grouped strings in the table. (Paint styles are **file-scoped**; use the Assets panel or an optional swatch frame on a token page for visual audit - they are not children of a Page node.)
-2. **Stops** - Each style: `GRADIENT_LINEAR` (or `GRADIENT_RADIAL` where design requires) with **two stops** minimum; bind stop colors to **`02 Semantic`** tokens (`brand-primary`, `action-cta`, `surface-base`, `surface-container`, etc.) per row above. Use a neutral fallback RGB on each stop if the editor requires a literal color alongside the alias.
-3. **Do not** add STRING variables holding raw `linear-gradient(...)` unless the product pipeline explicitly reads CSS strings from Dev Mode; prefer paint styles + semantic COLOR variables.
-4. **Migrate** - For nodes with hardcoded `GRADIENT` fills that match an audited pattern, set `node.fillStyleId = <PaintStyle.id>` in small `use_figma` batches; return `mutatedNodeIds`.
+### Key file paths
 
-**Style description (optional)** - In Figma UI, paste the matching `var(--gradient-...)` into the style description for handoff alignment.
+| File | Role |
+|------|------|
+| `figma-variables.json` | Snapshot of Figma variables (primitives + semantics) used as CSS source |
+| `generate-theme-css.mjs` | Reads `figma-variables.json`, writes `theme.css` |
+| `theme.css` | Generated CSS custom properties — do not edit directly |
+| `plan.md` | This file — canonical handoff and architecture reference |
+| `README.md` | Onboarding guide for new contributors |
 
-## Binding approach (reference for continuation)
+---
 
-- Prefer **`02 Semantic`** (respects scopes: TEXT vs fill vs stroke).
-- Fallback: **nearest primitive** in `01 Primitives` within Euclidean distance **~0.11** in RGB 0-1 space.
-- **Skip** paints with opacity **&lt; 0.999** (overlays) to avoid visual drift.
-- **IMAGE**: not converted with variable bind APIs above.
-- **GRADIENT**: do **not** use the opaque SOLID nearest-color bind path; use **`PaintStyle`** + **`ColorStop` -> `02 Semantic`** (see **Gradient tokens**). Whole-paint variable bind is not supported for gradient paints via `setBoundVariableForPaint`.
-- **Fonts:** `loadFontAsync` before mutating `TEXT`.
-
-## Figma rebuild sequence for raw palette rename
-
-Use this when rebuilding the design system in a fresh or cleaned Figma file.
-
-1. Create `01 Primitives` with one mode: `Value`.
-2. Create the 32 target `raw-*` variables from the table above as `COLOR` variables.
-3. Set each primitive `scopes = []`.
-4. Set WEB code syntax to `var(--raw-...)`.
-5. Create `02 Semantic` with four modes: `RioCity9`, `KH168`, `CAM88`, `Leng855`.
-6. Create the 10 semantic variables and alias every mode to the new `raw-*` variables.
-7. Apply explicit `02 Semantic` modes to the four SECTION roots.
-8. Bind UI fills, strokes, and text to `02 Semantic` first. Use raw primitives only for rare fixed values or compatibility audit work.
-9. Do not rebuild `RioCity9 sections`; it has been retired.
-10. For the current CSS export, emit RioCity9 only. Keep old primitive names only as RioCity9 compatibility aliases if existing app code still references them.
-
-## Completed work (session summary)
+## Completed work (session log)
 
 1. Discovered existing `01 Primitives` + `02 Semantic` (4 brand modes); reused instead of duplicating.
 2. Set per-SECTION explicit modes for `02 Semantic` on all four html.to.design roots.
-3. Multi-pass bind: semantics + primitives; added primitives (`yellow`, `gold`, `navy-brand`, `slate`, `muted-gold`, `coral`, `emerald`, `gray`, `wash`, `mono/*`, `accent/trace`) then consolidated naming into non-chromatic **`01 Primitives`** names.
-4. Documented the next rebuild target: replace legacy primitive names with intent/source `raw-*` names while keeping old CSS aliases only for compatibility.
-5. **Section text merge:** promoted `promo-strip/text-highlight`, `promo-strip/text-link`, and `recent-big-win/text-game` into `02 Semantic` as `text-promo-highlight`, `text-link`, and `text-prize-highlight`; rebound existing RioCity text usages and deleted the old `RioCity9 sections` collection.
-6. **Gradient paint styles:** 11 local reusable **`PaintStyle`** entries under `Gradient / Brand`, `Gradient / Surface`, `Gradient / Promo`, `Gradient / Button`, `Gradient / Hero`, and `Gradient / Border`; 446 repeated gradient fills styled. 39 hardcoded gradients remain because they are decorative, logo-like, or one-off.
-7. **RioCity9 cleanup:** RioCity9 section (`46:740`) has **0 hardcoded opaque solid fills/strokes**, **0 stale variable bindings**, and all colors rebound to the current scalable variables.
-8. **RioCity9 CSS cleanup:** `theme.css` now emits only RioCity9 raw variables, RioCity9 semantic variables, and RioCity9 compatibility aliases. Other theme CSS blocks are intentionally deferred.
+3. Multi-pass bind: semantics + primitives; nearest-color algorithm with RGB distance threshold.
+4. Renamed all primitives from legacy `raw-*` / chromatic names to abstract slash-grouped names (`mono/*`, `brand/*`, `accent/*`, `support/*`, `overlay/*`).
+5. Promoted `RioCity9 sections` text tokens into `02 Semantic`; deleted old collection.
+6. Created 11 local `PaintStyle` gradient entries; migrated 446 gradient fills.
+7. Applied full dark-theme variable binding to `Web_User Dahsboard`: 864 solids bound, 0 hardcoded.
+8. Regenerated `figma-variables.json` and `theme.css` from live Figma variables.
+9. Consolidated `generate-theme-css.mjs` to read from `figma-variables.json` (not legacy `export-done.json`).
 
-**Last reported opaque stats:** RioCity9 is fully variable-bound for opaque solid fills/strokes. Other brand boards still have optional stroke-heavy and section-token cleanup work.
+---
 
-## Continuation (when you resume)
+## Continuation (next steps)
 
-1. **Strokes:** Add stroke-scoped primitives or semantic `border-*` variants; rerun bind for `STROKE_COLOR` only.
-2. **Semantics rename:** If you want Figma names to match `color/primary`, rename `02 Semantic` variables and refresh WEB `codeSyntax` (bindings follow variable id).
-3. **Future CSS theme rollout:** After RioCity9 is reviewed, expand `generate-theme-css.mjs` to emit KH168, CAM88, and Leng855 raw subsets and `[data-theme]` blocks one theme at a time.
-4. **Gradients:** 11 `gradient.*` **PaintStyle** entries exist with stops bound to **`02 Semantic`**. Remaining work: phased **`fillStyleId`** migration for matching hardcoded `GRADIENT` layers (see **Gradient tokens**).
+1. **Multi-brand CSS:** After reviewing RioCity9, add modes to `02 Semantic` for KH168, CAM88, Leng855 and emit `[data-theme]` blocks from `generate-theme-css.mjs`.
+2. **Gradient stops:** 150 unbound stops remain in `Web_User Dahsboard`; 206 file-wide. Bind manually in Figma UI where the plugin API falls short, or replace decorative gradients with flat + overlay approach.
+3. **Stroke cleanup:** Other brand sections (Leng855, CAM88, KH168) still have optional unbound opaque strokes.
+4. **Duplicate primitives:** `mono/350` = `mono/400` (both `#99a4b0`) and `mono/800` = `mono/850` (both `#252525`) — consolidate when convenient.
+5. **`brand/500-soft`:** Same hex as `brand/500`; alpha is the only difference. Replace with single primitive + layer opacity.
 
-## Risks / notes
+---
 
-- Moving nodes **outside** their brand `SECTION` without updating explicit modes can change resolved colors.
-- Figma **plan mode limits** may cap modes per collection (already using 4 modes on `02 Semantic`).
-- `use_figma` scripts must stay small; return structured JSON; never parallel `use_figma`.
+## Risks
 
-## Related plan file (Cursor)
-
-An earlier iteration of this plan also exists at:
-
-`c:\Users\Vincent\.cursor\plans\figma_color_variables_3990b7f4.plan.md`
-
-This **`plan.md`** in the repo is the **canonical handoff** for continuing later.
+- Moving nodes **outside** their brand SECTION without updating explicit modes changes resolved colors silently.
+- Figma plan tier may cap the number of modes per collection (currently using 1 mode; up to 4 brand modes planned).
+- `use_figma` scripts must be small and sequential — never parallelise `use_figma` calls.
+- Gradient stop API binding may not be supported in all Figma desktop versions; test before a full gradient migration pass.
