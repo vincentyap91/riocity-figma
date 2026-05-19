@@ -1,13 +1,11 @@
 /**
  * Generates theme.css from figma-variables.json (Figma 01 Primitives + 02 Semantic).
  *
- * Architecture:
- *   --primitive-*  resolved raw values (01 Primitives) — do not use in components
- *   --color-*      semantic roles (02 Semantic) — use these in UI code
- *   --{group}-*    legacy aliases → primitives (optional migration)
+ * Naming (matches legacy theme.css):
+ *   --mono-*, --brand-*, --accent-*, --support-*, --overlay-*  → raw palette
+ *   --color-*  → semantic roles; always var(--mono-*) / var(--brand-*) / …
  *
- * Refresh figma-variables.json from Figma (use_figma export), then:
- *   node generate-theme-css.mjs
+ * Regenerate: node generate-theme-css.mjs
  */
 import fs from "fs";
 import path from "path";
@@ -19,22 +17,17 @@ const outPath = path.join(__dirname, "theme.css");
 
 const data = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
 
-/** Figma `mono/400` → `mono-400` */
+/** Figma `mono/400` → `--mono-400` (legacy flat name) */
 function figmaToLegacyName(figmaName) {
   return figmaName.replace(/\//g, "-");
 }
 
-/** Figma `mono/400` → `primitive-mono-400` */
-function figmaToPrimitiveName(figmaName) {
-  const legacy = figmaToLegacyName(figmaName);
-  if (legacy.startsWith("Surface-")) {
-    return `primitive-surface-${legacy.slice("Surface-".length).toLowerCase()}`;
-  }
-  return `primitive-${legacy}`;
+function legacyVarName(figmaName) {
+  return `--${figmaToLegacyName(figmaName)}`;
 }
 
 /** Figma `color/text/primary` → `color-text-primary` */
-function figmaToSemanticName(figmaName) {
+function figmaToSemanticCssName(figmaName) {
   return figmaToLegacyName(figmaName);
 }
 
@@ -73,34 +66,60 @@ const semMode = data["02 Semantic"].mode ?? "Default";
 const semModes = data["02 Semantic"].modes ?? [semMode];
 const exportedAt = data.exportedAt ?? "unknown";
 
-const primitiveByFigmaName = new Map(
-  primitives.map((p) => [p.name, p])
-);
+const primitiveByFigmaName = new Map(primitives.map((p) => [p.name, p]));
+
+const semanticGroupOrder = [
+  "text",
+  "surface",
+  "primary",
+  "border",
+  "accent",
+  "button",
+  "success",
+  "danger",
+  "error",
+  "warning",
+  "overlay",
+  "muted",
+  "info",
+];
+
+function semanticGroup(name) {
+  return name.split("/")[1] ?? "misc";
+}
+
+function sortSemantics(a, b) {
+  const ga = semanticGroupOrder.indexOf(semanticGroup(a.name));
+  const gb = semanticGroupOrder.indexOf(semanticGroup(b.name));
+  const orderA = ga === -1 ? 999 : ga;
+  const orderB = gb === -1 ? 999 : gb;
+  if (orderA !== orderB) return orderA - orderB;
+  return a.name.localeCompare(b.name);
+}
+
+const sortedSemantics = [...semantics].sort(sortSemantics);
 
 let css = "";
 css += "/**\n";
-css += " * Design tokens — generated from Figma Variables\n";
-css += ` * Source: figma-variables.json (exported ${exportedAt})\n`;
-css += ` * Figma collections: 01 Primitives (${primMode}), 02 Semantic (${semModes.join(", ")})\n`;
+css += " * theme.css — design tokens from Figma\n";
+css += ` * Exported: ${exportedAt} | Primitives: ${primMode} | Semantic: ${semModes.join(", ")}\n`;
 css += " *\n";
-css += " * Usage in application code:\n";
-css += " *   Use --color-* only (semantic layer). Never hardcode hex in components.\n";
-css += " *   --primitive-* are raw values for theme authoring / debugging only.\n";
+css += " * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*\n";
+css += " * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …\n";
+css += " *\n";
+css += " *   background: var(--color-surface);\n";
+css += " *   color:      var(--color-text-primary);\n";
+css += " *   border:     var(--color-border);\n";
+css += " *   CTA:        var(--color-primary);\n";
 css += " *\n";
 css += " * Regenerate: node generate-theme-css.mjs\n";
 css += " */\n\n";
-
-css += "/* =============================================================================\n";
-css += "   Default theme (Figma mode: " + semMode + ")\n";
-css += "   Future: duplicate block under [data-theme=\"brand\"] when multi-mode export exists\n";
-css += "   ============================================================================= */\n\n";
 
 css += ":root,\n";
 css += '[data-theme="default"] {\n';
 
 css += "  /* ---------------------------------------------------------------------------\n";
-css += "     01 Primitives — resolved values (hidden in Figma pickers)\n";
-css += "     Map: Figma mono/* ≈ neutral scale, brand/*, accent/*, support/*, overlay/*\n";
+css += "     01 Primitives — resolved values\n";
 css += "     --------------------------------------------------------------------------- */\n";
 
 let lastGroup = "";
@@ -108,74 +127,39 @@ for (const v of primitives) {
   const parts = v.name.split("/");
   const g = parts.length > 1 ? parts[0] : v.name.split("-")[0];
   const groupLabel =
-    g === "mono"
-      ? "neutral (mono)"
-      : g === "Surface"
-        ? "surface"
-        : g;
+    g === "mono" ? "mono" : g === "Surface" ? "Surface" : g;
   if (groupLabel !== lastGroup) {
     if (lastGroup) css += "\n";
     css += `  /* ${groupLabel} */\n`;
     lastGroup = groupLabel;
   }
-  const primVar = `--${figmaToPrimitiveName(v.name)}`;
-  css += `  ${primVar}: ${v.css};\n`;
+  css += `  ${legacyVarName(v.name)}: ${v.css};\n`;
 }
 
 css += "\n  /* ---------------------------------------------------------------------------\n";
-css += "     02 Semantic — role tokens (bind UI to these)\n";
-css += "     Each aliases a primitive via var(--primitive-*)\n";
+css += "     02 Semantic — role tokens (use in application code)\n";
 css += "     --------------------------------------------------------------------------- */\n";
 
 let lastSemGroup = "";
-for (const v of semantics) {
-  const top = v.name.split("/")[1] ?? "misc";
-  if (top !== lastSemGroup) {
+for (const v of sortedSemantics) {
+  const group = semanticGroup(v.name);
+  if (group !== lastSemGroup) {
     if (lastSemGroup) css += "\n";
-    css += `  /* ${top} */\n`;
-    lastSemGroup = top;
+    css += `  /* ${group} */\n`;
+    lastSemGroup = group;
   }
-  const semVar = `--${figmaToSemanticName(v.name)}`;
-  const aliasPrim = v.aliasTo
-    ? `--${figmaToPrimitiveName(v.aliasTo)}`
-    : null;
-  if (!aliasPrim || !primitiveByFigmaName.has(v.aliasTo)) {
-    css += `  /* WARN: missing primitive for ${v.name} → ${v.aliasTo} */\n`;
+  const semVar = `--${figmaToSemanticCssName(v.name)}`;
+  if (!v.aliasTo || !primitiveByFigmaName.has(v.aliasTo)) {
+    css += `  /* missing primitive: ${v.name} → ${v.aliasTo} */\n`;
     continue;
   }
-  css += `  ${semVar}: var(${aliasPrim});\n`;
+  const primVar = legacyVarName(v.aliasTo);
+  css += `  ${semVar}: var(${primVar});\n`;
 }
 
-css += "}\n\n";
-
-css += "/* ---------------------------------------------------------------------------\n";
-css += "   Legacy primitive aliases (Figma slash names as flat CSS vars)\n";
-css += "   Prefer --color-* in new code; these ease migration from older theme.css\n";
-css += "   --------------------------------------------------------------------------- */\n\n";
-
-css += ":root {\n";
-lastGroup = "";
-for (const v of primitives) {
-  const g = v.name.split("/")[0];
-  if (g !== lastGroup) {
-    if (lastGroup) css += "\n";
-    css += `  /* ${g} */\n`;
-    lastGroup = g;
-  }
-  const legacy = `--${figmaToLegacyName(v.name)}`;
-  const primVar = `--${figmaToPrimitiveName(v.name)}`;
-  css += `  ${legacy}: var(${primVar});\n`;
-}
-css += "}\n\n";
-
-css += "/* ---------------------------------------------------------------------------\n";
-css += "   Placeholder: light theme / additional brand modes\n";
-css += "   Export additional Figma modes to figma-variables.json, then extend generator.\n";
-css += "   Example:\n";
-css += '   [data-theme="light"] { --color-surface: #ffffff; ... }\n';
-css += "   --------------------------------------------------------------------------- */\n";
+css += "}\n";
 
 fs.writeFileSync(outPath, css);
 console.log(
-  `Wrote ${outPath} (${primitives.length} primitives, ${semantics.length} semantics)`
+  `Wrote ${outPath} — legacy --mono/--brand names, ${sortedSemantics.length} --color-* aliases`
 );

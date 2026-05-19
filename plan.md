@@ -31,7 +31,7 @@ todos:
     content: "OPTIONAL: reduce remaining opaque unbound strokes on non-RioCity9 sections"
     status: pending
   - id: gradients
-    content: "DONE: 11 local PaintStyle gradient.* entries; 150 gradient stops in dashboard unbound (API limit)"
+    content: "DONE: 9 local PaintStyle gradient.* entries; 150 gradient stops in dashboard unbound (API limit)"
     status: completed
 ---
 
@@ -50,7 +50,7 @@ flowchart TD
   subgraph figma ["Figma File — Page 1"]
     P["01 Primitives\n54 raw color values\nscopes hidden from pickers"]
     S["02 Semantic\n13 role tokens\n4 brand modes"]
-    G["Gradient Paint Styles\n11 reusable styles"]
+    G["Gradient Paint Styles\n9 reusable styles"]
     F["Canvas Layers\nfills · strokes · text · effects"]
     P -->|"aliased by"| S
     S -->|"bound to"| F
@@ -277,7 +277,7 @@ group     variant
 |-------|---------|---------|
 | `mono/*` | Neutral grayscale ramp | `mono/0` (#fff) → `mono/950` (#000) |
 | `brand/*` | Primary brand color ramp | `brand/500` (#45ff8b) |
-| `accent/*` | Gold / highlight ramp | `accent/400` (#f8d840) |
+| `accent/*` | Secondary highlight ramp | `accent/400` (#f8d840) |
 | `support/*` | Status and utility colors | `support/danger` (#c8102e) |
 | `overlay/*` | Transparency surfaces | `overlay/default` (rgba 0,0,0,0.6) |
 
@@ -458,7 +458,7 @@ group / scale-step        ← fits an existing ramp
 ─────   ──────────
 mono    825               neutral ramp  (0 = white → 950 = black)
 brand   858               brand ramp
-accent  420               highlight / gold ramp
+accent  420               highlight ramp
 support danger-soft       status / utility (descriptive role suffix)
 overlay scrim             transparency layer
 
@@ -576,19 +576,17 @@ Any variable name that contains the following words or patterns is a naming viol
 
 ## Gradient paint styles
 
-Eleven reusable local paint styles cover repeated gradient fills. Each style is named with a grouped path for easy discovery in the Assets panel.
+Nine reusable local paint styles cover repeated gradient fills. Each style is named with a grouped path for easy discovery in the Assets panel.
 
 | Figma paint style | Semantic role | CSS token | Bound fills |
 |-------------------|--------------|-----------|-------------|
 | `Gradient / Brand / Primary` | Hero / nav brand wash | `--gradient-brand-primary` | 7 |
 | `Gradient / Brand / Accent` | Secondary brand emphasis | `--gradient-brand-accent` | 39 |
-| `Gradient / Promo / Gold` | VIP / bonus strips | `--gradient-promo-gold` | 11 |
 | `Gradient / Promo / Red` | Urgency / limited-time | `--gradient-promo-red` | seed |
 | `Gradient / Surface / Glow` | Card depth glow | `--gradient-surface-glow` | 8 |
 | `Gradient / Surface / Card` | Card background | `--gradient-surface-card` | 60 |
 | `Gradient / Surface / Icon` | Icon wash | `--gradient-surface-icon` | 195 |
 | `Gradient / Surface / Subtle` | Subtle UI depth | `--gradient-surface-subtle` | 12 |
-| `Gradient / Button / VIP` | Premium CTA fill | `--gradient-button-vip` | 72 |
 | `Gradient / Hero / Primary` | Hero / category wash | `--gradient-hero-primary` | 34 |
 | `Gradient / Border / Highlight` | Highlighted card border | `--gradient-border-highlight` | 8 |
 
@@ -632,7 +630,7 @@ Eleven reusable local paint styles cover repeated gradient fills. Each style is 
 3. Multi-pass bind: semantics + primitives; nearest-color algorithm with RGB distance threshold.
 4. Renamed all primitives from legacy `raw-*` / chromatic names to abstract slash-grouped names (`mono/*`, `brand/*`, `accent/*`, `support/*`, `overlay/*`).
 5. Promoted `RioCity9 sections` text tokens into `02 Semantic`; deleted old collection.
-6. Created 11 local `PaintStyle` gradient entries; migrated 446 gradient fills.
+6. Created 9 local `PaintStyle` gradient entries; migrated 446 gradient fills.
 7. Applied full dark-theme variable binding to `Web_User Dahsboard`: 864 solids bound, 0 hardcoded.
 8. Regenerated `figma-variables.json` and `theme.css` from live Figma variables.
 9. Consolidated `generate-theme-css.mjs` to read from `figma-variables.json` (not legacy `export-done.json`).
