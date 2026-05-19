@@ -12,7 +12,7 @@ This folder documents and ships **design tokens** for the **Riocity-MCP** Figma 
 |-----------------|------------|
 | Understand token layers and what changed over time | **[plan.md](./plan.md)** |
 | Use colors in a web app | **`theme.css`** + `data-theme` (see below) |
-| Refresh CSS after editing tokens | Edit **`export-done.json`**, then run **`generate-theme-css.mjs`** |
+| Refresh CSS after editing tokens | Update **`figma-variables.json`** (Figma MCP export), then run **`node generate-theme-css.mjs`** |
 | Automate Figma | Cursor/Figma MCP **`use_figma`** with **figma-use** (+ **figma-generate-library**) skills; never parallelize `use_figma` calls |
 
 ### Brand modes (`data-theme`)

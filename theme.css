@@ -1,168 +1,538 @@
 /**
- * Theme CSS generated from figma-variables.json
- * Figma: 01 Primitives (Value) + 02 Semantic (Default)
+ * Design tokens — generated from Figma Variables
+ * Source: figma-variables.json (exported 2026-05-19)
+ * Figma collections: 01 Primitives (Value), 02 Semantic (Default)
+ *
+ * Usage in application code:
+ *   Use --color-* only (semantic layer). Never hardcode hex in components.
+ *   --primitive-* are raw values for theme authoring / debugging only.
+ *
  * Regenerate: node generate-theme-css.mjs
  */
 
-:root {
-  /* 01 Primitives — resolved values */
-  /* mono */
-  --mono-0: #ffffff;
-  --mono-220: #dbdad8;
-  --mono-250: #d8d8d8;
-  --mono-255: #d9d9d9;
-  --mono-280: #b9b9b9;
-  --mono-300: #b0baed;
-  --mono-310: #313131;
-  --mono-330: #333333;
-  --mono-350: #99a4b0;
-  --mono-400: #99a4b0;
-  --mono-462: #878e95;
-  --mono-465: #878787;
-  --mono-475: #b8b8b8;
-  --mono-500: #6b7280;
-  --mono-510: #6b7180;
-  --mono-520: #616d62;
-  --mono-530: #5c6270;
-  --mono-540: #50535c;
-  --mono-545: #575757;
-  --mono-550: #919191;
-  --mono-555: #929292;
-  --mono-560: #a6a6a6;
-  --mono-565: #aaaaaa;
-  --mono-600: #565656;
-  --mono-630: #434343;
-  --mono-635: #474747;
-  --mono-648: #7d7d7d;
-  --mono-650: #5d5d5d;
-  --mono-660: #383838;
-  --mono-700: #292929;
-  --mono-750: #282828;
-  --mono-795: #272727;
-  --mono-800: #252525;
-  --mono-825: #28292c;
-  --mono-850: #252525;
-  --mono-855: #353535;
-  --mono-860: #2b2d33;
-  --mono-862: #27282b;
-  --mono-865: #2e2f33;
-  --mono-870: #3a3a3a;
-  --mono-900: #222222;
-  --mono-910: #1b1b1b;
-  --mono-920: #1d1d1d;
-  --mono-930: #111111;
-  --mono-950: #000000;
+/* =============================================================================
+   Default theme (Figma mode: Default)
+   Future: duplicate block under [data-theme="brand"] when multi-mode export exists
+   ============================================================================= */
+
+:root,
+[data-theme="default"] {
+  /* ---------------------------------------------------------------------------
+     01 Primitives — resolved values (hidden in Figma pickers)
+     Map: Figma mono/* ≈ neutral scale, brand/*, accent/*, support/*, overlay/*
+     --------------------------------------------------------------------------- */
+  /* neutral (mono) */
+  --primitive-mono-0: #ffffff;
+  --primitive-mono-105: #f0f0f0;
+  --primitive-mono-108: #e9e9e9;
+  --primitive-mono-110: #e9eff4;
+  --primitive-mono-112: #e9f3fc;
+  --primitive-mono-114: #e7e7e7;
+  --primitive-mono-115: #dfe3e6;
+  --primitive-mono-220: #dbdad8;
+  --primitive-mono-250: #d8d8d8;
+  --primitive-mono-255: #d9d9d9;
+  --primitive-mono-280: #b9b9b9;
+  --primitive-mono-300: #b0baed;
+  --primitive-mono-310: #313131;
+  --primitive-mono-330: #333333;
+  --primitive-mono-350: #99a4b0;
+  --primitive-mono-400: #99a4b0;
+  --primitive-mono-462: #878e95;
+  --primitive-mono-465: #878787;
+  --primitive-mono-474: #b7b7b7;
+  --primitive-mono-475: #b8b8b8;
+  --primitive-mono-488: #adadad;
+  --primitive-mono-490: #a5afc0;
+  --primitive-mono-500: #6b7280;
+  --primitive-mono-510: #6b7180;
+  --primitive-mono-520: #616d62;
+  --primitive-mono-530: #5c6270;
+  --primitive-mono-540: #50535c;
+  --primitive-mono-542: #959595;
+  --primitive-mono-545: #575757;
+  --primitive-mono-550: #919191;
+  --primitive-mono-555: #929292;
+  --primitive-mono-560: #a6a6a6;
+  --primitive-mono-565: #aaaaaa;
+  --primitive-mono-600: #565656;
+  --primitive-mono-604: #545454;
+  --primitive-mono-622: #3e3e3e;
+  --primitive-mono-628: #424242;
+  --primitive-mono-630: #434343;
+  --primitive-mono-632: #464646;
+  --primitive-mono-635: #474747;
+  --primitive-mono-640: #484848;
+  --primitive-mono-644: #636363;
+  --primitive-mono-646: #676767;
+  --primitive-mono-648: #7d7d7d;
+  --primitive-mono-650: #5d5d5d;
+  --primitive-mono-660: #383838;
+  --primitive-mono-700: #292929;
+  --primitive-mono-710: #303030;
+  --primitive-mono-720: #323232;
+  --primitive-mono-735: #343434;
+  --primitive-mono-750: #282828;
+  --primitive-mono-768: #2c2c2c;
+  --primitive-mono-770: #2b2b2b;
+  --primitive-mono-775: #2d2d2d;
+  --primitive-mono-795: #272727;
+  --primitive-mono-798: #262626;
+  --primitive-mono-800: #252525;
+  --primitive-mono-808: #25272b;
+  --primitive-mono-818: #323a38;
+  --primitive-mono-825: #28292c;
+  --primitive-mono-850: #252525;
+  --primitive-mono-855: #353535;
+  --primitive-mono-860: #2b2d33;
+  --primitive-mono-862: #27282b;
+  --primitive-mono-865: #2e2f33;
+  --primitive-mono-867: #2d3035;
+  --primitive-mono-868: #2e2f2f;
+  --primitive-mono-870: #3a3a3a;
+  --primitive-mono-896: #242424;
+  --primitive-mono-900: #222222;
+  --primitive-mono-905: #232323;
+  --primitive-mono-910: #1b1b1b;
+  --primitive-mono-915: #1e1e1e;
+  --primitive-mono-920: #1d1d1d;
+  --primitive-mono-930: #111111;
+  --primitive-mono-940: #0f0f0f;
+  --primitive-mono-950: #000000;
+
+  /* surface */
+  --primitive-surface-active-positive: #a7c5c1;
 
   /* brand */
-  --brand-400: #2eff8b;
-  --brand-500: #45ff8b;
-  --brand-500-soft: rgba(69, 255, 139, 0.2);
-  --brand-600: #125a48;
-  --brand-648: #2c352c;
-  --brand-650: #2c352d;
-  --brand-700: #26583b;
-  --brand-750: #134438;
-  --brand-760: #057734;
-  --brand-810: #00431b;
-  --brand-820: #1e2921;
-  --brand-830: #477658;
-  --brand-840: #164027;
-  --brand-845: #2e905b;
-  --brand-850: #214c33;
-  --brand-855: #348641;
-  --brand-858: #2f8856;
+  --primitive-brand-400: #2eff8b;
+  --primitive-brand-500: #45ff8b;
+  --primitive-brand-500-soft: rgba(69, 255, 139, 0.2);
+  --primitive-brand-600: #125a48;
+  --primitive-brand-648: #2c352c;
+  --primitive-brand-650: #2c352d;
+  --primitive-brand-700: #26583b;
+  --primitive-brand-750: #134438;
+  --primitive-brand-760: #057734;
+  --primitive-brand-762: #126e51;
+  --primitive-brand-810: #00431b;
+  --primitive-brand-815: #033424;
+  --primitive-brand-820: #1e2921;
+  --primitive-brand-821: #1f3728;
+  --primitive-brand-822: #262e27;
+  --primitive-brand-823: #27302a;
+  --primitive-brand-824: #202620;
+  --primitive-brand-826: #29372a;
+  --primitive-brand-827: #2e3b2f;
+  --primitive-brand-828: #447156;
+  --primitive-brand-830: #477658;
+  --primitive-brand-832: #334034;
+  --primitive-brand-833: #3b453c;
+  --primitive-brand-839: #2a4b36;
+  --primitive-brand-840: #164027;
+  --primitive-brand-845: #2e905b;
+  --primitive-brand-850: #214c33;
+  --primitive-brand-855: #348641;
+  --primitive-brand-858: #2f8856;
 
   /* accent */
-  --accent-200: #fdd182;
-  --accent-280: #7e6f52;
-  --accent-300: #8a6b2a;
-  --accent-310: #c08605;
-  --accent-330: #cdb355;
-  --accent-340: #d4b12c;
-  --accent-350: #d4af37;
-  --accent-400: #f8d840;
-  --accent-420: #f6c722;
-  --accent-450: #f4cf08;
-  --accent-500: #fff500;
-  --accent-brown-700: #774505;
-  --accent-brown-800: #432800;
-  --accent-brown-900: #3c1100;
-  --accent-orange-500: #fc8448;
-  --accent-orange-700: #923f03;
+  --primitive-accent-200: #fdd182;
+  --primitive-accent-280: #7e6f52;
+  --primitive-accent-300: #8a6b2a;
+  --primitive-accent-310: #c08605;
+  --primitive-accent-330: #cdb355;
+  --primitive-accent-340: #d4b12c;
+  --primitive-accent-350: #d4af37;
+  --primitive-accent-360: #e6c252;
+  --primitive-accent-400: #f8d840;
+  --primitive-accent-420: #f6c722;
+  --primitive-accent-450: #f4cf08;
+  --primitive-accent-460: #f0d10c;
+  --primitive-accent-500: #fff500;
+  --primitive-accent-brown-700: #774505;
+  --primitive-accent-brown-800: #432800;
+  --primitive-accent-brown-900: #3c1100;
+  --primitive-accent-khaki-900: #3b3722;
+  --primitive-accent-orange-500: #fc8448;
+  --primitive-accent-orange-700: #923f03;
+  --primitive-accent-pale-100: #fffd90;
 
   /* support */
-  --support-cyan: #4bc3ef;
-  --support-cyan-strong: #1badde;
-  --support-danger: #c8102e;
-  --support-danger-deep: #331e20;
-  --support-danger-soft: #dd6044;
-  --support-danger-surface: #3a1a1a;
-  --support-danger-warm: #352c2c;
-  --support-error: #ff0000;
-  --support-error-light: #ff6f6f;
-  --support-error-vivid: #ff493f;
-  --support-info: #29337a;
-  --support-info-strong: #252f6c;
-  --support-lime: #b8eb7c;
-  --support-lime-strong: #98db7c;
-  --support-lime-vivid: #6fcb20;
-  --support-link: #4a90e2;
-  --support-navy: #012169;
-  --support-navy-deep: #001f3f;
-  --support-navy-mid: #003366;
-  --support-steel: #599bcb;
-  --support-steel-dark: #165275;
-  --support-success: #10b981;
-  --support-success-bright: #5bcc6d;
-  --support-success-strong: #208e49;
-  --support-teal-dark: #334155;
-  --support-warning: #eab308;
+  --primitive-support-cyan: #4bc3ef;
+  --primitive-support-cyan-strong: #1badde;
+  --primitive-support-danger: #c8102e;
+  --primitive-support-danger-deep: #331e20;
+  --primitive-support-danger-maroon: #532320;
+  --primitive-support-danger-red: #d32030;
+  --primitive-support-danger-soft: #dd6044;
+  --primitive-support-danger-surface: #3a1a1a;
+  --primitive-support-danger-vivid: #d71f28;
+  --primitive-support-danger-warm: #352c2c;
+  --primitive-support-error: #ff0000;
+  --primitive-support-error-bright: #f8252d;
+  --primitive-support-error-coral: #ff3f30;
+  --primitive-support-error-crimson: #e51d35;
+  --primitive-support-error-light: #ff6f6f;
+  --primitive-support-error-medium: #db3d3d;
+  --primitive-support-error-strong: #df1f1f;
+  --primitive-support-error-vivid: #ff493f;
+  --primitive-support-error-warm: #c3371c;
+  --primitive-support-info: #29337a;
+  --primitive-support-info-strong: #252f6c;
+  --primitive-support-lime: #b8eb7c;
+  --primitive-support-lime-bright: #4abd20;
+  --primitive-support-lime-deep: #63941e;
+  --primitive-support-lime-medium: #79b12b;
+  --primitive-support-lime-strong: #98db7c;
+  --primitive-support-lime-vivid: #6fcb20;
+  --primitive-support-link: #4a90e2;
+  --primitive-support-navy: #012169;
+  --primitive-support-navy-deep: #001f3f;
+  --primitive-support-navy-mid: #003366;
+  --primitive-support-steel: #599bcb;
+  --primitive-support-steel-dark: #165275;
+  --primitive-support-steel-light: #65b1ef;
+  --primitive-support-success: #10b981;
+  --primitive-support-success-bright: #5bcc6d;
+  --primitive-support-success-light: #67c667;
+  --primitive-support-success-mid: #3cbc6c;
+  --primitive-support-success-strong: #208e49;
+  --primitive-support-success-vivid: #2d9923;
+  --primitive-support-teal-dark: #334155;
+  --primitive-support-warning: #eab308;
 
   /* overlay */
-  --overlay-default: rgba(0, 0, 0, 0.6);
-  --overlay-hairline: rgba(255, 255, 255, 0.1);
-  --overlay-scrim: rgba(0, 0, 0, 0.2);
-  --overlay-shadow-soft: rgba(29, 34, 37, 0.1);
+  --primitive-overlay-default: rgba(0, 0, 0, 0.6);
+  --primitive-overlay-hairline: rgba(255, 255, 255, 0.1);
+  --primitive-overlay-scrim: rgba(0, 0, 0, 0.2);
+  --primitive-overlay-shadow-soft: rgba(29, 34, 37, 0.1);
+
+  /* ---------------------------------------------------------------------------
+     02 Semantic — role tokens (bind UI to these)
+     Each aliases a primitive via var(--primitive-*)
+     --------------------------------------------------------------------------- */
+  /* accent */
+  --color-accent: var(--primitive-accent-400);
+  --color-accent-gold: var(--primitive-accent-360);
+  --color-accent-khaki: var(--primitive-accent-khaki-900);
+  --color-accent-pale: var(--primitive-accent-pale-100);
+  --color-accent-yellow: var(--primitive-accent-460);
+
+  /* border */
+  --color-border: var(--primitive-mono-700);
+  --color-border-brand: var(--primitive-brand-500);
+  --color-border-strong: var(--primitive-mono-650);
+
+  /* button */
+  --color-button-tabs: var(--primitive-mono-660);
+
+  /* danger */
+  --color-danger: var(--primitive-support-danger);
+  --color-danger-maroon: var(--primitive-support-danger-maroon);
+  --color-danger-negative: var(--primitive-support-error-light);
+  --color-danger-red: var(--primitive-support-danger-red);
+  --color-danger-vivid: var(--primitive-support-danger-vivid);
+
+  /* error */
+  --color-error-bright: var(--primitive-support-error-bright);
+  --color-error-coral: var(--primitive-support-error-coral);
+  --color-error-crimson: var(--primitive-support-error-crimson);
+  --color-error-medium: var(--primitive-support-error-medium);
+  --color-error-strong: var(--primitive-support-error-strong);
+  --color-error-warm: var(--primitive-support-error-warm);
+
+  /* info */
+  --color-info-steel-light: var(--primitive-support-steel-light);
+
+  /* muted */
+  --color-muted: var(--primitive-mono-510);
+
+  /* overlay */
+  --color-overlay: var(--primitive-overlay-default);
+
+  /* primary */
+  --color-primary: var(--primitive-brand-500);
+
+  /* success */
+  --color-success: var(--primitive-support-success);
+  --color-success-light: var(--primitive-support-success-light);
+  --color-success-lime-bright: var(--primitive-support-lime-bright);
+  --color-success-lime-deep: var(--primitive-support-lime-deep);
+  --color-success-lime-medium: var(--primitive-support-lime-medium);
+  --color-success-mid: var(--primitive-support-success-mid);
+  --color-success-positive: var(--primitive-support-success-bright);
+  --color-success-vivid: var(--primitive-support-lime-vivid);
+  --color-success-vivid-green: var(--primitive-support-success-vivid);
+
+  /* surface */
+  --color-surface: var(--primitive-mono-900);
+  --color-surface-accent: var(--primitive-mono-330);
+  --color-surface-base: var(--primitive-mono-910);
+  --color-surface-base-dark: var(--primitive-mono-808);
+  --color-surface-border: var(--primitive-mono-870);
+  --color-surface-card-dark: var(--primitive-mono-628);
+  --color-surface-chip: var(--primitive-mono-632);
+  --color-surface-chip-hover: var(--primitive-mono-640);
+  --color-surface-code: var(--primitive-mono-622);
+  --color-surface-colorful: var(--primitive-brand-700);
+  --color-surface-cool-light: var(--primitive-mono-115);
+  --color-surface-darkest: var(--primitive-mono-940);
+  --color-surface-deep: var(--primitive-mono-920);
+  --color-surface-deep-dark: var(--primitive-mono-915);
+  --color-surface-filter: var(--primitive-mono-825);
+  --color-surface-filter-active: var(--primitive-brand-845);
+  --color-surface-filter-dark: var(--primitive-mono-867);
+  --color-surface-filter-deep: var(--primitive-mono-868);
+  --color-surface-float: var(--primitive-mono-750);
+  --color-surface-forest-1: var(--primitive-brand-822);
+  --color-surface-forest-2: var(--primitive-brand-823);
+  --color-surface-forest-3: var(--primitive-brand-824);
+  --color-surface-forest-4: var(--primitive-brand-826);
+  --color-surface-forest-5: var(--primitive-brand-827);
+  --color-surface-forest-accent: var(--primitive-brand-828);
+  --color-surface-forest-card: var(--primitive-brand-832);
+  --color-surface-forest-card-alt: var(--primitive-brand-833);
+  --color-surface-forest-darkest: var(--primitive-brand-815);
+  --color-surface-forest-deep: var(--primitive-brand-762);
+  --color-surface-forest-feature: var(--primitive-brand-839);
+  --color-surface-high: var(--primitive-mono-800);
+  --color-surface-highlight: var(--primitive-mono-310);
+  --color-surface-input: var(--primitive-mono-905);
+  --color-surface-input-light: var(--primitive-mono-110);
+  --color-surface-inset: var(--primitive-mono-950);
+  --color-surface-light: var(--primitive-mono-108);
+  --color-surface-low: var(--primitive-mono-930);
+  --color-surface-menu-active: var(--primitive-brand-821);
+  --color-surface-mid: var(--primitive-mono-850);
+  --color-surface-nav: var(--primitive-mono-720);
+  --color-surface-near-black: var(--primitive-mono-770);
+  --color-surface-near-black-alt: var(--primitive-mono-768);
+  --color-surface-neutral-light: var(--primitive-mono-114);
+  --color-surface-overlay-dark: var(--primitive-mono-775);
+  --color-surface-pale-blue: var(--primitive-mono-112);
+  --color-surface-panel: var(--primitive-mono-860);
+  --color-surface-scrim-dark: var(--primitive-mono-798);
+  --color-surface-search: var(--primitive-mono-896);
+  --color-surface-sheet: var(--primitive-mono-735);
+  --color-surface-sidebar: var(--primitive-mono-710);
+  --color-surface-subtle: var(--primitive-mono-105);
+  --color-surface-table: var(--primitive-mono-795);
+  --color-surface-teal-dark: var(--primitive-mono-818);
+
+  /* text */
+  --color-text-dim: var(--primitive-mono-604);
+  --color-text-disabled: var(--primitive-mono-474);
+  --color-text-fourth: var(--primitive-mono-750);
+  --color-text-label: var(--primitive-mono-490);
+  --color-text-light: var(--primitive-mono-488);
+  --color-text-link: var(--primitive-support-link);
+  --color-text-mid: var(--primitive-mono-644);
+  --color-text-mid-alt: var(--primitive-mono-646);
+  --color-text-muted: var(--primitive-mono-462);
+  --color-text-placeholder: var(--primitive-mono-465);
+  --color-text-primary: var(--primitive-mono-0);
+  --color-text-secondary: var(--primitive-mono-400);
+  --color-text-subtle: var(--primitive-mono-542);
+  --color-text-tertiary: var(--primitive-mono-950);
+
+  /* warning */
+  --color-warning: var(--primitive-support-warning);
+}
+
+/* ---------------------------------------------------------------------------
+   Legacy primitive aliases (Figma slash names as flat CSS vars)
+   Prefer --color-* in new code; these ease migration from older theme.css
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* mono */
+  --mono-0: var(--primitive-mono-0);
+  --mono-105: var(--primitive-mono-105);
+  --mono-108: var(--primitive-mono-108);
+  --mono-110: var(--primitive-mono-110);
+  --mono-112: var(--primitive-mono-112);
+  --mono-114: var(--primitive-mono-114);
+  --mono-115: var(--primitive-mono-115);
+  --mono-220: var(--primitive-mono-220);
+  --mono-250: var(--primitive-mono-250);
+  --mono-255: var(--primitive-mono-255);
+  --mono-280: var(--primitive-mono-280);
+  --mono-300: var(--primitive-mono-300);
+  --mono-310: var(--primitive-mono-310);
+  --mono-330: var(--primitive-mono-330);
+  --mono-350: var(--primitive-mono-350);
+  --mono-400: var(--primitive-mono-400);
+  --mono-462: var(--primitive-mono-462);
+  --mono-465: var(--primitive-mono-465);
+  --mono-474: var(--primitive-mono-474);
+  --mono-475: var(--primitive-mono-475);
+  --mono-488: var(--primitive-mono-488);
+  --mono-490: var(--primitive-mono-490);
+  --mono-500: var(--primitive-mono-500);
+  --mono-510: var(--primitive-mono-510);
+  --mono-520: var(--primitive-mono-520);
+  --mono-530: var(--primitive-mono-530);
+  --mono-540: var(--primitive-mono-540);
+  --mono-542: var(--primitive-mono-542);
+  --mono-545: var(--primitive-mono-545);
+  --mono-550: var(--primitive-mono-550);
+  --mono-555: var(--primitive-mono-555);
+  --mono-560: var(--primitive-mono-560);
+  --mono-565: var(--primitive-mono-565);
+  --mono-600: var(--primitive-mono-600);
+  --mono-604: var(--primitive-mono-604);
+  --mono-622: var(--primitive-mono-622);
+  --mono-628: var(--primitive-mono-628);
+  --mono-630: var(--primitive-mono-630);
+  --mono-632: var(--primitive-mono-632);
+  --mono-635: var(--primitive-mono-635);
+  --mono-640: var(--primitive-mono-640);
+  --mono-644: var(--primitive-mono-644);
+  --mono-646: var(--primitive-mono-646);
+  --mono-648: var(--primitive-mono-648);
+  --mono-650: var(--primitive-mono-650);
+  --mono-660: var(--primitive-mono-660);
+  --mono-700: var(--primitive-mono-700);
+  --mono-710: var(--primitive-mono-710);
+  --mono-720: var(--primitive-mono-720);
+  --mono-735: var(--primitive-mono-735);
+  --mono-750: var(--primitive-mono-750);
+  --mono-768: var(--primitive-mono-768);
+  --mono-770: var(--primitive-mono-770);
+  --mono-775: var(--primitive-mono-775);
+  --mono-795: var(--primitive-mono-795);
+  --mono-798: var(--primitive-mono-798);
+  --mono-800: var(--primitive-mono-800);
+  --mono-808: var(--primitive-mono-808);
+  --mono-818: var(--primitive-mono-818);
+  --mono-825: var(--primitive-mono-825);
+  --mono-850: var(--primitive-mono-850);
+  --mono-855: var(--primitive-mono-855);
+  --mono-860: var(--primitive-mono-860);
+  --mono-862: var(--primitive-mono-862);
+  --mono-865: var(--primitive-mono-865);
+  --mono-867: var(--primitive-mono-867);
+  --mono-868: var(--primitive-mono-868);
+  --mono-870: var(--primitive-mono-870);
+  --mono-896: var(--primitive-mono-896);
+  --mono-900: var(--primitive-mono-900);
+  --mono-905: var(--primitive-mono-905);
+  --mono-910: var(--primitive-mono-910);
+  --mono-915: var(--primitive-mono-915);
+  --mono-920: var(--primitive-mono-920);
+  --mono-930: var(--primitive-mono-930);
+  --mono-940: var(--primitive-mono-940);
+  --mono-950: var(--primitive-mono-950);
 
   /* Surface */
-  --Surface-Active-Positive: #a7c5c1;
+  --Surface-Active-Positive: var(--primitive-surface-active-positive);
 
-  /* 02 Semantic — alias primitives only */
-  --color-accent: var(--accent-400);
-  --color-border: var(--mono-700);
-  --color-border-brand: var(--brand-500);
-  --color-border-strong: var(--mono-650);
-  --color-button-tabs: var(--mono-660);
-  --color-danger: var(--support-danger);
-  --color-danger-negative: var(--support-error-light);
-  --color-muted: var(--mono-510);
-  --color-overlay: var(--overlay-default);
-  --color-primary: var(--brand-500);
-  --color-success: var(--support-success);
-  --color-success-positive: var(--support-success-bright);
-  --color-success-vivid: var(--support-lime-vivid);
-  --color-surface: var(--mono-900);
-  --color-surface-accent: var(--mono-330);
-  --color-surface-base: var(--mono-910);
-  --color-surface-border: var(--mono-870);
-  --color-surface-colorful: var(--brand-700);
-  --color-surface-deep: var(--mono-920);
-  --color-surface-filter: var(--mono-825);
-  --color-surface-filter-active: var(--brand-845);
-  --color-surface-float: var(--mono-750);
-  --color-surface-high: var(--mono-800);
-  --color-surface-highlight: var(--mono-310);
-  --color-surface-inset: var(--mono-950);
-  --color-surface-low: var(--mono-930);
-  --color-surface-mid: var(--mono-850);
-  --color-surface-panel: var(--mono-860);
-  --color-surface-table: var(--mono-795);
-  --color-text-fourth: var(--mono-750);
-  --color-text-link: var(--support-link);
-  --color-text-muted: var(--mono-462);
-  --color-text-placeholder: var(--mono-465);
-  --color-text-primary: var(--mono-0);
-  --color-text-secondary: var(--mono-400);
-  --color-text-tertiary: var(--mono-950);
-  --color-warning: var(--support-warning);
+  /* brand */
+  --brand-400: var(--primitive-brand-400);
+  --brand-500: var(--primitive-brand-500);
+  --brand-500-soft: var(--primitive-brand-500-soft);
+  --brand-600: var(--primitive-brand-600);
+  --brand-648: var(--primitive-brand-648);
+  --brand-650: var(--primitive-brand-650);
+  --brand-700: var(--primitive-brand-700);
+  --brand-750: var(--primitive-brand-750);
+  --brand-760: var(--primitive-brand-760);
+  --brand-762: var(--primitive-brand-762);
+  --brand-810: var(--primitive-brand-810);
+  --brand-815: var(--primitive-brand-815);
+  --brand-820: var(--primitive-brand-820);
+  --brand-821: var(--primitive-brand-821);
+  --brand-822: var(--primitive-brand-822);
+  --brand-823: var(--primitive-brand-823);
+  --brand-824: var(--primitive-brand-824);
+  --brand-826: var(--primitive-brand-826);
+  --brand-827: var(--primitive-brand-827);
+  --brand-828: var(--primitive-brand-828);
+  --brand-830: var(--primitive-brand-830);
+  --brand-832: var(--primitive-brand-832);
+  --brand-833: var(--primitive-brand-833);
+  --brand-839: var(--primitive-brand-839);
+  --brand-840: var(--primitive-brand-840);
+  --brand-845: var(--primitive-brand-845);
+  --brand-850: var(--primitive-brand-850);
+  --brand-855: var(--primitive-brand-855);
+  --brand-858: var(--primitive-brand-858);
+
+  /* accent */
+  --accent-200: var(--primitive-accent-200);
+  --accent-280: var(--primitive-accent-280);
+  --accent-300: var(--primitive-accent-300);
+  --accent-310: var(--primitive-accent-310);
+  --accent-330: var(--primitive-accent-330);
+  --accent-340: var(--primitive-accent-340);
+  --accent-350: var(--primitive-accent-350);
+  --accent-360: var(--primitive-accent-360);
+  --accent-400: var(--primitive-accent-400);
+  --accent-420: var(--primitive-accent-420);
+  --accent-450: var(--primitive-accent-450);
+  --accent-460: var(--primitive-accent-460);
+  --accent-500: var(--primitive-accent-500);
+  --accent-brown-700: var(--primitive-accent-brown-700);
+  --accent-brown-800: var(--primitive-accent-brown-800);
+  --accent-brown-900: var(--primitive-accent-brown-900);
+  --accent-khaki-900: var(--primitive-accent-khaki-900);
+  --accent-orange-500: var(--primitive-accent-orange-500);
+  --accent-orange-700: var(--primitive-accent-orange-700);
+  --accent-pale-100: var(--primitive-accent-pale-100);
+
+  /* support */
+  --support-cyan: var(--primitive-support-cyan);
+  --support-cyan-strong: var(--primitive-support-cyan-strong);
+  --support-danger: var(--primitive-support-danger);
+  --support-danger-deep: var(--primitive-support-danger-deep);
+  --support-danger-maroon: var(--primitive-support-danger-maroon);
+  --support-danger-red: var(--primitive-support-danger-red);
+  --support-danger-soft: var(--primitive-support-danger-soft);
+  --support-danger-surface: var(--primitive-support-danger-surface);
+  --support-danger-vivid: var(--primitive-support-danger-vivid);
+  --support-danger-warm: var(--primitive-support-danger-warm);
+  --support-error: var(--primitive-support-error);
+  --support-error-bright: var(--primitive-support-error-bright);
+  --support-error-coral: var(--primitive-support-error-coral);
+  --support-error-crimson: var(--primitive-support-error-crimson);
+  --support-error-light: var(--primitive-support-error-light);
+  --support-error-medium: var(--primitive-support-error-medium);
+  --support-error-strong: var(--primitive-support-error-strong);
+  --support-error-vivid: var(--primitive-support-error-vivid);
+  --support-error-warm: var(--primitive-support-error-warm);
+  --support-info: var(--primitive-support-info);
+  --support-info-strong: var(--primitive-support-info-strong);
+  --support-lime: var(--primitive-support-lime);
+  --support-lime-bright: var(--primitive-support-lime-bright);
+  --support-lime-deep: var(--primitive-support-lime-deep);
+  --support-lime-medium: var(--primitive-support-lime-medium);
+  --support-lime-strong: var(--primitive-support-lime-strong);
+  --support-lime-vivid: var(--primitive-support-lime-vivid);
+  --support-link: var(--primitive-support-link);
+  --support-navy: var(--primitive-support-navy);
+  --support-navy-deep: var(--primitive-support-navy-deep);
+  --support-navy-mid: var(--primitive-support-navy-mid);
+  --support-steel: var(--primitive-support-steel);
+  --support-steel-dark: var(--primitive-support-steel-dark);
+  --support-steel-light: var(--primitive-support-steel-light);
+  --support-success: var(--primitive-support-success);
+  --support-success-bright: var(--primitive-support-success-bright);
+  --support-success-light: var(--primitive-support-success-light);
+  --support-success-mid: var(--primitive-support-success-mid);
+  --support-success-strong: var(--primitive-support-success-strong);
+  --support-success-vivid: var(--primitive-support-success-vivid);
+  --support-teal-dark: var(--primitive-support-teal-dark);
+  --support-warning: var(--primitive-support-warning);
+
+  /* overlay */
+  --overlay-default: var(--primitive-overlay-default);
+  --overlay-hairline: var(--primitive-overlay-hairline);
+  --overlay-scrim: var(--primitive-overlay-scrim);
+  --overlay-shadow-soft: var(--primitive-overlay-shadow-soft);
 }
+
+/* ---------------------------------------------------------------------------
+   Placeholder: light theme / additional brand modes
+   Export additional Figma modes to figma-variables.json, then extend generator.
+   Example:
+   [data-theme="light"] { --color-surface: #ffffff; ... }
+   --------------------------------------------------------------------------- */

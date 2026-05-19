@@ -319,6 +319,261 @@ When multi-brand modes are added back to `02 Semantic`, use this alias matrix:
 
 ---
 
+## Frame audit guide — color variable coverage
+
+Use this section any time you open a frame and need to check whether every fill, stroke, and effect is variable-bound. Follow the steps in order.
+
+---
+
+### The two-layer rule (recap)
+
+Every color must pass through exactly two stops before reaching a canvas layer. No exceptions.
+
+```mermaid
+flowchart LR
+  subgraph p ["01 Primitives — raw value"]
+    P1["mono/700\n#292929"]
+  end
+  subgraph s ["02 Semantic — usage role"]
+    S1["color/border\n→ mono/700"]
+  end
+  subgraph c ["Canvas layer"]
+    C1["Card border stroke"]
+  end
+  P1 --> S1 --> C1
+```
+
+A layer bound directly to a **primitive** or left as a **raw hex** is an audit failure.
+
+---
+
+### Audit checklist — one frame at a time
+
+**Step 1 — Scan every paint**
+
+Select the frame. In Figma's design panel, inspect each fill, stroke, and effect:
+
+| Paint type | Pass condition | Fail condition |
+|------------|---------------|----------------|
+| Solid fill | Shows a variable name (e.g. `color/surface`) | Shows only a hex code |
+| Solid stroke | Shows a variable name | Shows only a hex code |
+| Drop shadow / glow effect | Shows a variable name | Shows only a hex code |
+| Gradient fill | Each stop shows a variable name, or the fill has a Paint Style | Raw hex in each stop |
+| Image fill | Always skip — images are outside the variable system | — |
+
+> In Figma, a bound layer shows the variable name beside the color swatch. An unbound layer shows only the hex value.
+
+---
+
+**Step 2 — For each unbound hex, look up 01 Primitives**
+
+Open **Variables panel → 01 Primitives**.
+
+Does a variable here already resolve to this hex (or close enough — within ~5 hex digits of visible difference)?
+
+```mermaid
+flowchart LR
+  hex["Unbound hex found"]
+  found{"Exists in\n01 Primitives?"}
+  step3["Go to Step 3\n(check 02 Semantic)"]
+  create_prim["Create a new primitive\n(see 'Creating a new primitive')"]
+  hex --> found
+  found -->|YES| step3
+  found -->|NO| create_prim
+  create_prim --> step3
+```
+
+---
+
+**Step 3 — For each primitive, look up 02 Semantic**
+
+Open **Variables panel → 02 Semantic**.
+
+Does a token here already match how this color is *used* on the frame? Think about the layer's role, not its color.
+
+| If the layer is… | Look for a semantic like… |
+|-----------------|--------------------------|
+| Page / section background | `color/surface`, `color/surface/base` |
+| Card or floating panel | `color/surface/elevated` |
+| Inset / deep well area | `color/surface/deep` |
+| Table row fill | `color/surface/table` |
+| Filter bar or nav rail | `color/surface/filter` |
+| Active filter / selected tab | `color/surface/filter/active` |
+| Default divider or outline | `color/border` |
+| Emphasis divider | `color/border/strong` |
+| Brand highlight border | `color/border/brand` |
+| Primary CTA button | `color/primary` |
+| Secondary highlight | `color/accent` |
+| Warning state indicator | `color/warning` |
+| Error or destructive state | `color/danger` |
+| Positive / success state | `color/success` |
+| Body or heading text | `color/text/primary` |
+| Muted / secondary text | `color/text/secondary` |
+| Hint / placeholder text | `color/text/muted` |
+| Hyperlink text | `color/text/link` |
+| Modal overlay / scrim | `color/overlay` |
+
+```mermaid
+flowchart LR
+  role{"Matching role exists\nin 02 Semantic?"}
+  bind["Bind layer paint\nto that semantic token"]
+  create_sem["Create a new semantic token\n(see 'Creating a new semantic')"]
+  done["Done — layer is bound"]
+  role -->|YES| bind --> done
+  role -->|NO| create_sem --> bind --> done
+```
+
+---
+
+### Full decision tree
+
+```mermaid
+flowchart TD
+  start["Layer has hardcoded hex?"]
+  skip["Already bound — skip"]
+  check_prim{"Hex exists in\n01 Primitives?"}
+  check_sem{"Role exists in\n02 Semantic?"}
+  new_prim["Create primitive\n(intent/source name)"]
+  new_sem["Create semantic\n(usage role name)"]
+  bind_layer["Bind layer paint\nto the semantic token"]
+
+  start -->|NO| skip
+  start -->|YES| check_prim
+  check_prim -->|YES| check_sem
+  check_prim -->|NO| new_prim --> check_sem
+  check_sem -->|YES| bind_layer
+  check_sem -->|NO| new_sem --> bind_layer
+```
+
+---
+
+### Creating a new primitive
+
+Only create when the hex value does not exist in **01 Primitives**.
+
+**Naming anatomy:**
+
+```
+group / scale-step        ← fits an existing ramp
+─────   ──────────
+mono    825               neutral ramp  (0 = white → 950 = black)
+brand   858               brand ramp
+accent  420               highlight / gold ramp
+support danger-soft       status / utility (descriptive role suffix)
+overlay scrim             transparency layer
+
+raw-intent-source         ← brand-specific value with no natural ramp position
+raw-brand-rio             (describes source / intent — not a color word)
+raw-surface-kh-base
+raw-border-leng
+```
+
+**Primitive naming rules:**
+
+| Rule | Example — GOOD | Example — BAD |
+|------|---------------|---------------|
+| Use group prefix | `mono/825` | `825` |
+| Use scale step for ramp colors | `brand/858` | `brand-dark-green` |
+| Use role suffix for status colors | `support/danger-soft` | `light-red` |
+| Use `raw-intent-source` for unique brand values | `raw-surface-kh-base` | `dark-navy-kh` |
+| Never use a color word | `overlay/scrim` | `black-20-overlay` |
+| Never use version words | `mono/865` | `mono-865-new` |
+
+**Steps to create in Figma:**
+
+1. Variables panel → **01 Primitives** → open the matching group folder.
+2. Click **+ Add variable** → type **Color**.
+3. Name using the rules above.
+4. Set the value to the exact hex (or rgba for alpha colors).
+5. Edit variable → **Scopes → uncheck all** (`scopes: []`). Primitives must be invisible to designers.
+6. Edit variable → **Code syntax → Web** → enter `--group-step` with hyphens (matches CSS output).
+
+---
+
+### Creating a new semantic token
+
+Only create when no existing role token in **02 Semantic** matches the layer's purpose.
+
+**Naming anatomy:**
+
+```
+color / category / sub-role / modifier
+──────  ────────   ────────   ────────
+color   surface    filter     active     ← filter bar in active state
+color   text       muted                 ← de-emphasised text
+color   border     strong                ← heavy divider
+color   primary                          ← top-level CTA (no sub-role needed)
+color   danger                           ← top-level status (no sub-role needed)
+```
+
+**Semantic naming rules:**
+
+| Rule | Example — GOOD | Example — BAD |
+|------|---------------|---------------|
+| Always start with `color/` | `color/surface/panel` | `surface-panel` |
+| Describe where / how it is used | `color/border/highlight` | `color/green-border` |
+| Add sub-role only when needed | `color/surface/elevated` | `color/surface/elevated/v2` |
+| Never include a color word | `color/button/tabs` | `color/dark-tab-bg` |
+| Never alias semantic → semantic | points to `mono/700` | points to `color/border` |
+| Never paste a primitive name | `color/surface/high` | `color/mono-800` |
+| Brand name allowed only in primitives | `raw-brand-rio` (primitive) | `color/rio-surface` (semantic) |
+
+**Steps to create in Figma:**
+
+1. Variables panel → **02 Semantic** → correct folder.
+2. Click **+ Add variable** → type **Color**.
+3. Name using the rules above.
+4. For each mode cell (RioCity9, KH168, CAM88, Leng855): pick the matching **01 Primitives** variable — never a raw hex.
+5. Edit variable → **Scopes** → enable **Fill color** + **Stroke color** (at minimum).
+6. Edit variable → **Code syntax → Web** → enter `--color-category-subrole` with hyphens.
+
+---
+
+### Binding a layer
+
+Once the primitive and semantic both exist:
+
+1. Select the layer on canvas.
+2. In the **Fill / Stroke / Effect** row, click the color swatch.
+3. In the color picker, switch to the **Variables** tab (the library icon).
+4. Search for the semantic name (e.g. `color/surface/panel`).
+5. Click it. The swatch now shows the variable name instead of a hex — the layer is bound.
+6. Repeat for every unbound paint on the same layer.
+
+> **Gradient stops:** Each stop inside a gradient can also be bound. Select the stop handle, open the color picker, switch to Variables, and pick the matching semantic.
+
+---
+
+### Naming anti-patterns — reject these
+
+Any variable name that contains the following words or patterns is a naming violation:
+
+| Anti-pattern | Why it fails |
+|--------------|-------------|
+| `black`, `white`, `gray`, `grey` | Describes appearance, not role |
+| `green`, `red`, `blue`, `gold`, `yellow`, `purple` | Describes appearance, not role |
+| `dark-`, `light-`, `bright-` | Relative appearance — meaningless across themes |
+| `-500`, `-700` as a **semantic** suffix | Primitive step leaked into a semantic name |
+| `v2`, `new-`, `old-`, `-copy` | Version debt — name should survive forever |
+| `mono-660` or `brand-500` as a semantic | Primitive names do not belong in semantic layer |
+| Brand name in semantic: `rio-surface`, `kh-border` | Makes the token non-portable across brands |
+
+> Brand names in **primitives** are fine with `raw-*` prefix (`raw-brand-rio`) because that describes the *source*. They are never allowed in semantic names.
+
+---
+
+### Self-check before saving
+
+- [ ] Every new primitive has `scopes: []` (hidden from pickers in Figma).
+- [ ] Every new semantic points to a **primitive**, not a hex and not another semantic.
+- [ ] Every new semantic has a value set for **all four modes** (or at least `Default` as placeholder).
+- [ ] No new variable name contains a color word, brand name (in semantics), or version suffix.
+- [ ] The layer paint is now bound to the **semantic** — not the primitive, not a raw hex.
+- [ ] Web code syntax is set in hyphens on both the primitive and the semantic.
+- [ ] After changes: re-export `figma-variables.json` and run `node generate-theme-css.mjs` to refresh `theme.css`.
+
+---
+
 ## Gradient paint styles
 
 Eleven reusable local paint styles cover repeated gradient fills. Each style is named with a grouped path for easy discovery in the Assets panel.
