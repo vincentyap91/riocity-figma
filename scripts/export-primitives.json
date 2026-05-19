@@ -206,6 +206,10 @@
       "css": "#ffffff"
     },
     {
+      "name": "mono/0909",
+      "css": "rgba(255, 255, 255, 0)"
+    },
+    {
       "name": "mono/105",
       "css": "#f0f0f0"
     },
@@ -256,6 +260,10 @@
     {
       "name": "mono/330",
       "css": "#333333"
+    },
+    {
+      "name": "mono/330-a0",
+      "css": "rgba(51, 51, 51, 0)"
     },
     {
       "name": "mono/350",
@@ -510,6 +518,10 @@
       "css": "#000000"
     },
     {
+      "name": "mono/950-a25",
+      "css": "rgba(0, 0, 0, 0.25)"
+    },
+    {
       "name": "overlay/default",
       "css": "rgba(0, 0, 0, 0.6)"
     },
@@ -524,6 +536,18 @@
     {
       "name": "overlay/shadow-soft",
       "css": "rgba(29, 34, 37, 0.1)"
+    },
+    {
+      "name": "raw-gradient/home-cta-edge",
+      "css": "#01b545"
+    },
+    {
+      "name": "raw-gradient/home-highlight-end",
+      "css": "#ebb614"
+    },
+    {
+      "name": "raw-gradient/home-highlight-start",
+      "css": "#ffd963"
     },
     {
       "name": "support/cyan",

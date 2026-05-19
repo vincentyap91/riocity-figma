@@ -33,6 +33,7 @@
   --mono-300: #b0baed;
   --mono-310: #313131;
   --mono-330: #333333;
+  --mono-330-a0: rgba(51, 51, 51, 0);
   --mono-350: #99a4b0;
   --mono-400: #99a4b0;
   --mono-462: #878e95;
@@ -90,12 +91,14 @@
   --mono-896: #242424;
   --mono-900: #222222;
   --mono-905: #232323;
+  --mono-0909: rgba(255, 255, 255, 0);
   --mono-910: #1b1b1b;
   --mono-915: #1e1e1e;
   --mono-920: #1d1d1d;
   --mono-930: #111111;
   --mono-940: #0f0f0f;
   --mono-950: #000000;
+  --mono-950-a25: rgba(0, 0, 0, 0.25);
 
   /* Surface */
   --Surface-Active-Positive: #a7c5c1;
@@ -203,12 +206,18 @@
   --overlay-scrim: rgba(0, 0, 0, 0.2);
   --overlay-shadow-soft: rgba(29, 34, 37, 0.1);
 
+  /* raw-gradient */
+  --raw-gradient-home-cta-edge: #01b545;
+  --raw-gradient-home-highlight-end: #ebb614;
+  --raw-gradient-home-highlight-start: #ffd963;
+
   /* ---------------------------------------------------------------------------
      02 Semantic — role tokens (use in application code)
      --------------------------------------------------------------------------- */
   /* text */
   --color-text-dim: var(--mono-604);
-  --color-text-disabled: var(--mono-474);
+  --color-text-disabled: var(--mono-220);
+  --color-text-faded: var(--mono-565);
   --color-text-fourth: var(--mono-750);
   --color-text-label: var(--mono-490);
   --color-text-light: var(--mono-488);
@@ -220,6 +229,7 @@
   --color-text-primary: var(--mono-0);
   --color-text-secondary: var(--mono-400);
   --color-text-subtle: var(--mono-542);
+  --color-text-subtle-dark: var(--mono-545);
   --color-text-tertiary: var(--mono-950);
 
   /* surface */
@@ -253,16 +263,22 @@
   --color-surface-forest-darkest: var(--brand-815);
   --color-surface-forest-deep: var(--brand-762);
   --color-surface-forest-feature: var(--brand-839);
+  --color-surface-forest-deep: var(--brand-820);
+  --color-surface-forest-mid: var(--brand-830);
   --color-surface-high: var(--mono-800);
   --color-surface-highlight: var(--mono-310);
+  --color-surface-info: var(--support-info);
+  --color-surface-info-deep: var(--support-info-strong);
   --color-surface-input: var(--mono-905);
   --color-surface-input-light: var(--mono-110);
   --color-surface-inset: var(--mono-950);
   --color-surface-light: var(--mono-108);
   --color-surface-low: var(--mono-930);
   --color-surface-menu-active: var(--brand-821);
-  --color-surface-mid: var(--mono-850);
+  --color-surface-mid: var(--mono-660);
+  --color-surface-mid-dark: var(--mono-630);
   --color-surface-nav: var(--mono-720);
+  --color-surface-navy: var(--support-navy);
   --color-surface-near-black: var(--mono-770);
   --color-surface-near-black-alt: var(--mono-768);
   --color-surface-neutral-light: var(--mono-114);
@@ -273,6 +289,7 @@
   --color-surface-search: var(--mono-896);
   --color-surface-sheet: var(--mono-735);
   --color-surface-sidebar: var(--mono-710);
+  --color-surface-slate: var(--support-teal-dark);
   --color-surface-subtle: var(--mono-105);
   --color-surface-table: var(--mono-795);
   --color-surface-teal-dark: var(--mono-818);
@@ -283,16 +300,23 @@
   /* border */
   --color-border: var(--mono-700);
   --color-border-brand: var(--brand-500);
+  --color-border-divider: var(--mono-540);
   --color-border-strong: var(--mono-650);
+  --color-border-subtle: var(--mono-255);
 
   /* accent */
   --color-accent: var(--accent-400);
+  --color-accent-chip: var(--accent-420);
   --color-accent-gold: var(--accent-360);
+  --color-accent-gold-light: var(--accent-200);
+  --color-accent-gold-mid: var(--accent-330);
+  --color-accent-gold-muted: var(--accent-280);
   --color-accent-khaki: var(--accent-khaki-900);
   --color-accent-pale: var(--accent-pale-100);
   --color-accent-yellow: var(--accent-460);
 
   /* button */
+  --color-button-back: var(--mono-510);
   --color-button-tabs: var(--mono-660);
 
   /* success */
@@ -303,20 +327,24 @@
   --color-success-lime-medium: var(--support-lime-medium);
   --color-success-mid: var(--support-success-mid);
   --color-success-positive: var(--support-success-bright);
+  --color-success-strong: var(--support-success-strong);
   --color-success-vivid: var(--support-lime-vivid);
   --color-success-vivid-green: var(--support-success-vivid);
 
   /* danger */
   --color-danger: var(--support-danger);
+  --color-danger-deep: var(--support-danger-deep);
   --color-danger-maroon: var(--support-danger-maroon);
   --color-danger-negative: var(--support-error-light);
   --color-danger-red: var(--support-danger-red);
   --color-danger-vivid: var(--support-danger-vivid);
 
   /* error */
+  --color-error-alert: var(--support-error-vivid);
   --color-error-bright: var(--support-error-bright);
   --color-error-coral: var(--support-error-coral);
   --color-error-crimson: var(--support-error-crimson);
+  --color-error-icon: var(--support-error);
   --color-error-medium: var(--support-error-medium);
   --color-error-strong: var(--support-error-strong);
   --color-error-warm: var(--support-error-warm);
@@ -332,4 +360,28 @@
 
   /* info */
   --color-info-steel-light: var(--support-steel-light);
+
+  /* effect */
+  --color-effect-header-shadow: var(--mono-950-a25);
+
+  /* gradient */
+  --color-gradient-dashboard-warm:    linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
+  --color-gradient-header-balance:    linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
+  --color-gradient-home-card:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-home-cta:          linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
+  --color-gradient-home-highlight:    linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-muted:        linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
+  --color-gradient-side-menu-brand:   linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
+  --color-gradient-side-menu-warm:    linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
+  --color-gradient-sidenav-highlight: linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
+  --color-gradient-sidenav-info:      linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
+  --color-gradient-sidenav-scrim:     linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
+  --color-gradient-slot-panel:        linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
+
+  /* icon */
+  --color-icon-muted: var(--mono-555);
+  --color-icon-subtle: var(--mono-560);
+
+  /* transparent */
+  --color-transparent: var(--mono-0909);
 }
