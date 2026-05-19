@@ -364,6 +364,13 @@
   /* effect */
   --color-effect-header-shadow: var(--mono-950-a25);
 
+  /* icon */
+  --color-icon-muted: var(--mono-555);
+  --color-icon-subtle: var(--mono-560);
+
+  /* transparent */
+  --color-transparent: var(--mono-0909);
+
   /* gradient */
   --color-gradient-dashboard-warm:    linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
   --color-gradient-header-balance:    linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
@@ -377,11 +384,4 @@
   --color-gradient-sidenav-info:      linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
   --color-gradient-sidenav-scrim:     linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
   --color-gradient-slot-panel:        linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
-
-  /* icon */
-  --color-icon-muted: var(--mono-555);
-  --color-icon-subtle: var(--mono-560);
-
-  /* transparent */
-  --color-transparent: var(--mono-0909);
 }

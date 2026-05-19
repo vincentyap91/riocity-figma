@@ -4,6 +4,8 @@
  * Naming (matches legacy theme.css):
  *   --mono-*, --brand-*, --accent-*, --support-*, --overlay-*  → raw palette
  *   --color-*  → semantic roles; always var(--mono-*) / var(--brand-*) / …
+ *   Gradients:  Figma color/gradient/*/start|end pairs → --color-gradient-*
+ *               as linear-gradient(90deg, var(--start) 0%, var(--end) 100%)
  *
  * Regenerate: node generate-theme-css.mjs
  */
@@ -82,9 +84,29 @@ const semanticGroupOrder = [
   "overlay",
   "muted",
   "info",
+  "effect",
+  "gradient",
+  "icon",
+  "transparent",
 ];
 
+/** `color/gradient/home/card/start` → `home/card` */
+function gradientPath(figmaName) {
+  const m = figmaName.match(/^color\/gradient\/(.+)\/(start|end)$/);
+  return m ? m[1] : null;
+}
+
+/** `home/card` → `--color-gradient-home-card` */
+function gradientCssVar(path) {
+  return `--color-gradient-${path.replace(/\//g, "-")}`;
+}
+
+function isGradientStop(figmaName) {
+  return /^color\/gradient\/.+\/(start|end)$/.test(figmaName);
+}
+
 function semanticGroup(name) {
+  if (name.startsWith("color/gradient/")) return "gradient";
   return name.split("/")[1] ?? "misc";
 }
 
@@ -97,7 +119,49 @@ function sortSemantics(a, b) {
   return a.name.localeCompare(b.name);
 }
 
-const sortedSemantics = [...semantics].sort(sortSemantics);
+const flatSemantics = semantics.filter((v) => !isGradientStop(v.name));
+const sortedSemantics = [...flatSemantics].sort(sortSemantics);
+
+/** Build composite linear-gradient tokens from start/end pairs */
+function buildGradientTokens() {
+  const byPath = new Map();
+  for (const v of semantics) {
+    const path = gradientPath(v.name);
+    if (!path) continue;
+    const role = v.name.endsWith("/start") ? "start" : "end";
+    if (!byPath.has(path)) byPath.set(path, {});
+    byPath.get(path)[role] = v;
+  }
+
+  const entries = [];
+  for (const [path, pair] of byPath) {
+    if (!pair.start?.aliasTo || !pair.end?.aliasTo) {
+      entries.push({
+        cssVar: gradientCssVar(path),
+        error: `missing start/end for color/gradient/${path}`,
+      });
+      continue;
+    }
+    if (
+      !primitiveByFigmaName.has(pair.start.aliasTo) ||
+      !primitiveByFigmaName.has(pair.end.aliasTo)
+    ) {
+      entries.push({
+        cssVar: gradientCssVar(path),
+        error: `missing primitive for color/gradient/${path}`,
+      });
+      continue;
+    }
+    const startVar = legacyVarName(pair.start.aliasTo);
+    const endVar = legacyVarName(pair.end.aliasTo);
+    entries.push({
+      cssVar: gradientCssVar(path),
+      value: `linear-gradient(90deg, var(${startVar}) 0%, var(${endVar}) 100%)`,
+    });
+  }
+
+  return entries.sort((a, b) => a.cssVar.localeCompare(b.cssVar));
+}
 
 let css = "";
 css += "/**\n";
@@ -157,9 +221,25 @@ for (const v of sortedSemantics) {
   css += `  ${semVar}: var(${primVar});\n`;
 }
 
+const gradientTokens = buildGradientTokens();
+if (gradientTokens.length) {
+  if (lastSemGroup) css += "\n";
+  css += "  /* gradient */\n";
+  const pad = Math.max(...gradientTokens.map((g) => g.cssVar.length));
+  for (const g of gradientTokens) {
+    if (g.error) {
+      css += `  /* ${g.error} */\n`;
+      continue;
+    }
+    const gap = " ".repeat(Math.max(1, pad - g.cssVar.length + 1));
+    css += `  ${g.cssVar}:${gap}${g.value};\n`;
+  }
+}
+
 css += "}\n";
 
 fs.writeFileSync(outPath, css);
+const gradientCount = gradientTokens.filter((g) => !g.error).length;
 console.log(
-  `Wrote ${outPath} — legacy --mono/--brand names, ${sortedSemantics.length} --color-* aliases`
+  `Wrote ${outPath} — ${primitives.length} primitives, ${sortedSemantics.length} flat semantics, ${gradientCount} gradient composites`
 );
