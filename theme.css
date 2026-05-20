@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-05-19 | Primitives: Value | Semantic: Default
+ * Exported: 2026-05-20 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -108,6 +108,7 @@
   --brand-500: #45ff8b;
   --brand-500-soft: rgba(69, 255, 139, 0.2);
   --brand-600: #125a48;
+  --brand-630: #1f3728;
   --brand-648: #2c352c;
   --brand-650: #2c352d;
   --brand-700: #26583b;
@@ -225,7 +226,7 @@
   --color-text-mid: var(--mono-644);
   --color-text-mid-alt: var(--mono-646);
   --color-text-muted: var(--mono-462);
-  --color-text-placeholder: var(--mono-465);
+  --color-text-placeholder: var(--mono-400);
   --color-text-primary: var(--mono-0);
   --color-text-secondary: var(--mono-400);
   --color-text-subtle: var(--mono-542);
@@ -270,11 +271,14 @@
   --color-surface-info: var(--support-info);
   --color-surface-info-deep: var(--support-info-strong);
   --color-surface-input: var(--mono-905);
-  --color-surface-input-light: var(--mono-110);
+  --color-surface-input-light: var(--mono-0);
+  --color-surface-input-light-border: var(--mono-0);
+  --color-surface-input-muted: var(--mono-565);
+  --color-surface-input-muted-border: var(--mono-565);
   --color-surface-inset: var(--mono-950);
   --color-surface-light: var(--mono-108);
   --color-surface-low: var(--mono-930);
-  --color-surface-menu-active: var(--brand-821);
+  --color-surface-menu-active: var(--brand-500);
   --color-surface-mid: var(--mono-660);
   --color-surface-mid-dark: var(--mono-630);
   --color-surface-nav: var(--mono-720);
@@ -290,6 +294,8 @@
   --color-surface-sheet: var(--mono-735);
   --color-surface-sidebar: var(--mono-710);
   --color-surface-slate: var(--support-teal-dark);
+  --color-surface-striped-even: var(--mono-310);
+  --color-surface-striped-odd: var(--mono-660);
   --color-surface-subtle: var(--mono-105);
   --color-surface-table: var(--mono-795);
   --color-surface-teal-dark: var(--mono-818);
@@ -317,7 +323,21 @@
 
   /* button */
   --color-button-back: var(--mono-510);
+  --color-button-cta: var(--brand-500);
+  --color-button-cta-primary: var(--mono-950);
+  --color-button-cta-secondary: var(--support-success-strong);
+  --color-button-cta-secondary-text: var(--mono-0);
+  --color-button-hover: var(--brand-630);
+  --color-button-menu-active: var(--brand-500);
   --color-button-tabs: var(--mono-660);
+
+  /* popup */
+  --color-popup-body: var(--mono-900);
+  --color-popup-head: var(--mono-910);
+
+  /* progress */
+  --color-progress-bar-bg: var(--mono-915);
+  --color-progress-bar-fill: var(--brand-500);
 
   /* success */
   --color-success: var(--support-success);
@@ -372,16 +392,19 @@
   --color-transparent: var(--mono-0909);
 
   /* gradient */
+  --color-gradient-card-brand:        linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
   --color-gradient-dashboard-warm:    linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
   --color-gradient-header-balance:    linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
   --color-gradient-home-card:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
   --color-gradient-home-cta:          linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
   --color-gradient-home-highlight:    linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
   --color-gradient-home-muted:        linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
+  --color-gradient-referral-card:     linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
   --color-gradient-side-menu-brand:   linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
   --color-gradient-side-menu-warm:    linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
   --color-gradient-sidenav-highlight: linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
   --color-gradient-sidenav-info:      linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
   --color-gradient-sidenav-scrim:     linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
   --color-gradient-slot-panel:        linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
+  --color-gradient-tag:               linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
 }

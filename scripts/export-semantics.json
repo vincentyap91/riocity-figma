@@ -65,6 +65,30 @@
       "aliasTo": "mono/510"
     },
     {
+      "name": "color/button/cta",
+      "aliasTo": "brand/500"
+    },
+    {
+      "name": "color/button/cta-primary",
+      "aliasTo": "mono/950"
+    },
+    {
+      "name": "color/button/cta-secondary",
+      "aliasTo": "support/success-strong"
+    },
+    {
+      "name": "color/button/cta-secondary-text",
+      "aliasTo": "mono/0"
+    },
+    {
+      "name": "color/button/hover",
+      "aliasTo": "brand/630"
+    },
+    {
+      "name": "color/button/menu-active",
+      "aliasTo": "brand/500"
+    },
+    {
       "name": "color/button/tabs",
       "aliasTo": "mono/660"
     },
@@ -129,6 +153,14 @@
       "aliasTo": "support/error-warm"
     },
     {
+      "name": "color/gradient/card/brand/end",
+      "aliasTo": "brand/826"
+    },
+    {
+      "name": "color/gradient/card/brand/start",
+      "aliasTo": "brand/700"
+    },
+    {
       "name": "color/gradient/dashboard/warm/end",
       "aliasTo": "accent/orange-700"
     },
@@ -175,6 +207,14 @@
     {
       "name": "color/gradient/home/muted/start",
       "aliasTo": "mono/542"
+    },
+    {
+      "name": "color/gradient/referral/card/end",
+      "aliasTo": "brand/820"
+    },
+    {
+      "name": "color/gradient/referral/card/start",
+      "aliasTo": "brand/826"
     },
     {
       "name": "color/gradient/side-menu/brand/end",
@@ -225,6 +265,14 @@
       "aliasTo": "mono/750"
     },
     {
+      "name": "color/gradient/tag/end",
+      "aliasTo": "support/danger-maroon"
+    },
+    {
+      "name": "color/gradient/tag/start",
+      "aliasTo": "support/error-bright"
+    },
+    {
       "name": "color/icon/muted",
       "aliasTo": "mono/555"
     },
@@ -245,7 +293,23 @@
       "aliasTo": "overlay/default"
     },
     {
+      "name": "color/popup/body",
+      "aliasTo": "mono/900"
+    },
+    {
+      "name": "color/popup/head",
+      "aliasTo": "mono/910"
+    },
+    {
       "name": "color/primary",
+      "aliasTo": "brand/500"
+    },
+    {
+      "name": "color/progress/bar/bg",
+      "aliasTo": "mono/915"
+    },
+    {
+      "name": "color/progress/bar/fill",
       "aliasTo": "brand/500"
     },
     {
@@ -438,7 +502,19 @@
     },
     {
       "name": "color/surface/input-light",
-      "aliasTo": "mono/110"
+      "aliasTo": "mono/0"
+    },
+    {
+      "name": "color/surface/input-light-border",
+      "aliasTo": "mono/0"
+    },
+    {
+      "name": "color/surface/input-muted",
+      "aliasTo": "mono/565"
+    },
+    {
+      "name": "color/surface/input-muted-border",
+      "aliasTo": "mono/565"
     },
     {
       "name": "color/surface/inset",
@@ -454,7 +530,7 @@
     },
     {
       "name": "color/surface/menu-active",
-      "aliasTo": "brand/821"
+      "aliasTo": "brand/500"
     },
     {
       "name": "color/surface/mid",
@@ -517,6 +593,14 @@
       "aliasTo": "support/teal-dark"
     },
     {
+      "name": "color/surface/striped-even",
+      "aliasTo": "mono/310"
+    },
+    {
+      "name": "color/surface/striped-odd",
+      "aliasTo": "mono/660"
+    },
+    {
       "name": "color/surface/subtle",
       "aliasTo": "mono/105"
     },
@@ -570,7 +654,7 @@
     },
     {
       "name": "color/text/placeholder",
-      "aliasTo": "mono/465"
+      "aliasTo": "mono/400"
     },
     {
       "name": "color/text/primary",

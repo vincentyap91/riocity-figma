@@ -4,7 +4,7 @@
  * Naming (matches legacy theme.css):
  *   --mono-*, --brand-*, --accent-*, --support-*, --overlay-*  → raw palette
  *   --color-*  → semantic roles; always var(--mono-*) / var(--brand-*) / …
- *   Gradients:  Figma color/gradient/*/start|end pairs → --color-gradient-*
+ *   Gradients:  Figma color/gradient/.../start+end pairs → --color-gradient-*
  *               as linear-gradient(90deg, var(--start) 0%, var(--end) 100%)
  *
  * Regenerate: node generate-theme-css.mjs
@@ -77,6 +77,8 @@ const semanticGroupOrder = [
   "border",
   "accent",
   "button",
+  "popup",
+  "progress",
   "success",
   "danger",
   "error",
