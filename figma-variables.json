@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-05-20",
+  "exportedAt": "2026-05-21",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -529,6 +529,10 @@
         "css": "rgba(0, 0, 0, 0.25)"
       },
       {
+        "name": "mono/990",
+        "css": "#99a4b0"
+      },
+      {
         "name": "overlay/default",
         "css": "rgba(0, 0, 0, 0.6)"
       },
@@ -723,6 +727,10 @@
       {
         "name": "support/warning",
         "css": "#eab308"
+      },
+      {
+        "name": "support/warning-surface",
+        "css": "#624d28"
       }
     ]
   },
@@ -781,12 +789,24 @@
         "aliasTo": "mono/540"
       },
       {
+        "name": "color/border/line",
+        "aliasTo": "mono/628"
+      },
+      {
         "name": "color/border/strong",
         "aliasTo": "mono/650"
       },
       {
         "name": "color/border/subtle",
         "aliasTo": "mono/255"
+      },
+      {
+        "name": "color/button/accent",
+        "aliasTo": "accent/400"
+      },
+      {
+        "name": "color/button/accent-deep",
+        "aliasTo": "accent/360"
       },
       {
         "name": "color/button/back",
@@ -815,6 +835,10 @@
       {
         "name": "color/button/menu-active",
         "aliasTo": "brand/500"
+      },
+      {
+        "name": "color/button/muted",
+        "aliasTo": "mono/510"
       },
       {
         "name": "color/button/tabs",
@@ -889,6 +913,14 @@
         "aliasTo": "brand/700"
       },
       {
+        "name": "color/gradient/check-in/card/end",
+        "aliasTo": "brand/810"
+      },
+      {
+        "name": "color/gradient/check-in/card/start",
+        "aliasTo": "support/success-strong"
+      },
+      {
         "name": "color/gradient/dashboard/warm/end",
         "aliasTo": "accent/orange-700"
       },
@@ -945,6 +977,22 @@
         "aliasTo": "brand/826"
       },
       {
+        "name": "color/gradient/referral/commission/end",
+        "aliasTo": "brand/820"
+      },
+      {
+        "name": "color/gradient/referral/commission/start",
+        "aliasTo": "brand/826"
+      },
+      {
+        "name": "color/gradient/referral/deposit/end",
+        "aliasTo": "support/danger-maroon"
+      },
+      {
+        "name": "color/gradient/referral/deposit/start",
+        "aliasTo": "accent/brown-700"
+      },
+      {
         "name": "color/gradient/side-menu/brand/end",
         "aliasTo": "brand/760"
       },
@@ -993,6 +1041,14 @@
         "aliasTo": "mono/750"
       },
       {
+        "name": "color/gradient/table/end",
+        "aliasTo": "mono/720"
+      },
+      {
+        "name": "color/gradient/table/start",
+        "aliasTo": "brand/700"
+      },
+      {
         "name": "color/gradient/tag/end",
         "aliasTo": "support/danger-maroon"
       },
@@ -1007,6 +1063,10 @@
       {
         "name": "color/icon/subtle",
         "aliasTo": "mono/560"
+      },
+      {
+        "name": "color/info/icon",
+        "aliasTo": "mono/648"
       },
       {
         "name": "color/info/steel-light",
@@ -1225,6 +1285,10 @@
         "aliasTo": "support/info-strong"
       },
       {
+        "name": "color/surface/info/warning",
+        "aliasTo": "support/warning-surface"
+      },
+      {
         "name": "color/surface/input",
         "aliasTo": "mono/905"
       },
@@ -1321,6 +1385,10 @@
         "aliasTo": "support/teal-dark"
       },
       {
+        "name": "color/surface/start",
+        "aliasTo": "mono/990"
+      },
+      {
         "name": "color/surface/striped-even",
         "aliasTo": "mono/310"
       },
@@ -1339,6 +1407,14 @@
       {
         "name": "color/surface/teal-dark",
         "aliasTo": "mono/818"
+      },
+      {
+        "name": "color/text/accent",
+        "aliasTo": "accent/460"
+      },
+      {
+        "name": "color/text/accent-deep",
+        "aliasTo": "accent/420"
       },
       {
         "name": "color/text/dim",
@@ -1403,6 +1479,10 @@
       {
         "name": "color/text/tertiary",
         "aliasTo": "mono/950"
+      },
+      {
+        "name": "color/text/warm",
+        "aliasTo": "accent/brown-800"
       },
       {
         "name": "color/transparent",

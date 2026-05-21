@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-05-20 | Primitives: Value | Semantic: Default
+ * Exported: 2026-05-21 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -99,6 +99,7 @@
   --mono-940: #0f0f0f;
   --mono-950: #000000;
   --mono-950-a25: rgba(0, 0, 0, 0.25);
+  --mono-990: #99a4b0;
 
   /* Surface */
   --Surface-Active-Positive: #a7c5c1;
@@ -200,6 +201,7 @@
   --support-success-vivid: #2d9923;
   --support-teal-dark: #334155;
   --support-warning: #eab308;
+  --support-warning-surface: #624d28;
 
   /* overlay */
   --overlay-default: rgba(0, 0, 0, 0.6);
@@ -216,6 +218,8 @@
      02 Semantic — role tokens (use in application code)
      --------------------------------------------------------------------------- */
   /* text */
+  --color-text-accent: var(--accent-460);
+  --color-text-accent-deep: var(--accent-420);
   --color-text-dim: var(--mono-604);
   --color-text-disabled: var(--mono-220);
   --color-text-faded: var(--mono-565);
@@ -232,6 +236,7 @@
   --color-text-subtle: var(--mono-542);
   --color-text-subtle-dark: var(--mono-545);
   --color-text-tertiary: var(--mono-950);
+  --color-text-warm: var(--accent-brown-800);
 
   /* surface */
   --color-surface: var(--mono-900);
@@ -270,6 +275,7 @@
   --color-surface-highlight: var(--mono-310);
   --color-surface-info: var(--support-info);
   --color-surface-info-deep: var(--support-info-strong);
+  --color-surface-info-warning: var(--support-warning-surface);
   --color-surface-input: var(--mono-905);
   --color-surface-input-light: var(--mono-0);
   --color-surface-input-light-border: var(--mono-0);
@@ -294,6 +300,7 @@
   --color-surface-sheet: var(--mono-735);
   --color-surface-sidebar: var(--mono-710);
   --color-surface-slate: var(--support-teal-dark);
+  --color-surface-start: var(--mono-990);
   --color-surface-striped-even: var(--mono-310);
   --color-surface-striped-odd: var(--mono-660);
   --color-surface-subtle: var(--mono-105);
@@ -307,6 +314,7 @@
   --color-border: var(--mono-700);
   --color-border-brand: var(--brand-500);
   --color-border-divider: var(--mono-540);
+  --color-border-line: var(--mono-628);
   --color-border-strong: var(--mono-650);
   --color-border-subtle: var(--mono-255);
 
@@ -322,6 +330,8 @@
   --color-accent-yellow: var(--accent-460);
 
   /* button */
+  --color-button-accent: var(--accent-400);
+  --color-button-accent-deep: var(--accent-360);
   --color-button-back: var(--mono-510);
   --color-button-cta: var(--brand-500);
   --color-button-cta-primary: var(--mono-950);
@@ -329,6 +339,7 @@
   --color-button-cta-secondary-text: var(--mono-0);
   --color-button-hover: var(--brand-630);
   --color-button-menu-active: var(--brand-500);
+  --color-button-muted: var(--mono-510);
   --color-button-tabs: var(--mono-660);
 
   /* popup */
@@ -379,6 +390,7 @@
   --color-muted: var(--mono-510);
 
   /* info */
+  --color-info-icon: var(--mono-648);
   --color-info-steel-light: var(--support-steel-light);
 
   /* effect */
@@ -392,19 +404,23 @@
   --color-transparent: var(--mono-0909);
 
   /* gradient */
-  --color-gradient-card-brand:        linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
-  --color-gradient-dashboard-warm:    linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
-  --color-gradient-header-balance:    linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
-  --color-gradient-home-card:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-home-cta:          linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
-  --color-gradient-home-highlight:    linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
-  --color-gradient-home-muted:        linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
-  --color-gradient-referral-card:     linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
-  --color-gradient-side-menu-brand:   linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
-  --color-gradient-side-menu-warm:    linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
-  --color-gradient-sidenav-highlight: linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
-  --color-gradient-sidenav-info:      linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
-  --color-gradient-sidenav-scrim:     linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
-  --color-gradient-slot-panel:        linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
-  --color-gradient-tag:               linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
+  --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
+  --color-gradient-check-in-card:       linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
+  --color-gradient-dashboard-warm:      linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
+  --color-gradient-header-balance:      linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
+  --color-gradient-home-card:           linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-home-cta:            linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
+  --color-gradient-home-highlight:      linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-muted:          linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
+  --color-gradient-referral-card:       linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
+  --color-gradient-referral-commission: linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
+  --color-gradient-referral-deposit:    linear-gradient(90deg, var(--accent-brown-700) 0%, var(--support-danger-maroon) 100%);
+  --color-gradient-side-menu-brand:     linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
+  --color-gradient-side-menu-warm:      linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
+  --color-gradient-sidenav-highlight:   linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
+  --color-gradient-sidenav-info:        linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
+  --color-gradient-sidenav-scrim:       linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
+  --color-gradient-slot-panel:          linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
+  --color-gradient-table:               linear-gradient(90deg, var(--brand-700) 0%, var(--mono-720) 100%);
+  --color-gradient-tag:                 linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
 }

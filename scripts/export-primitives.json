@@ -526,6 +526,10 @@
       "css": "rgba(0, 0, 0, 0.25)"
     },
     {
+      "name": "mono/990",
+      "css": "#99a4b0"
+    },
+    {
       "name": "overlay/default",
       "css": "rgba(0, 0, 0, 0.6)"
     },
@@ -720,6 +724,10 @@
     {
       "name": "support/warning",
       "css": "#eab308"
+    },
+    {
+      "name": "support/warning-surface",
+      "css": "#624d28"
     }
   ]
 }
