@@ -289,6 +289,10 @@
         "css": "#878787"
       },
       {
+        "name": "mono/472",
+        "css": "#a2a2a2"
+      },
+      {
         "name": "mono/474",
         "css": "#b7b7b7"
       },
@@ -1465,6 +1469,10 @@
         "aliasTo": "mono/646"
       },
       {
+        "name": "color/text/mid-neutral",
+        "aliasTo": "mono/465"
+      },
+      {
         "name": "color/text/muted",
         "aliasTo": "mono/462"
       },
@@ -1479,6 +1487,10 @@
       {
         "name": "color/text/secondary",
         "aliasTo": "mono/400"
+      },
+      {
+        "name": "color/text/soft",
+        "aliasTo": "mono/472"
       },
       {
         "name": "color/text/subtle",
