@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-05-21",
+  "exportedAt": "2026-05-22",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -814,11 +814,11 @@
       },
       {
         "name": "color/button/cta",
-        "aliasTo": "brand/500"
+        "aliasTo": "color/primary"
       },
       {
         "name": "color/button/cta-primary",
-        "aliasTo": "mono/950"
+        "aliasTo": "color/text/tertiary"
       },
       {
         "name": "color/button/cta-secondary",
@@ -826,7 +826,11 @@
       },
       {
         "name": "color/button/cta-secondary-text",
-        "aliasTo": "mono/0"
+        "aliasTo": "color/text/primary"
+      },
+      {
+        "name": "color/button/disabled",
+        "aliasTo": "brand/830"
       },
       {
         "name": "color/button/hover",
@@ -834,7 +838,7 @@
       },
       {
         "name": "color/button/menu-active",
-        "aliasTo": "brand/500"
+        "aliasTo": "color/primary"
       },
       {
         "name": "color/button/muted",
@@ -906,7 +910,7 @@
       },
       {
         "name": "color/gradient/card/brand/end",
-        "aliasTo": "brand/826"
+        "aliasTo": "color/surface/forest-4"
       },
       {
         "name": "color/gradient/card/brand/start",
@@ -970,11 +974,11 @@
       },
       {
         "name": "color/gradient/referral/card/end",
-        "aliasTo": "brand/820"
+        "aliasTo": "color/surface/forest/deep"
       },
       {
         "name": "color/gradient/referral/card/start",
-        "aliasTo": "brand/826"
+        "aliasTo": "color/surface/forest-4"
       },
       {
         "name": "color/gradient/referral/commission/end",
@@ -986,7 +990,7 @@
       },
       {
         "name": "color/gradient/referral/deposit/end",
-        "aliasTo": "support/danger-maroon"
+        "aliasTo": "color/danger/maroon"
       },
       {
         "name": "color/gradient/referral/deposit/start",
@@ -1041,20 +1045,12 @@
         "aliasTo": "mono/750"
       },
       {
-        "name": "color/gradient/table/end",
-        "aliasTo": "mono/720"
-      },
-      {
-        "name": "color/gradient/table/start",
-        "aliasTo": "brand/700"
-      },
-      {
         "name": "color/gradient/tag/end",
-        "aliasTo": "support/danger-maroon"
+        "aliasTo": "color/danger/maroon"
       },
       {
         "name": "color/gradient/tag/start",
-        "aliasTo": "support/error-bright"
+        "aliasTo": "color/error/bright"
       },
       {
         "name": "color/icon/muted",
@@ -1082,7 +1078,7 @@
       },
       {
         "name": "color/popup/body",
-        "aliasTo": "mono/900"
+        "aliasTo": "color/surface"
       },
       {
         "name": "color/popup/head",
@@ -1094,11 +1090,11 @@
       },
       {
         "name": "color/progress/bar/bg",
-        "aliasTo": "mono/915"
+        "aliasTo": "color/surface/deep-dark"
       },
       {
         "name": "color/progress/bar/fill",
-        "aliasTo": "brand/500"
+        "aliasTo": "color/primary"
       },
       {
         "name": "color/success",
@@ -1175,6 +1171,10 @@
       {
         "name": "color/surface/code",
         "aliasTo": "mono/622"
+      },
+      {
+        "name": "color/surface/coloful-deep",
+        "aliasTo": "brand/850"
       },
       {
         "name": "color/surface/colorful",
@@ -1294,11 +1294,11 @@
       },
       {
         "name": "color/surface/input-light",
-        "aliasTo": "mono/0"
+        "aliasTo": "color/text/primary"
       },
       {
         "name": "color/surface/input-light-border",
-        "aliasTo": "mono/0"
+        "aliasTo": "color/text/primary"
       },
       {
         "name": "color/surface/input-muted",
@@ -1317,12 +1317,16 @@
         "aliasTo": "mono/108"
       },
       {
+        "name": "color/surface/light-active",
+        "aliasTo": "brand/500-soft"
+      },
+      {
         "name": "color/surface/low",
         "aliasTo": "mono/930"
       },
       {
         "name": "color/surface/menu-active",
-        "aliasTo": "brand/500"
+        "aliasTo": "color/primary"
       },
       {
         "name": "color/surface/mid",
@@ -1390,11 +1394,11 @@
       },
       {
         "name": "color/surface/striped-even",
-        "aliasTo": "mono/310"
+        "aliasTo": "color/surface/highlight"
       },
       {
         "name": "color/surface/striped-odd",
-        "aliasTo": "mono/660"
+        "aliasTo": "color/surface/mid"
       },
       {
         "name": "color/surface/subtle",
@@ -1407,6 +1411,14 @@
       {
         "name": "color/surface/teal-dark",
         "aliasTo": "mono/818"
+      },
+      {
+        "name": "color/table/highlight/end",
+        "aliasTo": "mono/720"
+      },
+      {
+        "name": "color/table/highlight/start",
+        "aliasTo": "brand/700"
       },
       {
         "name": "color/text/accent",

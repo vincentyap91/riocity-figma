@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-05-21 | Primitives: Value | Semantic: Default
+ * Exported: 2026-05-22 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -248,6 +248,7 @@
   --color-surface-chip: var(--mono-632);
   --color-surface-chip-hover: var(--mono-640);
   --color-surface-code: var(--mono-622);
+  --color-surface-coloful-deep: var(--brand-850);
   --color-surface-colorful: var(--brand-700);
   --color-surface-cool-light: var(--mono-115);
   --color-surface-darkest: var(--mono-940);
@@ -283,6 +284,7 @@
   --color-surface-input-muted-border: var(--mono-565);
   --color-surface-inset: var(--mono-950);
   --color-surface-light: var(--mono-108);
+  --color-surface-light-active: var(--brand-500-soft);
   --color-surface-low: var(--mono-930);
   --color-surface-menu-active: var(--brand-500);
   --color-surface-mid: var(--mono-660);
@@ -337,6 +339,7 @@
   --color-button-cta-primary: var(--mono-950);
   --color-button-cta-secondary: var(--support-success-strong);
   --color-button-cta-secondary-text: var(--mono-0);
+  --color-button-disabled: var(--brand-830);
   --color-button-hover: var(--brand-630);
   --color-button-menu-active: var(--brand-500);
   --color-button-muted: var(--mono-510);

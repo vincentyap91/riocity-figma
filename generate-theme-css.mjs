@@ -40,7 +40,9 @@ function groupOrder(name) {
   if (name.startsWith("accent/")) return 2;
   if (name.startsWith("support/")) return 3;
   if (name.startsWith("overlay/")) return 4;
-  return 5;
+  if (name.startsWith("raw-gradient/")) return 5;
+  if (name.startsWith("vip/")) return 6;
+  return 7;
 }
 
 function monoSortKey(name) {
@@ -69,6 +71,16 @@ const semModes = data["02 Semantic"].modes ?? [semMode];
 const exportedAt = data.exportedAt ?? "unknown";
 
 const primitiveByFigmaName = new Map(primitives.map((p) => [p.name, p]));
+const semanticByFigmaName = new Map(semantics.map((s) => [s.name, s]));
+
+/** Resolve semantic → semantic → … → primitive (Figma alias chains) */
+function resolveToPrimitive(figmaName, depth = 0) {
+  if (!figmaName || depth > 16) return null;
+  if (primitiveByFigmaName.has(figmaName)) return figmaName;
+  const sem = semanticByFigmaName.get(figmaName);
+  if (!sem?.aliasTo) return null;
+  return resolveToPrimitive(sem.aliasTo, depth + 1);
+}
 
 const semanticGroupOrder = [
   "text",
@@ -88,14 +100,18 @@ const semanticGroupOrder = [
   "info",
   "effect",
   "gradient",
+  "vip",
+  "table",
   "icon",
   "transparent",
 ];
 
-/** `color/gradient/home/card/start` → `home/card` */
+/** `color/gradient/home/card/start` → `home/card`; table highlight → `table` */
 function gradientPath(figmaName) {
-  const m = figmaName.match(/^color\/gradient\/(.+)\/(start|end)$/);
-  return m ? m[1] : null;
+  let m = figmaName.match(/^color\/gradient\/(.+)\/(start|end)$/);
+  if (m) return m[1];
+  if (/^color\/table\/highlight\/(start|end)$/.test(figmaName)) return "table";
+  return null;
 }
 
 /** `home/card` → `--color-gradient-home-card` */
@@ -104,11 +120,16 @@ function gradientCssVar(path) {
 }
 
 function isGradientStop(figmaName) {
-  return /^color\/gradient\/.+\/(start|end)$/.test(figmaName);
+  return (
+    /^color\/gradient\/.+\/(start|end)$/.test(figmaName) ||
+    /^color\/table\/highlight\/(start|end)$/.test(figmaName)
+  );
 }
 
 function semanticGroup(name) {
   if (name.startsWith("color/gradient/")) return "gradient";
+  if (name.startsWith("color/vip/")) return "vip";
+  if (name.startsWith("color/table/")) return "table";
   return name.split("/")[1] ?? "misc";
 }
 
@@ -144,18 +165,17 @@ function buildGradientTokens() {
       });
       continue;
     }
-    if (
-      !primitiveByFigmaName.has(pair.start.aliasTo) ||
-      !primitiveByFigmaName.has(pair.end.aliasTo)
-    ) {
+    const startPrim = resolveToPrimitive(pair.start.aliasTo);
+    const endPrim = resolveToPrimitive(pair.end.aliasTo);
+    if (!startPrim || !endPrim) {
       entries.push({
         cssVar: gradientCssVar(path),
-        error: `missing primitive for color/gradient/${path}`,
+        error: `missing primitive for color/gradient/${path} (${pair.start.aliasTo} → ${pair.end.aliasTo})`,
       });
       continue;
     }
-    const startVar = legacyVarName(pair.start.aliasTo);
-    const endVar = legacyVarName(pair.end.aliasTo);
+    const startVar = legacyVarName(startPrim);
+    const endVar = legacyVarName(endPrim);
     entries.push({
       cssVar: gradientCssVar(path),
       value: `linear-gradient(90deg, var(${startVar}) 0%, var(${endVar}) 100%)`,
@@ -193,7 +213,15 @@ for (const v of primitives) {
   const parts = v.name.split("/");
   const g = parts.length > 1 ? parts[0] : v.name.split("-")[0];
   const groupLabel =
-    g === "mono" ? "mono" : g === "Surface" ? "Surface" : g;
+    g === "mono"
+      ? "mono"
+      : g === "Surface"
+        ? "Surface"
+        : g === "raw-gradient"
+          ? "raw-gradient"
+          : g === "vip"
+            ? "vip"
+            : g;
   if (groupLabel !== lastGroup) {
     if (lastGroup) css += "\n";
     css += `  /* ${groupLabel} */\n`;
@@ -215,11 +243,12 @@ for (const v of sortedSemantics) {
     lastSemGroup = group;
   }
   const semVar = `--${figmaToSemanticCssName(v.name)}`;
-  if (!v.aliasTo || !primitiveByFigmaName.has(v.aliasTo)) {
+  const primName = resolveToPrimitive(v.aliasTo);
+  if (!primName) {
     css += `  /* missing primitive: ${v.name} → ${v.aliasTo} */\n`;
     continue;
   }
-  const primVar = legacyVarName(v.aliasTo);
+  const primVar = legacyVarName(primName);
   css += `  ${semVar}: var(${primVar});\n`;
 }
 
