@@ -451,9 +451,9 @@
 
   /* transparent */
   --color-transparent: var(--mono-0909);
-  
+
   /* Box shadow */
-  --color-box-shadow-primary: 0px 0px 20px 0px var(--brand-500-soft) inset
+  --color-box-shadow-primary: 0px 0px 20px 0px var(--brand-500-soft) inset;
 
   /* gradient */
   --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
