@@ -473,6 +473,10 @@
         "css": "#383838"
       },
       {
+        "name": "mono/666",
+        "css": "#666666"
+      },
+      {
         "name": "mono/700",
         "css": "#292929"
       },
@@ -909,6 +913,10 @@
         "aliasTo": "color/text/primary"
       },
       {
+        "name": "color/button/dashboard",
+        "aliasTo": "brand/500"
+      },
+      {
         "name": "color/button/disabled",
         "aliasTo": "brand/830"
       },
@@ -917,12 +925,28 @@
         "aliasTo": "brand/630"
       },
       {
+        "name": "color/button/lang-border",
+        "aliasTo": "mono/650"
+      },
+      {
+        "name": "color/button/lang-icon",
+        "aliasTo": "color/text/primary"
+      },
+      {
+        "name": "color/button/lang-text",
+        "aliasTo": "color/text/primary"
+      },
+      {
         "name": "color/button/menu-active",
         "aliasTo": "color/primary"
       },
       {
         "name": "color/button/muted",
         "aliasTo": "mono/510"
+      },
+      {
+        "name": "color/button/pagination-disabled",
+        "aliasTo": "mono/666"
       },
       {
         "name": "color/button/tabs",
@@ -1626,7 +1650,7 @@
       },
       {
         "name": "color/text/muted",
-        "aliasTo": "mono/462"
+        "aliasTo": "mono/510"
       },
       {
         "name": "color/text/placeholder",

@@ -72,6 +72,7 @@
   --mono-648: #7d7d7d;
   --mono-650: #5d5d5d;
   --mono-660: #383838;
+  --mono-666: #666666;
   --mono-700: #292929;
   --mono-710: #303030;
   --mono-720: #323232;
@@ -253,7 +254,7 @@
   --color-text-mid: var(--mono-644);
   --color-text-mid-alt: var(--mono-646);
   --color-text-mid-neutral: var(--mono-465);
-  --color-text-muted: var(--mono-462);
+  --color-text-muted: var(--mono-510);
   --color-text-placeholder: var(--mono-400);
   --color-text-primary: var(--mono-0);
   --color-text-secondary: var(--mono-400);
@@ -373,10 +374,15 @@
   --color-button-cta-primary: var(--mono-950);
   --color-button-cta-secondary: var(--support-success-strong);
   --color-button-cta-secondary-text: var(--mono-0);
+  --color-button-dashboard: var(--brand-500);
   --color-button-disabled: var(--brand-830);
   --color-button-hover: var(--brand-630);
+  --color-button-lang-border: var(--mono-650);
+  --color-button-lang-icon: var(--mono-0);
+  --color-button-lang-text: var(--mono-0);
   --color-button-menu-active: var(--brand-500);
   --color-button-muted: var(--mono-510);
+  --color-button-pagination-disabled: var(--mono-666);
   --color-button-tabs: var(--mono-660);
 
   /* popup */
@@ -386,6 +392,9 @@
   /* progress */
   --color-progress-bar-bg: var(--mono-915);
   --color-progress-bar-fill: var(--brand-500);
+
+  /* Table */
+  --color-table-highlight: linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
 
   /* success */
   --color-success: var(--support-success);
@@ -463,6 +472,5 @@
   --color-gradient-sidenav-info:        linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
   --color-gradient-sidenav-scrim:       linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
   --color-gradient-slot-panel:          linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
-  --color-gradient-table:               linear-gradient(90deg, var(--brand-700) 0%, var(--mono-720) 100%);
   --color-gradient-tag:                 linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
 }
