@@ -5,10 +5,6 @@
     "mode": "Value",
     "variables": [
       {
-        "name": "Surface/Active-Positive",
-        "css": "#a7c5c1"
-      },
-      {
         "name": "accent/200",
         "css": "#fdd182"
       },
@@ -55,6 +51,18 @@
       {
         "name": "accent/460",
         "css": "#f0d10c"
+      },
+      {
+        "name": "accent/470",
+        "css": "#ffda29"
+      },
+      {
+        "name": "accent/475",
+        "css": "#dd8545"
+      },
+      {
+        "name": "accent/476",
+        "css": "#ae5300"
       },
       {
         "name": "accent/500",
@@ -109,6 +117,10 @@
         "css": "#1f3728"
       },
       {
+        "name": "brand/646",
+        "css": "#2b3c2b"
+      },
+      {
         "name": "brand/648",
         "css": "#2c352c"
       },
@@ -129,12 +141,28 @@
         "css": "#057734"
       },
       {
+        "name": "brand/761",
+        "css": "#039940"
+      },
+      {
         "name": "brand/762",
         "css": "#126e51"
       },
       {
+        "name": "brand/809",
+        "css": "#0e510e"
+      },
+      {
         "name": "brand/810",
         "css": "#00431b"
+      },
+      {
+        "name": "brand/811",
+        "css": "#114617"
+      },
+      {
+        "name": "brand/812",
+        "css": "#00742f"
       },
       {
         "name": "brand/815",
@@ -177,6 +205,10 @@
         "css": "#477658"
       },
       {
+        "name": "brand/831",
+        "css": "#334c33"
+      },
+      {
         "name": "brand/832",
         "css": "#334034"
       },
@@ -197,6 +229,14 @@
         "css": "#2e905b"
       },
       {
+        "name": "brand/846",
+        "css": "#1c8649"
+      },
+      {
+        "name": "brand/847",
+        "css": "#34774f"
+      },
+      {
         "name": "brand/850",
         "css": "#214c33"
       },
@@ -205,8 +245,16 @@
         "css": "#348641"
       },
       {
+        "name": "brand/856",
+        "css": "#2eac61"
+      },
+      {
         "name": "brand/858",
         "css": "#2f8856"
+      },
+      {
+        "name": "brand/862",
+        "css": "#72e0a0"
       },
       {
         "name": "mono/0",
@@ -281,12 +329,24 @@
         "css": "#99a4b0"
       },
       {
+        "name": "mono/453",
+        "css": "#454545"
+      },
+      {
         "name": "mono/462",
         "css": "#878e95"
       },
       {
         "name": "mono/465",
         "css": "#878787"
+      },
+      {
+        "name": "mono/468",
+        "css": "#8d8d8d"
+      },
+      {
+        "name": "mono/471",
+        "css": "#8b8b8b"
       },
       {
         "name": "mono/472",
@@ -381,6 +441,10 @@
         "css": "#474747"
       },
       {
+        "name": "mono/636",
+        "css": "#363636"
+      },
+      {
         "name": "mono/640",
         "css": "#484848"
       },
@@ -391,6 +455,10 @@
       {
         "name": "mono/646",
         "css": "#676767"
+      },
+      {
+        "name": "mono/647",
+        "css": "#7a7a7a"
       },
       {
         "name": "mono/648",
@@ -735,6 +803,10 @@
       {
         "name": "support/warning-surface",
         "css": "#624d28"
+      },
+      {
+        "name": "Surface/Active-Positive",
+        "css": "#a7c5c1"
       }
     ]
   },
@@ -747,6 +819,10 @@
       {
         "name": "color/accent",
         "aliasTo": "accent/400"
+      },
+      {
+        "name": "color/accent/check-in/reward",
+        "aliasTo": "accent/470"
       },
       {
         "name": "color/accent/chip",
@@ -929,6 +1005,22 @@
         "aliasTo": "support/success-strong"
       },
       {
+        "name": "color/gradient/check-in/day/end",
+        "aliasTo": "brand/811"
+      },
+      {
+        "name": "color/gradient/check-in/day/start",
+        "aliasTo": "brand/846"
+      },
+      {
+        "name": "color/gradient/check-in/reward/end",
+        "aliasTo": "accent/476"
+      },
+      {
+        "name": "color/gradient/check-in/reward/start",
+        "aliasTo": "accent/475"
+      },
+      {
         "name": "color/gradient/dashboard/warm/end",
         "aliasTo": "accent/orange-700"
       },
@@ -1057,6 +1149,18 @@
         "aliasTo": "color/error/bright"
       },
       {
+        "name": "color/icon/check-in/active",
+        "aliasTo": "brand/856"
+      },
+      {
+        "name": "color/icon/check-in/muted",
+        "aliasTo": "mono/468"
+      },
+      {
+        "name": "color/icon/check-in/star-deep",
+        "aliasTo": "brand/812"
+      },
+      {
         "name": "color/icon/muted",
         "aliasTo": "mono/555"
       },
@@ -1163,6 +1267,38 @@
       {
         "name": "color/surface/card-dark",
         "aliasTo": "mono/628"
+      },
+      {
+        "name": "color/surface/check-in/cell",
+        "aliasTo": "mono/453"
+      },
+      {
+        "name": "color/surface/check-in/cell-active",
+        "aliasTo": "brand/831"
+      },
+      {
+        "name": "color/surface/check-in/cell-alt",
+        "aliasTo": "mono/855"
+      },
+      {
+        "name": "color/surface/check-in/cell-hover",
+        "aliasTo": "mono/636"
+      },
+      {
+        "name": "color/surface/check-in/cta",
+        "aliasTo": "brand/761"
+      },
+      {
+        "name": "color/surface/check-in/day-bg",
+        "aliasTo": "brand/646"
+      },
+      {
+        "name": "color/surface/check-in/day-current",
+        "aliasTo": "brand/847"
+      },
+      {
+        "name": "color/surface/check-in/footer",
+        "aliasTo": "brand/809"
       },
       {
         "name": "color/surface/chip",
@@ -1431,6 +1567,22 @@
       {
         "name": "color/text/accent-deep",
         "aliasTo": "accent/420"
+      },
+      {
+        "name": "color/text/check-in/day-active",
+        "aliasTo": "brand/862"
+      },
+      {
+        "name": "color/text/check-in/day-muted",
+        "aliasTo": "mono/475"
+      },
+      {
+        "name": "color/text/check-in/day-past",
+        "aliasTo": "mono/471"
+      },
+      {
+        "name": "color/text/check-in/reward",
+        "aliasTo": "mono/647"
       },
       {
         "name": "color/text/dim",

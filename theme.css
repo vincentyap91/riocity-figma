@@ -36,8 +36,11 @@
   --mono-330-a0: rgba(51, 51, 51, 0);
   --mono-350: #99a4b0;
   --mono-400: #99a4b0;
+  --mono-453: #454545;
   --mono-462: #878e95;
   --mono-465: #878787;
+  --mono-468: #8d8d8d;
+  --mono-471: #8b8b8b;
   --mono-472: #a2a2a2;
   --mono-474: #b7b7b7;
   --mono-475: #b8b8b8;
@@ -61,9 +64,11 @@
   --mono-630: #434343;
   --mono-632: #464646;
   --mono-635: #474747;
+  --mono-636: #363636;
   --mono-640: #484848;
   --mono-644: #636363;
   --mono-646: #676767;
+  --mono-647: #7a7a7a;
   --mono-648: #7d7d7d;
   --mono-650: #5d5d5d;
   --mono-660: #383838;
@@ -111,13 +116,18 @@
   --brand-500-soft: rgba(69, 255, 139, 0.2);
   --brand-600: #125a48;
   --brand-630: #1f3728;
+  --brand-646: #2b3c2b;
   --brand-648: #2c352c;
   --brand-650: #2c352d;
   --brand-700: #26583b;
   --brand-750: #134438;
   --brand-760: #057734;
+  --brand-761: #039940;
   --brand-762: #126e51;
+  --brand-809: #0e510e;
   --brand-810: #00431b;
+  --brand-811: #114617;
+  --brand-812: #00742f;
   --brand-815: #033424;
   --brand-820: #1e2921;
   --brand-821: #1f3728;
@@ -128,14 +138,19 @@
   --brand-827: #2e3b2f;
   --brand-828: #447156;
   --brand-830: #477658;
+  --brand-831: #334c33;
   --brand-832: #334034;
   --brand-833: #3b453c;
   --brand-839: #2a4b36;
   --brand-840: #164027;
   --brand-845: #2e905b;
+  --brand-846: #1c8649;
+  --brand-847: #34774f;
   --brand-850: #214c33;
   --brand-855: #348641;
+  --brand-856: #2eac61;
   --brand-858: #2f8856;
+  --brand-862: #72e0a0;
 
   /* accent */
   --accent-200: #fdd182;
@@ -150,6 +165,9 @@
   --accent-420: #f6c722;
   --accent-450: #f4cf08;
   --accent-460: #f0d10c;
+  --accent-470: #ffda29;
+  --accent-475: #dd8545;
+  --accent-476: #ae5300;
   --accent-500: #fff500;
   --accent-brown-700: #774505;
   --accent-brown-800: #432800;
@@ -221,6 +239,10 @@
   /* text */
   --color-text-accent: var(--accent-460);
   --color-text-accent-deep: var(--accent-420);
+  --color-text-check-in-day-active: var(--brand-862);
+  --color-text-check-in-day-muted: var(--mono-475);
+  --color-text-check-in-day-past: var(--mono-471);
+  --color-text-check-in-reward: var(--mono-647);
   --color-text-dim: var(--mono-604);
   --color-text-disabled: var(--mono-220);
   --color-text-faded: var(--mono-565);
@@ -248,6 +270,14 @@
   --color-surface-base-dark: var(--mono-808);
   --color-surface-border: var(--mono-870);
   --color-surface-card-dark: var(--mono-628);
+  --color-surface-check-in-cell: var(--mono-453);
+  --color-surface-check-in-cell-active: var(--brand-831);
+  --color-surface-check-in-cell-alt: var(--mono-855);
+  --color-surface-check-in-cell-hover: var(--mono-636);
+  --color-surface-check-in-cta: var(--brand-761);
+  --color-surface-check-in-day-bg: var(--brand-646);
+  --color-surface-check-in-day-current: var(--brand-847);
+  --color-surface-check-in-footer: var(--brand-809);
   --color-surface-chip: var(--mono-632);
   --color-surface-chip-hover: var(--mono-640);
   --color-surface-code: var(--mono-622);
@@ -325,6 +355,7 @@
 
   /* accent */
   --color-accent: var(--accent-400);
+  --color-accent-check-in-reward: var(--accent-470);
   --color-accent-chip: var(--accent-420);
   --color-accent-gold: var(--accent-360);
   --color-accent-gold-light: var(--accent-200);
@@ -403,6 +434,9 @@
   --color-effect-header-shadow: var(--mono-950-a25);
 
   /* icon */
+  --color-icon-check-in-active: var(--brand-856);
+  --color-icon-check-in-muted: var(--mono-468);
+  --color-icon-check-in-star-deep: var(--brand-812);
   --color-icon-muted: var(--mono-555);
   --color-icon-subtle: var(--mono-560);
 
@@ -412,6 +446,8 @@
   /* gradient */
   --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
   --color-gradient-check-in-card:       linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
+  --color-gradient-check-in-day:        linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
+  --color-gradient-check-in-reward:     linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
   --color-gradient-dashboard-warm:      linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
   --color-gradient-header-balance:      linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
   --color-gradient-home-card:           linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
