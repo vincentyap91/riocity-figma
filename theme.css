@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-05-22 | Primitives: Value | Semantic: Default
+ * Exported: 2026-05-25 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -229,10 +229,32 @@
   --overlay-scrim: rgba(0, 0, 0, 0.2);
   --overlay-shadow-soft: rgba(29, 34, 37, 0.1);
 
+  /* raw */
+  --raw-border-cam-panel: #5162b3;
+  --raw-brand-cam: #032ea1;
+  --raw-brand-cam-strong: #d90d32;
+  --raw-content-cam-nav: #1a1755;
+  --raw-effect-cam-glow: rgba(69, 100, 255, 0.2);
+  --raw-gradient-cam-highlight-end: #eef2ca;
+  --raw-gradient-cam-highlight-start: #e0ddc3;
+  --raw-gradient-cam-icon-end: #110d35;
+  --raw-gradient-cam-icon-start: #1f223c;
+
   /* raw-gradient */
   --raw-gradient-home-cta-edge: #01b545;
   --raw-gradient-home-highlight-end: #ebb614;
   --raw-gradient-home-highlight-start: #ffd963;
+
+  /* raw */
+  --raw-icon-cam-shadow: #0c0c00;
+  --raw-surface-cam: #f3f3ff;
+  --raw-surface-cam-base: #d6dbf5;
+  --raw-surface-cam-highlight: #d6dbf5;
+  --raw-surface-cam-menu: #7583c9;
+  --raw-surface-cam-muted: #717fc3;
+  --raw-surface-cam-panel: #eeeeff;
+  --raw-surface-cam-table: #f6ecff;
+  --raw-text-cam-primary: #0c162f;
 
   /* ---------------------------------------------------------------------------
      02 Semantic — role tokens (use in application code)
@@ -254,7 +276,7 @@
   --color-text-mid: var(--mono-644);
   --color-text-mid-alt: var(--mono-646);
   --color-text-mid-neutral: var(--mono-465);
-  --color-text-muted: var(--mono-510);
+  --color-text-muted: var(--mono-462);
   --color-text-placeholder: var(--mono-400);
   --color-text-primary: var(--mono-0);
   --color-text-secondary: var(--mono-400);
@@ -262,6 +284,7 @@
   --color-text-subtle: var(--mono-542);
   --color-text-subtle-dark: var(--mono-545);
   --color-text-tertiary: var(--mono-950);
+  --color-text-title: var(--brand-500);
   --color-text-warm: var(--accent-brown-800);
 
   /* surface */
@@ -270,6 +293,7 @@
   --color-surface-base: var(--mono-910);
   --color-surface-base-dark: var(--mono-808);
   --color-surface-border: var(--mono-870);
+  --color-surface-card-container: var(--mono-900);
   --color-surface-card-dark: var(--mono-628);
   --color-surface-check-in-cell: var(--mono-453);
   --color-surface-check-in-cell-active: var(--brand-831);
@@ -393,9 +417,6 @@
   --color-progress-bar-bg: var(--mono-915);
   --color-progress-bar-fill: var(--brand-500);
 
-  /* Table */
-  --color-table-highlight: linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
-
   /* success */
   --color-success: var(--support-success);
   --color-success-light: var(--support-success-light);
@@ -440,6 +461,7 @@
   --color-info-steel-light: var(--support-steel-light);
 
   /* effect */
+  --color-effect-glow: var(--brand-500-soft);
   --color-effect-header-shadow: var(--mono-950-a25);
 
   /* icon */
@@ -452,13 +474,14 @@
   /* transparent */
   --color-transparent: var(--mono-0909);
 
-  /* Box shadow */
-  --color-box-shadow-primary: 0px 0px 20px 0px var(--brand-500-soft) inset;
+  /* table */
+  /* Table */
+  --color-table-highlight: linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
 
   /* gradient */
   --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
   --color-gradient-check-in-card:       linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
-  --color-gradient-check-in-day:        linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
+  --color-gradient-check-in-day:        linear-gradient(180deg, var(--brand-846) 0%, var(--brand-811) 100%);
   --color-gradient-check-in-reward:     linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
   --color-gradient-dashboard-warm:      linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
   --color-gradient-header-balance:      linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);

@@ -1,9 +1,13 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-05-22",
+  "exportedAt": "2026-05-25",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
+      {
+        "name": "Surface/Active-Positive",
+        "css": "#a7c5c1"
+      },
       {
         "name": "accent/200",
         "css": "#fdd182"
@@ -51,18 +55,6 @@
       {
         "name": "accent/460",
         "css": "#f0d10c"
-      },
-      {
-        "name": "accent/470",
-        "css": "#ffda29"
-      },
-      {
-        "name": "accent/475",
-        "css": "#dd8545"
-      },
-      {
-        "name": "accent/476",
-        "css": "#ae5300"
       },
       {
         "name": "accent/500",
@@ -117,10 +109,6 @@
         "css": "#1f3728"
       },
       {
-        "name": "brand/646",
-        "css": "#2b3c2b"
-      },
-      {
         "name": "brand/648",
         "css": "#2c352c"
       },
@@ -141,28 +129,12 @@
         "css": "#057734"
       },
       {
-        "name": "brand/761",
-        "css": "#039940"
-      },
-      {
         "name": "brand/762",
         "css": "#126e51"
       },
       {
-        "name": "brand/809",
-        "css": "#0e510e"
-      },
-      {
         "name": "brand/810",
         "css": "#00431b"
-      },
-      {
-        "name": "brand/811",
-        "css": "#114617"
-      },
-      {
-        "name": "brand/812",
-        "css": "#00742f"
       },
       {
         "name": "brand/815",
@@ -205,10 +177,6 @@
         "css": "#477658"
       },
       {
-        "name": "brand/831",
-        "css": "#334c33"
-      },
-      {
         "name": "brand/832",
         "css": "#334034"
       },
@@ -229,14 +197,6 @@
         "css": "#2e905b"
       },
       {
-        "name": "brand/846",
-        "css": "#1c8649"
-      },
-      {
-        "name": "brand/847",
-        "css": "#34774f"
-      },
-      {
         "name": "brand/850",
         "css": "#214c33"
       },
@@ -245,16 +205,8 @@
         "css": "#348641"
       },
       {
-        "name": "brand/856",
-        "css": "#2eac61"
-      },
-      {
         "name": "brand/858",
         "css": "#2f8856"
-      },
-      {
-        "name": "brand/862",
-        "css": "#72e0a0"
       },
       {
         "name": "mono/0",
@@ -329,28 +281,12 @@
         "css": "#99a4b0"
       },
       {
-        "name": "mono/453",
-        "css": "#454545"
-      },
-      {
         "name": "mono/462",
         "css": "#878e95"
       },
       {
         "name": "mono/465",
         "css": "#878787"
-      },
-      {
-        "name": "mono/468",
-        "css": "#8d8d8d"
-      },
-      {
-        "name": "mono/471",
-        "css": "#8b8b8b"
-      },
-      {
-        "name": "mono/472",
-        "css": "#a2a2a2"
       },
       {
         "name": "mono/474",
@@ -441,10 +377,6 @@
         "css": "#474747"
       },
       {
-        "name": "mono/636",
-        "css": "#363636"
-      },
-      {
         "name": "mono/640",
         "css": "#484848"
       },
@@ -457,10 +389,6 @@
         "css": "#676767"
       },
       {
-        "name": "mono/647",
-        "css": "#7a7a7a"
-      },
-      {
         "name": "mono/648",
         "css": "#7d7d7d"
       },
@@ -471,10 +399,6 @@
       {
         "name": "mono/660",
         "css": "#383838"
-      },
-      {
-        "name": "mono/666",
-        "css": "#666666"
       },
       {
         "name": "mono/700",
@@ -809,8 +733,156 @@
         "css": "#624d28"
       },
       {
-        "name": "Surface/Active-Positive",
-        "css": "#a7c5c1"
+        "name": "accent/470",
+        "css": "#ffda29"
+      },
+      {
+        "name": "accent/475",
+        "css": "#dd8545"
+      },
+      {
+        "name": "accent/476",
+        "css": "#ae5300"
+      },
+      {
+        "name": "brand/646",
+        "css": "#2b3c2b"
+      },
+      {
+        "name": "brand/761",
+        "css": "#039940"
+      },
+      {
+        "name": "brand/811",
+        "css": "#114617"
+      },
+      {
+        "name": "brand/812",
+        "css": "#00742f"
+      },
+      {
+        "name": "brand/831",
+        "css": "#334c33"
+      },
+      {
+        "name": "brand/846",
+        "css": "#1c8649"
+      },
+      {
+        "name": "brand/847",
+        "css": "#34774f"
+      },
+      {
+        "name": "brand/856",
+        "css": "#2eac61"
+      },
+      {
+        "name": "brand/862",
+        "css": "#72e0a0"
+      },
+      {
+        "name": "mono/453",
+        "css": "#454545"
+      },
+      {
+        "name": "mono/468",
+        "css": "#8d8d8d"
+      },
+      {
+        "name": "mono/471",
+        "css": "#8b8b8b"
+      },
+      {
+        "name": "mono/472",
+        "css": "#a2a2a2"
+      },
+      {
+        "name": "mono/636",
+        "css": "#363636"
+      },
+      {
+        "name": "mono/647",
+        "css": "#7a7a7a"
+      },
+      {
+        "name": "mono/666",
+        "css": "#666666"
+      },
+      {
+        "name": "raw-border-cam-panel",
+        "css": "#5162b3"
+      },
+      {
+        "name": "raw-brand-cam",
+        "css": "#032ea1"
+      },
+      {
+        "name": "raw-brand-cam-strong",
+        "css": "#d90d32"
+      },
+      {
+        "name": "raw-content-cam-nav",
+        "css": "#1a1755"
+      },
+      {
+        "name": "raw-effect-cam-glow",
+        "css": "rgba(69, 100, 255, 0.2)"
+      },
+      {
+        "name": "raw-gradient-cam-highlight-end",
+        "css": "#eef2ca"
+      },
+      {
+        "name": "raw-gradient-cam-highlight-start",
+        "css": "#e0ddc3"
+      },
+      {
+        "name": "raw-gradient-cam-icon-end",
+        "css": "#110d35"
+      },
+      {
+        "name": "raw-gradient-cam-icon-start",
+        "css": "#1f223c"
+      },
+      {
+        "name": "raw-icon-cam-shadow",
+        "css": "#0c0c00"
+      },
+      {
+        "name": "raw-surface-cam",
+        "css": "#f3f3ff"
+      },
+      {
+        "name": "raw-surface-cam-base",
+        "css": "#d6dbf5"
+      },
+      {
+        "name": "raw-surface-cam-highlight",
+        "css": "#d6dbf5"
+      },
+      {
+        "name": "raw-surface-cam-menu",
+        "css": "#7583c9"
+      },
+      {
+        "name": "raw-surface-cam-muted",
+        "css": "#717fc3"
+      },
+      {
+        "name": "raw-surface-cam-panel",
+        "css": "#eeeeff"
+      },
+      {
+        "name": "raw-surface-cam-table",
+        "css": "#f6ecff"
+      },
+      {
+        "name": "raw-text-cam-primary",
+        "css": "#0c162f"
+      },
+      {
+        "name": "brand/809",
+        "css": "#0e510e"
       }
     ]
   },
@@ -823,10 +895,6 @@
       {
         "name": "color/accent",
         "aliasTo": "accent/400"
-      },
-      {
-        "name": "color/accent/check-in/reward",
-        "aliasTo": "accent/470"
       },
       {
         "name": "color/accent/chip",
@@ -898,11 +966,11 @@
       },
       {
         "name": "color/button/cta",
-        "aliasTo": "color/primary"
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/button/cta-primary",
-        "aliasTo": "color/text/tertiary"
+        "aliasTo": "mono/950"
       },
       {
         "name": "color/button/cta-secondary",
@@ -910,43 +978,19 @@
       },
       {
         "name": "color/button/cta-secondary-text",
-        "aliasTo": "color/text/primary"
-      },
-      {
-        "name": "color/button/dashboard",
-        "aliasTo": "brand/500"
-      },
-      {
-        "name": "color/button/disabled",
-        "aliasTo": "brand/830"
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/button/hover",
         "aliasTo": "brand/630"
       },
       {
-        "name": "color/button/lang-border",
-        "aliasTo": "mono/650"
-      },
-      {
-        "name": "color/button/lang-icon",
-        "aliasTo": "color/text/primary"
-      },
-      {
-        "name": "color/button/lang-text",
-        "aliasTo": "color/text/primary"
-      },
-      {
         "name": "color/button/menu-active",
-        "aliasTo": "color/primary"
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/button/muted",
         "aliasTo": "mono/510"
-      },
-      {
-        "name": "color/button/pagination-disabled",
-        "aliasTo": "mono/666"
       },
       {
         "name": "color/button/tabs",
@@ -1014,7 +1058,7 @@
       },
       {
         "name": "color/gradient/card/brand/end",
-        "aliasTo": "color/surface/forest-4"
+        "aliasTo": "brand/826"
       },
       {
         "name": "color/gradient/card/brand/start",
@@ -1027,22 +1071,6 @@
       {
         "name": "color/gradient/check-in/card/start",
         "aliasTo": "support/success-strong"
-      },
-      {
-        "name": "color/gradient/check-in/day/end",
-        "aliasTo": "brand/811"
-      },
-      {
-        "name": "color/gradient/check-in/day/start",
-        "aliasTo": "brand/846"
-      },
-      {
-        "name": "color/gradient/check-in/reward/end",
-        "aliasTo": "accent/476"
-      },
-      {
-        "name": "color/gradient/check-in/reward/start",
-        "aliasTo": "accent/475"
       },
       {
         "name": "color/gradient/dashboard/warm/end",
@@ -1094,11 +1122,11 @@
       },
       {
         "name": "color/gradient/referral/card/end",
-        "aliasTo": "color/surface/forest/deep"
+        "aliasTo": "brand/820"
       },
       {
         "name": "color/gradient/referral/card/start",
-        "aliasTo": "color/surface/forest-4"
+        "aliasTo": "brand/826"
       },
       {
         "name": "color/gradient/referral/commission/end",
@@ -1110,7 +1138,7 @@
       },
       {
         "name": "color/gradient/referral/deposit/end",
-        "aliasTo": "color/danger/maroon"
+        "aliasTo": "support/danger-maroon"
       },
       {
         "name": "color/gradient/referral/deposit/start",
@@ -1166,23 +1194,11 @@
       },
       {
         "name": "color/gradient/tag/end",
-        "aliasTo": "color/danger/maroon"
+        "aliasTo": "support/danger-maroon"
       },
       {
         "name": "color/gradient/tag/start",
-        "aliasTo": "color/error/bright"
-      },
-      {
-        "name": "color/icon/check-in/active",
-        "aliasTo": "brand/856"
-      },
-      {
-        "name": "color/icon/check-in/muted",
-        "aliasTo": "mono/468"
-      },
-      {
-        "name": "color/icon/check-in/star-deep",
-        "aliasTo": "brand/812"
+        "aliasTo": "support/error-bright"
       },
       {
         "name": "color/icon/muted",
@@ -1210,7 +1226,7 @@
       },
       {
         "name": "color/popup/body",
-        "aliasTo": "color/surface"
+        "aliasTo": "mono/900"
       },
       {
         "name": "color/popup/head",
@@ -1222,11 +1238,11 @@
       },
       {
         "name": "color/progress/bar/bg",
-        "aliasTo": "color/surface/deep-dark"
+        "aliasTo": "mono/915"
       },
       {
         "name": "color/progress/bar/fill",
-        "aliasTo": "color/primary"
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/success",
@@ -1293,38 +1309,6 @@
         "aliasTo": "mono/628"
       },
       {
-        "name": "color/surface/check-in/cell",
-        "aliasTo": "mono/453"
-      },
-      {
-        "name": "color/surface/check-in/cell-active",
-        "aliasTo": "brand/831"
-      },
-      {
-        "name": "color/surface/check-in/cell-alt",
-        "aliasTo": "mono/855"
-      },
-      {
-        "name": "color/surface/check-in/cell-hover",
-        "aliasTo": "mono/636"
-      },
-      {
-        "name": "color/surface/check-in/cta",
-        "aliasTo": "brand/761"
-      },
-      {
-        "name": "color/surface/check-in/day-bg",
-        "aliasTo": "brand/646"
-      },
-      {
-        "name": "color/surface/check-in/day-current",
-        "aliasTo": "brand/847"
-      },
-      {
-        "name": "color/surface/check-in/footer",
-        "aliasTo": "brand/809"
-      },
-      {
         "name": "color/surface/chip",
         "aliasTo": "mono/632"
       },
@@ -1335,10 +1319,6 @@
       {
         "name": "color/surface/code",
         "aliasTo": "mono/622"
-      },
-      {
-        "name": "color/surface/coloful-deep",
-        "aliasTo": "brand/850"
       },
       {
         "name": "color/surface/colorful",
@@ -1458,11 +1438,11 @@
       },
       {
         "name": "color/surface/input-light",
-        "aliasTo": "color/text/primary"
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/surface/input-light-border",
-        "aliasTo": "color/text/primary"
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/surface/input-muted",
@@ -1481,16 +1461,12 @@
         "aliasTo": "mono/108"
       },
       {
-        "name": "color/surface/light-active",
-        "aliasTo": "brand/500-soft"
-      },
-      {
         "name": "color/surface/low",
         "aliasTo": "mono/930"
       },
       {
         "name": "color/surface/menu-active",
-        "aliasTo": "color/primary"
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/surface/mid",
@@ -1558,11 +1534,11 @@
       },
       {
         "name": "color/surface/striped-even",
-        "aliasTo": "color/surface/highlight"
+        "aliasTo": "mono/310"
       },
       {
         "name": "color/surface/striped-odd",
-        "aliasTo": "color/surface/mid"
+        "aliasTo": "mono/660"
       },
       {
         "name": "color/surface/subtle",
@@ -1577,36 +1553,12 @@
         "aliasTo": "mono/818"
       },
       {
-        "name": "color/table/highlight/end",
-        "aliasTo": "mono/720"
-      },
-      {
-        "name": "color/table/highlight/start",
-        "aliasTo": "brand/700"
-      },
-      {
         "name": "color/text/accent",
         "aliasTo": "accent/460"
       },
       {
         "name": "color/text/accent-deep",
         "aliasTo": "accent/420"
-      },
-      {
-        "name": "color/text/check-in/day-active",
-        "aliasTo": "brand/862"
-      },
-      {
-        "name": "color/text/check-in/day-muted",
-        "aliasTo": "mono/475"
-      },
-      {
-        "name": "color/text/check-in/day-past",
-        "aliasTo": "mono/471"
-      },
-      {
-        "name": "color/text/check-in/reward",
-        "aliasTo": "mono/647"
       },
       {
         "name": "color/text/dim",
@@ -1645,12 +1597,8 @@
         "aliasTo": "mono/646"
       },
       {
-        "name": "color/text/mid-neutral",
-        "aliasTo": "mono/465"
-      },
-      {
         "name": "color/text/muted",
-        "aliasTo": "mono/510"
+        "aliasTo": "mono/462"
       },
       {
         "name": "color/text/placeholder",
@@ -1663,10 +1611,6 @@
       {
         "name": "color/text/secondary",
         "aliasTo": "mono/400"
-      },
-      {
-        "name": "color/text/soft",
-        "aliasTo": "mono/472"
       },
       {
         "name": "color/text/subtle",
@@ -1691,6 +1635,146 @@
       {
         "name": "color/warning",
         "aliasTo": "support/warning"
+      },
+      {
+        "name": "color/accent/check-in/reward",
+        "aliasTo": "accent/470"
+      },
+      {
+        "name": "color/button/dashboard",
+        "aliasTo": "brand/500"
+      },
+      {
+        "name": "color/button/disabled",
+        "aliasTo": "brand/830"
+      },
+      {
+        "name": "color/button/lang-border",
+        "aliasTo": "mono/650"
+      },
+      {
+        "name": "color/button/lang-icon",
+        "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/button/lang-text",
+        "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/button/pagination-disabled",
+        "aliasTo": "mono/666"
+      },
+      {
+        "name": "color/effect/glow",
+        "aliasTo": "brand/500-soft"
+      },
+      {
+        "name": "color/gradient/check-in/day/end",
+        "aliasTo": "brand/811"
+      },
+      {
+        "name": "color/gradient/check-in/day/start",
+        "aliasTo": "brand/846"
+      },
+      {
+        "name": "color/gradient/check-in/reward/end",
+        "aliasTo": "accent/476"
+      },
+      {
+        "name": "color/gradient/check-in/reward/start",
+        "aliasTo": "accent/475"
+      },
+      {
+        "name": "color/icon/check-in/active",
+        "aliasTo": "brand/856"
+      },
+      {
+        "name": "color/icon/check-in/muted",
+        "aliasTo": "mono/468"
+      },
+      {
+        "name": "color/icon/check-in/star-deep",
+        "aliasTo": "brand/812"
+      },
+      {
+        "name": "color/surface/card-container",
+        "aliasTo": "mono/900"
+      },
+      {
+        "name": "color/surface/check-in/cell",
+        "aliasTo": "mono/453"
+      },
+      {
+        "name": "color/surface/check-in/cell-active",
+        "aliasTo": "brand/831"
+      },
+      {
+        "name": "color/surface/check-in/cell-alt",
+        "aliasTo": "mono/855"
+      },
+      {
+        "name": "color/surface/check-in/cell-hover",
+        "aliasTo": "mono/636"
+      },
+      {
+        "name": "color/surface/check-in/cta",
+        "aliasTo": "brand/761"
+      },
+      {
+        "name": "color/surface/check-in/day-bg",
+        "aliasTo": "brand/646"
+      },
+      {
+        "name": "color/surface/check-in/day-current",
+        "aliasTo": "brand/847"
+      },
+      {
+        "name": "color/surface/check-in/footer",
+        "aliasTo": "brand/809"
+      },
+      {
+        "name": "color/surface/coloful-deep",
+        "aliasTo": "brand/850"
+      },
+      {
+        "name": "color/surface/light-active",
+        "aliasTo": "brand/500-soft"
+      },
+      {
+        "name": "color/table/highlight/end",
+        "aliasTo": "mono/720"
+      },
+      {
+        "name": "color/table/highlight/start",
+        "aliasTo": "brand/700"
+      },
+      {
+        "name": "color/text/check-in/day-active",
+        "aliasTo": "brand/862"
+      },
+      {
+        "name": "color/text/check-in/day-muted",
+        "aliasTo": "mono/475"
+      },
+      {
+        "name": "color/text/check-in/day-past",
+        "aliasTo": "mono/471"
+      },
+      {
+        "name": "color/text/check-in/reward",
+        "aliasTo": "mono/647"
+      },
+      {
+        "name": "color/text/mid-neutral",
+        "aliasTo": "mono/465"
+      },
+      {
+        "name": "color/text/soft",
+        "aliasTo": "mono/472"
+      },
+      {
+        "name": "color/text/title",
+        "aliasTo": "brand/500"
       }
     ]
   }
