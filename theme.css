@@ -229,6 +229,11 @@
   --overlay-scrim: rgba(0, 0, 0, 0.2);
   --overlay-shadow-soft: rgba(29, 34, 37, 0.1);
 
+  /* raw-gradient */
+  --raw-gradient-home-cta-edge: #01b545;
+  --raw-gradient-home-highlight-end: #ebb614;
+  --raw-gradient-home-highlight-start: #ffd963;
+
   /* raw */
   --raw-border-cam-panel: #5162b3;
   --raw-brand-cam: #032ea1;
@@ -239,13 +244,6 @@
   --raw-gradient-cam-highlight-start: #e0ddc3;
   --raw-gradient-cam-icon-end: #110d35;
   --raw-gradient-cam-icon-start: #1f223c;
-
-  /* raw-gradient */
-  --raw-gradient-home-cta-edge: #01b545;
-  --raw-gradient-home-highlight-end: #ebb614;
-  --raw-gradient-home-highlight-start: #ffd963;
-
-  /* raw */
   --raw-icon-cam-shadow: #0c0c00;
   --raw-surface-cam: #f3f3ff;
   --raw-surface-cam-base: #d6dbf5;
@@ -474,10 +472,6 @@
   /* transparent */
   --color-transparent: var(--mono-0909);
 
-  /* table */
-  /* Table */
-  --color-table-highlight: linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
-
   /* gradient */
   --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
   --color-gradient-check-in-card:       linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
@@ -498,5 +492,47 @@
   --color-gradient-sidenav-info:        linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
   --color-gradient-sidenav-scrim:       linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
   --color-gradient-slot-panel:          linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
+  --color-gradient-table:               linear-gradient(90deg, var(--brand-700) 0%, var(--mono-720) 100%);
   --color-gradient-tag:                 linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
+
+  /* table */
+  --color-table-highlight: var(--color-gradient-table);
+
+  /* Live Match / Live Sports */
+    --live-match-banner-gradient-start: #5C1628;
+    --live-match-banner-gradient-end: #2E1B6B;
+    --live-match-accent: #45FF8B;
+    --live-match-text-primary: #FFFFFF;
+    --live-match-text-secondary: #99A4B0;
+    --live-match-hero-title: #FFFFFF;
+    --live-match-hero-title-accent: #45FF8B;
+    --live-match-hero-subtitle: #FFFFFF;
+    --live-match-hero-border: rgba(255, 255, 255, 0.08);
+    --live-match-section-title: #FFFFFF;
+    --live-match-card-bg: #1A2744;
+    --live-match-card-shadow: rgba(0, 0, 0, 0.45);
+    --live-match-card-header-text: #6BC5E8;
+    --live-match-league-pill-bg: rgba(15, 20, 36, 0.65);
+    --live-match-league-pill-text: #6BC5E8;
+    --live-match-card-text: #FFFFFF;
+    --live-match-time-text: #FFFFFF;
+    --live-match-time-icon: #FFFFFF;
+    --live-match-odds-bg: #D4AF37;
+    --live-match-odds-border: #D4AF37;
+    --live-match-odds-col-bg: #000000;
+    --live-match-odds-label-bg: #1A1A1A;
+    --live-match-odds-label: #B3B3B3;
+    --live-match-odds-value: #FFFFFF;
+    --live-match-button-bg: #F4C542;
+    --live-match-button-text: #000000;
+    --live-match-button-shadow: rgba(244, 197, 66, 0.35);
+    --live-match-button-hover-bg: #FFD966;
+    --live-match-nav-btn-bg: #F4C542;
+    --live-match-nav-btn-icon: #000000;
+    --live-match-nav-btn-shadow: rgba(244, 197, 66, 0.35);
+    --live-match-nav-btn-hover-bg: #FFD966;
+    --live-match-nav-btn-disabled-bg: #3A3F4A;
+    --live-match-nav-btn-disabled-icon: #6B7180;
+    --live-match-empty-text: #99A4B0;
+    --live-match-container-border-mobile: rgba(244, 197, 66, 0.55);
 }

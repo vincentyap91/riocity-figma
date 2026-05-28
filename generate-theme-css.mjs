@@ -257,6 +257,7 @@ if (gradientTokens.length) {
   if (lastSemGroup) css += "\n";
   css += "  /* gradient */\n";
   const pad = Math.max(...gradientTokens.map((g) => g.cssVar.length));
+  let tableGradientVar = null;
   for (const g of gradientTokens) {
     if (g.error) {
       css += `  /* ${g.error} */\n`;
@@ -264,6 +265,13 @@ if (gradientTokens.length) {
     }
     const gap = " ".repeat(Math.max(1, pad - g.cssVar.length + 1));
     css += `  ${g.cssVar}:${gap}${g.value};\n`;
+    if (g.cssVar === "--color-gradient-table") tableGradientVar = g.cssVar;
+  }
+
+  // Back-compat: older code expects `--color-table-highlight`.
+  if (tableGradientVar) {
+    css += "\n  /* table */\n";
+    css += `  --color-table-highlight: var(${tableGradientVar});\n`;
   }
 }
 
