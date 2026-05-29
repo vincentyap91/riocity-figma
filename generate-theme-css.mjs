@@ -7,7 +7,9 @@
  *   Gradients:  Figma color/gradient/.../start+end pairs → --color-gradient-*
  *               as linear-gradient(90deg, var(--start) 0%, var(--end) 100%)
  *
- * Regenerate: node generate-theme-css.mjs
+ * Regenerate:
+ *   node generate-theme-css.mjs           → theme.css (Default)
+ *   node generate-theme-css.mjs --cam88   → theme-cam88.css (CAM88)
  */
 import fs from "fs";
 import path from "path";
@@ -15,7 +17,29 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const jsonPath = path.join(__dirname, "figma-variables.json");
-const outPath = path.join(__dirname, "theme.css");
+
+const profiles = {
+  default: {
+    outFile: "theme.css",
+    semanticKey: "02 Semantic",
+    semMode: "Default",
+    selectors: ':root,\n[data-theme="default"]',
+    fileLabel: "theme.css",
+  },
+  cam88: {
+    outFile: "theme-cam88.css",
+    semanticKey: "02 Semantic CAM88",
+    semMode: "CAM88",
+    selectors: '[data-theme="cam88"]',
+    fileLabel: "theme-cam88.css",
+  },
+};
+
+const activeProfiles = process.argv.includes("--cam88")
+  ? process.argv.includes("--default")
+    ? ["default", "cam88"]
+    : ["cam88"]
+  : ["default"];
 
 const data = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
 
@@ -61,25 +85,17 @@ function sortPrimitives(a, b) {
 }
 
 const primitives = [...data["01 Primitives"].variables].sort(sortPrimitives);
-const semantics = [...data["02 Semantic"].variables].sort((a, b) =>
-  a.name.localeCompare(b.name)
-);
-
 const primMode = data["01 Primitives"].mode ?? "Value";
-const semMode = data["02 Semantic"].mode ?? "Default";
-const semModes = data["02 Semantic"].modes ?? [semMode];
 const exportedAt = data.exportedAt ?? "unknown";
-
 const primitiveByFigmaName = new Map(primitives.map((p) => [p.name, p]));
-const semanticByFigmaName = new Map(semantics.map((s) => [s.name, s]));
 
 /** Resolve semantic → semantic → … → primitive (Figma alias chains) */
-function resolveToPrimitive(figmaName, depth = 0) {
+function resolveToPrimitive(figmaName, semanticByFigmaName, depth = 0) {
   if (!figmaName || depth > 16) return null;
   if (primitiveByFigmaName.has(figmaName)) return figmaName;
   const sem = semanticByFigmaName.get(figmaName);
   if (!sem?.aliasTo) return null;
-  return resolveToPrimitive(sem.aliasTo, depth + 1);
+  return resolveToPrimitive(sem.aliasTo, semanticByFigmaName, depth + 1);
 }
 
 const semanticGroupOrder = [
@@ -142,11 +158,8 @@ function sortSemantics(a, b) {
   return a.name.localeCompare(b.name);
 }
 
-const flatSemantics = semantics.filter((v) => !isGradientStop(v.name));
-const sortedSemantics = [...flatSemantics].sort(sortSemantics);
-
 /** Build composite linear-gradient tokens from start/end pairs */
-function buildGradientTokens() {
+function buildGradientTokens(semantics, semanticByFigmaName) {
   const byPath = new Map();
   for (const v of semantics) {
     const path = gradientPath(v.name);
@@ -165,8 +178,8 @@ function buildGradientTokens() {
       });
       continue;
     }
-    const startPrim = resolveToPrimitive(pair.start.aliasTo);
-    const endPrim = resolveToPrimitive(pair.end.aliasTo);
+    const startPrim = resolveToPrimitive(pair.start.aliasTo, semanticByFigmaName);
+    const endPrim = resolveToPrimitive(pair.end.aliasTo, semanticByFigmaName);
     if (!startPrim || !endPrim) {
       entries.push({
         cssVar: gradientCssVar(path),
@@ -185,31 +198,41 @@ function buildGradientTokens() {
   return entries.sort((a, b) => a.cssVar.localeCompare(b.cssVar));
 }
 
-let css = "";
-css += "/**\n";
-css += " * theme.css — design tokens from Figma\n";
-css += ` * Exported: ${exportedAt} | Primitives: ${primMode} | Semantic: ${semModes.join(", ")}\n`;
-css += " *\n";
-css += " * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*\n";
-css += " * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …\n";
-css += " *\n";
-css += " *   background: var(--color-surface);\n";
-css += " *   color:      var(--color-text-primary);\n";
-css += " *   border:     var(--color-border);\n";
-css += " *   CTA:        var(--color-primary);\n";
-css += " *\n";
-css += " * Regenerate: node generate-theme-css.mjs\n";
-css += " */\n\n";
+function generateThemeCss(profile) {
+  const semantics = [...data[profile.semanticKey].variables].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+  const semanticByFigmaName = new Map(semantics.map((s) => [s.name, s]));
+  const flatSemantics = semantics.filter((v) => !isGradientStop(v.name));
+  const sortedSemantics = [...flatSemantics].sort(sortSemantics);
+  const gradientTokens = buildGradientTokens(semantics, semanticByFigmaName);
 
-css += ":root,\n";
-css += '[data-theme="default"] {\n';
+  let css = "";
+  css += "/**\n";
+  css += ` * ${profile.fileLabel} — design tokens from Figma\n`;
+  css += ` * Exported: ${exportedAt} | Primitives: ${primMode} | Semantic: ${profile.semMode}\n`;
+  css += " *\n";
+  css += " * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*\n";
+  css += " * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …\n";
+  css += " *\n";
+  css += " *   background: var(--color-surface);\n";
+  css += " *   color:      var(--color-text-primary);\n";
+  css += " *   border:     var(--color-border);\n";
+  css += " *   CTA:        var(--color-primary);\n";
+  css += " *\n";
+  css += " * Regenerate: node generate-theme-css.mjs";
+  if (profile.semMode !== "Default") css += ` --${profile.semMode.toLowerCase()}`;
+  css += "\n";
+  css += " */\n\n";
 
-css += "  /* ---------------------------------------------------------------------------\n";
-css += "     01 Primitives — resolved values\n";
-css += "     --------------------------------------------------------------------------- */\n";
+  css += `${profile.selectors} {\n`;
 
-let lastGroup = "";
-for (const v of primitives) {
+  css += "  /* ---------------------------------------------------------------------------\n";
+  css += "     01 Primitives — resolved values\n";
+  css += "     --------------------------------------------------------------------------- */\n";
+
+  let lastGroup = "";
+  for (const v of primitives) {
   const parts = v.name.split("/");
   const g = parts.length > 1 ? parts[0] : v.name.split("-")[0];
   const groupLabel =
@@ -222,63 +245,67 @@ for (const v of primitives) {
           : g === "vip"
             ? "vip"
             : g;
-  if (groupLabel !== lastGroup) {
-    if (lastGroup) css += "\n";
-    css += `  /* ${groupLabel} */\n`;
-    lastGroup = groupLabel;
+    if (groupLabel !== lastGroup) {
+      if (lastGroup) css += "\n";
+      css += `  /* ${groupLabel} */\n`;
+      lastGroup = groupLabel;
+    }
+    css += `  ${legacyVarName(v.name)}: ${v.css};\n`;
   }
-  css += `  ${legacyVarName(v.name)}: ${v.css};\n`;
-}
 
-css += "\n  /* ---------------------------------------------------------------------------\n";
-css += "     02 Semantic — role tokens (use in application code)\n";
-css += "     --------------------------------------------------------------------------- */\n";
+  css += "\n  /* ---------------------------------------------------------------------------\n";
+  css += "     02 Semantic — role tokens (use in application code)\n";
+  css += "     --------------------------------------------------------------------------- */\n";
 
-let lastSemGroup = "";
-for (const v of sortedSemantics) {
-  const group = semanticGroup(v.name);
-  if (group !== lastSemGroup) {
-    if (lastSemGroup) css += "\n";
-    css += `  /* ${group} */\n`;
-    lastSemGroup = group;
-  }
-  const semVar = `--${figmaToSemanticCssName(v.name)}`;
-  const primName = resolveToPrimitive(v.aliasTo);
-  if (!primName) {
-    css += `  /* missing primitive: ${v.name} → ${v.aliasTo} */\n`;
-    continue;
-  }
-  const primVar = legacyVarName(primName);
-  css += `  ${semVar}: var(${primVar});\n`;
-}
-
-const gradientTokens = buildGradientTokens();
-if (gradientTokens.length) {
-  if (lastSemGroup) css += "\n";
-  css += "  /* gradient */\n";
-  const pad = Math.max(...gradientTokens.map((g) => g.cssVar.length));
-  let tableGradientVar = null;
-  for (const g of gradientTokens) {
-    if (g.error) {
-      css += `  /* ${g.error} */\n`;
+  let lastSemGroup = "";
+  for (const v of sortedSemantics) {
+    const group = semanticGroup(v.name);
+    if (group !== lastSemGroup) {
+      if (lastSemGroup) css += "\n";
+      css += `  /* ${group} */\n`;
+      lastSemGroup = group;
+    }
+    const semVar = `--${figmaToSemanticCssName(v.name)}`;
+    const primName = resolveToPrimitive(v.aliasTo, semanticByFigmaName);
+    if (!primName) {
+      css += `  /* missing primitive: ${v.name} → ${v.aliasTo} */\n`;
       continue;
     }
-    const gap = " ".repeat(Math.max(1, pad - g.cssVar.length + 1));
-    css += `  ${g.cssVar}:${gap}${g.value};\n`;
-    if (g.cssVar === "--color-gradient-table") tableGradientVar = g.cssVar;
+    const primVar = legacyVarName(primName);
+    css += `  ${semVar}: var(${primVar});\n`;
   }
 
-  // Back-compat: older code expects `--color-table-highlight`.
-  if (tableGradientVar) {
-    css += "\n  /* table */\n";
-    css += `  --color-table-highlight: var(${tableGradientVar});\n`;
+  if (gradientTokens.length) {
+    if (lastSemGroup) css += "\n";
+    css += "  /* gradient */\n";
+    const pad = Math.max(...gradientTokens.map((g) => g.cssVar.length));
+    let tableGradientVar = null;
+    for (const g of gradientTokens) {
+      if (g.error) {
+        css += `  /* ${g.error} */\n`;
+        continue;
+      }
+      const gap = " ".repeat(Math.max(1, pad - g.cssVar.length + 1));
+      css += `  ${g.cssVar}:${gap}${g.value};\n`;
+      if (g.cssVar === "--color-gradient-table") tableGradientVar = g.cssVar;
+    }
+
+    if (tableGradientVar) {
+      css += "\n  /* table */\n";
+      css += `  --color-table-highlight: var(${tableGradientVar});\n`;
+    }
   }
+
+  css += "}\n";
+
+  const outPath = path.join(__dirname, profile.outFile);
+  fs.writeFileSync(outPath, css);
+  const gradientCount = gradientTokens.filter((g) => !g.error).length;
+  console.log(
+    `Wrote ${outPath} — ${primitives.length} primitives, ${sortedSemantics.length} flat semantics, ${gradientCount} gradient composites`
+  );
 }
 
-css += "}\n";
-
-fs.writeFileSync(outPath, css);
-const gradientCount = gradientTokens.filter((g) => !g.error).length;
-console.log(
-  `Wrote ${outPath} — ${primitives.length} primitives, ${sortedSemantics.length} flat semantics, ${gradientCount} gradient composites`
-);
+for (const key of activeProfiles) {
+  generateThemeCss(profiles[key]);
+}

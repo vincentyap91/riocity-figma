@@ -1,6 +1,6 @@
 /**
- * theme.css — design tokens from Figma
- * Exported: 2026-05-29 | Primitives: Value | Semantic: Default, CAM88
+ * theme-cam88.css — design tokens from Figma
+ * Exported: 2026-05-29 | Primitives: Value | Semantic: CAM88
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -10,11 +10,10 @@
  *   border:     var(--color-border);
  *   CTA:        var(--color-primary);
  *
- * Regenerate: node generate-theme-css.mjs
+ * Regenerate: node generate-theme-css.mjs --cam88
  */
 
-:root,
-[data-theme="default"] {
+[data-theme="cam88"] {
   /* ---------------------------------------------------------------------------
      01 Primitives — resolved values
      --------------------------------------------------------------------------- */
@@ -312,171 +311,166 @@
      02 Semantic — role tokens (use in application code)
      --------------------------------------------------------------------------- */
   /* text */
-  --color-text-accent: var(--accent-460);
-  --color-text-accent-deep: var(--accent-420);
+  --color-text-accent: var(--raw-brand-cam-strong);
+  --color-text-accent-deep: var(--mono-660);
   --color-text-card-text: var(--mono-0);
-  --color-text-check-in-day-active: var(--brand-862);
+  --color-text-check-in-day-active: var(--raw-border-cam-panel);
   --color-text-check-in-day-muted: var(--mono-475);
-  --color-text-check-in-day-past: var(--mono-471);
-  --color-text-check-in-reward: var(--mono-647);
+  --color-text-check-in-day-past: var(--raw-disabled-text);
+  --color-text-check-in-reward: var(--raw-disabled-color);
   --color-text-dim: var(--mono-604);
-  --color-text-disabled: var(--mono-220);
+  --color-text-disabled: var(--raw-disabled-text);
   --color-text-faded: var(--mono-565);
   --color-text-fifth: var(--mono-950);
-  --color-text-fifth-title: var(--brand-500);
-  --color-text-four-title: var(--accent-450);
+  --color-text-fifth-title: var(--mono-660);
+  --color-text-four-title: var(--raw-brand-cam);
   --color-text-fourth: var(--mono-750);
   --color-text-game-title: var(--mono-660);
-  --color-text-highlight: var(--raw-promo-date);
+  --color-text-highlight: var(--raw-highlight-cam);
   --color-text-label: var(--mono-490);
-  --color-text-light: var(--mono-488);
-  --color-text-link: var(--support-link);
-  --color-text-link-danger: var(--support-link-danger);
-  --color-text-link-inverse: var(--mono-0);
+  --color-text-light: var(--mono-0);
+  --color-text-link: var(--raw-brand-cam);
+  --color-text-link-danger: var(--support-link-danger-cam);
+  --color-text-link-inverse: var(--mono-950);
   --color-text-mid: var(--mono-644);
-  --color-text-mid-alt: var(--mono-646);
+  --color-text-mid-alt: var(--raw-surface-cam-input);
   --color-text-mid-neutral: var(--mono-465);
-  --color-text-muted: var(--mono-510);
+  --color-text-muted: var(--raw-text-muted);
   --color-text-placeholder: var(--mono-400);
-  --color-text-primary: var(--mono-0);
-  --color-text-primary-card-title: var(--brand-500);
-  --color-text-recent-amount: var(--brand-500);
-  --color-text-referral-accent: var(--accent-420);
-  --color-text-secondary: var(--mono-400);
-  --color-text-secondary-card-title: var(--accent-450);
-  --color-text-small: var(--mono-400);
+  --color-text-primary: var(--mono-660);
+  --color-text-primary-card-title: var(--mono-0);
+  --color-text-recent-amount: var(--support-link-danger-cam);
+  --color-text-referral-accent: var(--mono-660);
+  --color-text-secondary: var(--support-error);
+  --color-text-secondary-card-title: var(--mono-0);
+  --color-text-small: var(--mono-450);
   --color-text-soft: var(--mono-472);
   --color-text-sports-muted: var(--raw-text-sports-muted);
   --color-text-sports-primary: var(--raw-text-sports-primary);
-  --color-text-sub-highlight: var(--accent-460);
-  --color-text-sub-title: var(--support-warning);
-  --color-text-subtle: var(--mono-542);
+  --color-text-sub-highlight: var(--raw-highlight-cam);
+  --color-text-sub-title: var(--raw-brand-cam);
+  --color-text-subtle: var(--mono-300);
   --color-text-subtle-dark: var(--mono-545);
-  --color-text-tertiary: var(--mono-950);
-  --color-text-third-title: var(--brand-500);
-  --color-text-title: var(--accent-400);
-  --color-text-warm: var(--accent-brown-800);
+  --color-text-tertiary: var(--mono-0);
+  --color-text-third-title: var(--raw-brand-cam-strong);
+  --color-text-title: var(--support-error);
+  --color-text-warm: var(--mono-0);
 
   /* surface */
-  --color-surface: var(--mono-900);
-  --color-surface-accent: var(--mono-330);
-  --color-surface-base: var(--mono-910);
+  --color-surface: var(--raw-surface-cam);
+  --color-surface-accent: var(--mono-750);
+  --color-surface-base: var(--raw-surface-cam-base);
   --color-surface-base-dark: var(--mono-808);
   --color-surface-border: var(--mono-870);
-  --color-surface-card-container: var(--mono-900);
-  --color-surface-card-dark: var(--mono-628);
-  --color-surface-card-light: var(--mono-330);
-  --color-surface-cat-navigation: var(--mono-750);
-  --color-surface-chatbox: var(--mono-750);
-  --color-surface-check-in-cell: var(--mono-453);
-  --color-surface-check-in-cell-active: var(--brand-831);
+  --color-surface-card-container: var(--mono-750);
+  --color-surface-card-dark: var(--raw-surface-cam-base);
+  --color-surface-card-light: var(--mono-910);
+  --color-surface-cat-navigation: var(--brand-500);
+  --color-surface-chatbox: var(--raw-surface-cam-base);
+  --color-surface-check-in-cell: var(--raw-border-cam-panel);
+  --color-surface-check-in-cell-active: var(--raw-gradient-cam-icon-end);
   --color-surface-check-in-cell-alt: var(--mono-855);
-  --color-surface-check-in-cell-hover: var(--mono-636);
+  --color-surface-check-in-cell-hover: var(--raw-cam-muted);
   --color-surface-check-in-cta: var(--brand-761);
-  --color-surface-check-in-day-bg: var(--brand-646);
+  --color-surface-check-in-day-bg: var(--raw-gradient-cam-icon-start);
   --color-surface-check-in-day-current: var(--brand-847);
-  --color-surface-check-in-footer: var(--brand-809);
-  --color-surface-check-in-icon: var(--mono-650);
-  --color-surface-check-in-inverse: var(--accent-450);
-  --color-surface-check-in-text: var(--brand-500);
-  --color-surface-chip: var(--mono-632);
-  --color-surface-chip-hover: var(--mono-640);
+  --color-surface-check-in-footer: var(--raw-surface-cam-highlight);
+  --color-surface-check-in-icon: var(--raw-disabled-color);
+  --color-surface-check-in-text: var(--raw-gradient-cam-icon-end);
+  --color-surface-chip: var(--brand-500);
+  --color-surface-chip-hover: var(--raw-surface-cam-base);
   --color-surface-chip-info: var(--brand-839);
   --color-surface-code: var(--mono-622);
   --color-surface-coloful-deep: var(--brand-850);
-  --color-surface-colorful: var(--brand-700);
+  --color-surface-colorful: var(--raw-progress-bar);
   --color-surface-cool-light: var(--mono-115);
   --color-surface-darkest: var(--mono-940);
-  --color-surface-deep: var(--mono-920);
+  --color-surface-deep: var(--mono-0);
   --color-surface-deep-dark: var(--mono-915);
-  --color-surface-filter: var(--mono-825);
-  --color-surface-filter-active: var(--brand-845);
+  --color-surface-filter: var(--mono-0);
+  --color-surface-filter-active: var(--mono-300);
   --color-surface-filter-dark: var(--mono-867);
   --color-surface-filter-deep: var(--mono-868);
-  --color-surface-float: var(--mono-750);
+  --color-surface-float: var(--mono-300);
   --color-surface-forest-1: var(--brand-822);
   --color-surface-forest-2: var(--brand-823);
   --color-surface-forest-3: var(--brand-824);
   --color-surface-forest-4: var(--brand-826);
   --color-surface-forest-5: var(--brand-827);
   --color-surface-forest-accent: var(--brand-828);
-  --color-surface-forest-card: var(--brand-832);
+  --color-surface-forest-card: var(--raw-surface-cam-base);
   --color-surface-forest-card-alt: var(--brand-833);
   --color-surface-forest-darkest: var(--brand-815);
   --color-surface-forest-deep: var(--brand-762);
   --color-surface-forest-deep: var(--brand-820);
   --color-surface-game-stage: var(--raw-surface-game-stage);
-  --color-surface-high: var(--mono-800);
-  --color-surface-highlight: var(--mono-310);
+  --color-surface-high: var(--raw-surface-cam-menu);
+  --color-surface-highlight: var(--raw-surface-cam-highlight);
   --color-surface-info: var(--support-info);
   --color-surface-info-deep: var(--support-info-strong);
   --color-surface-info-warning: var(--support-warning-surface);
   --color-surface-input: var(--mono-905);
-  --color-surface-input-color: var(--brand-827);
-  --color-surface-input-inverse: var(--mono-330);
+  --color-surface-input-color: var(--raw-surface-cam-input);
+  --color-surface-input-inverse: var(--mono-0);
   --color-surface-input-light: var(--mono-0);
   --color-surface-input-light-border: var(--mono-0);
-  --color-surface-input-muted: var(--mono-565);
+  --color-surface-input-muted: var(--raw-border-cam-panel);
   --color-surface-input-muted-border: var(--mono-565);
   --color-surface-inset: var(--mono-950);
   --color-surface-light: var(--mono-108);
   --color-surface-light-active: var(--brand-500-soft);
-  --color-surface-low: var(--mono-930);
-  --color-surface-menu-active: var(--brand-500);
+  --color-surface-low: var(--raw-surface-cam-muted);
+  --color-surface-menu-active: var(--raw-brand-cam-strong);
   --color-surface-mid: var(--mono-660);
-  --color-surface-mid-dark: var(--mono-630);
-  --color-surface-mid-color: var(--brand-830);
-  --color-surface-mid-container: var(--brand-700);
+  --color-surface-mid-dark: var(--raw-surface-cam-base);
+  --color-surface-mid-color: var(--brand-500);
+  --color-surface-mid-container: var(--raw-text-cam-primary);
   --color-surface-mid-text: var(--mono-0);
-  --color-surface-nav: var(--mono-720);
+  --color-surface-nav: var(--raw-surface-cam-menu);
   --color-surface-navy: var(--support-navy);
   --color-surface-near-black: var(--mono-770);
-  --color-surface-near-black-alt: var(--mono-768);
+  --color-surface-near-black-alt: var(--mono-697);
   --color-surface-neutral-light: var(--mono-114);
   --color-surface-notify: var(--mono-750);
   --color-surface-overlay-dark: var(--mono-775);
   --color-surface-pale-blue: var(--mono-112);
-  --color-surface-panel: var(--mono-860);
-  --color-surface-panel-border: var(--support-success-strong);
-  --color-surface-primary-shape: var(--support-success-strong);
+  --color-surface-panel: var(--raw-surface-cam-panel);
+  --color-surface-panel-border: var(--mono-750);
   --color-surface-qrcode: var(--mono-0);
-  --color-surface-referral-card: var(--brand-600);
-  --color-surface-referral-input: var(--brand-750);
-  --color-surface-rtp-card: var(--mono-750);
+  --color-surface-referral-card: var(--mono-750);
+  --color-surface-referral-input: var(--raw-surface-cam-input);
+  --color-surface-rtp-card: var(--brand-500);
   --color-surface-scrim-dark: var(--mono-798);
   --color-surface-search: var(--mono-896);
-  --color-surface-secondary-chip: var(--mono-632);
-  --color-surface-secondary-shape: var(--support-danger-maroon);
-  --color-surface-secondary-table-head: var(--brand-839);
-  --color-surface-sheet: var(--mono-735);
+  --color-surface-secondary-table-head: var(--mono-697);
+  --color-surface-sheet: var(--mono-697);
   --color-surface-sidebar: var(--mono-710);
   --color-surface-slate: var(--support-teal-dark);
   --color-surface-start: var(--mono-990);
-  --color-surface-striped-even: var(--mono-310);
-  --color-surface-striped-odd: var(--mono-660);
+  --color-surface-striped-even: var(--raw-surface-cam-highlight);
+  --color-surface-striped-odd: var(--raw-surface-cam-highlight);
   --color-surface-subtle: var(--mono-105);
-  --color-surface-table: var(--mono-795);
-  --color-surface-table-head: var(--mono-750);
+  --color-surface-table: var(--mono-300);
+  --color-surface-table-head: var(--brand-500);
   --color-surface-teal-dark: var(--mono-818);
 
   /* primary */
-  --color-primary: var(--brand-500);
+  --color-primary: var(--raw-brand-cam);
 
   /* border */
-  --color-border: var(--mono-700);
-  --color-border-brand: var(--brand-500);
+  --color-border: var(--mono-630);
+  --color-border-brand: var(--raw-border-cam-panel);
   --color-border-divider: var(--mono-540);
-  --color-border-line: var(--mono-628);
+  --color-border-line: var(--mono-565);
   --color-border-sports-card: var(--raw-border-sports-card);
   --color-border-sports-market: var(--raw-border-sports-market);
-  --color-border-strong: var(--mono-650);
+  --color-border-strong: var(--raw-text-cam-primary);
   --color-border-subtle: var(--mono-255);
 
   /* accent */
-  --color-accent: var(--accent-400);
+  --color-accent: var(--support-error);
   --color-accent-check-in-reward: var(--accent-470);
   --color-accent-chip: var(--accent-420);
-  --color-accent-glow: var(--accent-200);
   --color-accent-gold: var(--accent-360);
   --color-accent-gold-light: var(--accent-200);
   --color-accent-gold-mid: var(--accent-330);
@@ -486,46 +480,46 @@
   --color-accent-yellow: var(--accent-460);
 
   /* button */
-  --color-button-accent: var(--accent-400);
-  --color-button-accent-deep: var(--accent-360);
-  --color-button-accordian-head: var(--mono-0);
-  --color-button-back: var(--mono-510);
-  --color-button-cta: var(--brand-500);
-  --color-button-cta-fifth: var(--mono-900);
+  --color-button-accent: var(--brand-500);
+  --color-button-accent-deep: var(--support-error-warm);
+  --color-button-accordian-head: var(--raw-brand-cam);
+  --color-button-back: var(--raw-cam-muted);
+  --color-button-cta: var(--raw-brand-cam);
+  --color-button-cta-fifth: var(--mono-697);
   --color-button-cta-fifth-text: var(--mono-0);
-  --color-button-cta-fourth: var(--accent-400);
-  --color-button-cta-fourth-text: var(--mono-950);
-  --color-button-cta-primary: var(--mono-950);
-  --color-button-cta-secondary: var(--support-success-strong);
+  --color-button-cta-fourth: var(--brand-500);
+  --color-button-cta-fourth-text: var(--mono-0);
+  --color-button-cta-primary: var(--mono-0);
+  --color-button-cta-secondary: var(--raw-brand-cam);
   --color-button-cta-secondary-text: var(--mono-0);
-  --color-button-cta-tertiary: var(--mono-330);
-  --color-button-cta-tertiary-text: var(--mono-0);
+  --color-button-cta-tertiary: var(--mono-750);
+  --color-button-cta-tertiary-text: var(--raw-content-cam-nav);
   --color-button-dashboard: var(--brand-500);
-  --color-button-disabled: var(--brand-830);
-  --color-button-hover: var(--brand-630);
-  --color-button-hover-text: var(--brand-500);
+  --color-button-disabled: var(--raw-disabled-color);
+  --color-button-hover: var(--raw-brand-cam);
+  --color-button-hover-text: var(--mono-488);
   --color-button-lang-border: var(--mono-650);
   --color-button-lang-icon: var(--mono-0);
   --color-button-lang-text: var(--mono-0);
   --color-button-menu-active: var(--brand-500);
-  --color-button-muted: var(--mono-510);
+  --color-button-muted: var(--raw-cam-muted);
   --color-button-muted-text: var(--mono-0);
-  --color-button-pagination-disabled: var(--mono-666);
-  --color-button-referral-cta: var(--support-warning);
-  --color-button-referral-cta-text: var(--accent-brown-800);
-  --color-button-sidenav-text: var(--brand-500);
+  --color-button-pagination-disabled: var(--raw-cam-muted);
+  --color-button-referral-cta: var(--brand-500);
+  --color-button-referral-cta-text: var(--mono-0);
+  --color-button-sidenav-text: var(--raw-content-cam-nav);
   --color-button-sports: var(--raw-surface-sports-button);
-  --color-button-tabs: var(--mono-660);
-  --color-button-tabs-muted: var(--mono-800);
+  --color-button-tabs: var(--raw-brand-cam);
+  --color-button-tabs-muted: var(--raw-cam-muted);
   --color-button-tabs-muted-text: var(--mono-0);
-  --color-button-tabs-text: var(--brand-400);
+  --color-button-tabs-text: var(--mono-0);
 
   /* popup */
-  --color-popup-body: var(--mono-900);
-  --color-popup-head: var(--mono-910);
+  --color-popup-body: var(--raw-surface-cam-panel);
+  --color-popup-head: var(--mono-300);
 
   /* progress */
-  --color-progress-bar-bg: var(--mono-915);
+  --color-progress-bar-bg: var(--raw-progress-bar);
   --color-progress-bar-fill: var(--brand-500);
 
   /* success */
@@ -536,17 +530,17 @@
   --color-success-lime-medium: var(--support-lime-medium);
   --color-success-mid: var(--support-success-mid);
   --color-success-positive: var(--support-success-bright);
-  --color-success-strong: var(--support-success-strong);
+  --color-success-strong: var(--raw-rank-border);
   --color-success-vivid: var(--support-lime-vivid);
   --color-success-vivid-green: var(--support-success-vivid);
 
   /* danger */
-  --color-danger: var(--support-danger);
-  --color-danger-accent: var(--support-danger-maroon);
-  --color-danger-deep: var(--support-danger-maroon);
+  --color-danger: var(--support-error);
+  --color-danger-accent: var(--support-error-accent);
+  --color-danger-deep: var(--support-error-accent);
   --color-danger-maroon: var(--support-danger-maroon);
   --color-danger-negative: var(--support-negative);
-  --color-danger-red: var(--support-danger-red);
+  --color-danger-red: var(--support-danger);
   --color-danger-vivid: var(--support-danger-vivid);
 
   /* error */
@@ -576,22 +570,22 @@
   --color-info-steel-light: var(--support-steel-light);
 
   /* effect */
-  --color-effect-glow: var(--brand-500-soft);
-  --color-effect-header-shadow: var(--mono-950-a25);
+  --color-effect-glow: var(--raw-effect-cam-glow);
+  --color-effect-header-shadow: var(--overlay-shadow-soft);
   --color-effect-shadow-soft: var(--overlay-shadow-soft);
 
   /* icon */
   --color-icon-action: var(--mono-580);
-  --color-icon-check-in-active: var(--brand-856);
-  --color-icon-check-in-muted: var(--mono-468);
+  --color-icon-check-in-active: var(--raw-gradient-cam-icon-end);
+  --color-icon-check-in-muted: var(--raw-surface-cam-highlight);
   --color-icon-check-in-star-deep: var(--brand-812);
-  --color-icon-muted: var(--mono-555);
+  --color-icon-muted: var(--raw-icon-cam-shadow);
   --color-icon-rank-alert-base: var(--raw-icon-rank-alert-base);
   --color-icon-rank-alert-highlight: var(--raw-icon-rank-alert-highlight);
   --color-icon-rank-first: var(--raw-icon-rank-first-mark);
   --color-icon-rank-second: var(--raw-icon-rank-second-mark);
   --color-icon-rank-third: var(--raw-icon-rank-third-mark);
-  --color-icon-subtle: var(--mono-560);
+  --color-icon-subtle: var(--raw-content-cam-nav);
 
   /* transparent */
   --color-transparent: var(--mono-0909);
@@ -603,35 +597,35 @@
   --color-secondary: var(--mono-0);
 
   /* gradient */
-  --color-gradient-button-cta:          linear-gradient(90deg, var(--brand-500) 0%, var(--brand-500) 100%);
-  --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
-  --color-gradient-check-in-card:       linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
+  --color-gradient-button-cta:          linear-gradient(90deg, var(--support-error) 0%, var(--support-danger-dark) 100%);
+  --color-gradient-card-brand:          linear-gradient(90deg, var(--raw-surface-cam-panel) 0%, var(--raw-surface-cam-panel) 100%);
+  --color-gradient-check-in-card:       linear-gradient(90deg, var(--raw-brand-cam) 0%, var(--raw-gradient-primary-card-end) 100%);
   --color-gradient-check-in-day:        linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
   --color-gradient-check-in-reward:     linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
   --color-gradient-dashboard-warm:      linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
-  --color-gradient-header-balance:      linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
-  --color-gradient-home-card:           linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-header-balance:      linear-gradient(90deg, var(--raw-brand-cam) 0%, var(--raw-brand-cam) 100%);
+  --color-gradient-home-card:           linear-gradient(90deg, var(--raw-gradient-rank-selected-start) 0%, var(--raw-gradient-rank-selected-end) 100%);
   --color-gradient-home-cta:            linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
-  --color-gradient-home-highlight:      linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-highlight:      linear-gradient(90deg, var(--brand-500) 0%, var(--brand-500) 100%);
   --color-gradient-home-muted:          linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
   --color-gradient-rank-first:          linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:         linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);
   --color-gradient-rank-third:          linear-gradient(90deg, var(--raw-gradient-rank-third-start) 0%, var(--raw-gradient-rank-third-end) 100%);
-  --color-gradient-referral-card:       linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
-  --color-gradient-referral-commission: linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
-  --color-gradient-referral-deposit:    linear-gradient(90deg, var(--accent-brown-700) 0%, var(--support-danger-maroon) 100%);
-  --color-gradient-referral-icon:       linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
-  --color-gradient-referral-panel:      linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-side-menu-brand:     linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
+  --color-gradient-referral-card:       linear-gradient(90deg, var(--raw-surface-cam-panel) 0%, var(--raw-surface-cam-panel) 100%);
+  --color-gradient-referral-commission: linear-gradient(90deg, var(--raw-gradient-primary-card-start) 0%, var(--raw-gradient-primary-card-end) 100%);
+  --color-gradient-referral-deposit:    linear-gradient(90deg, var(--raw-gradient-secondary-card-start) 0%, var(--raw-gradient-secondary-card-end) 100%);
+  --color-gradient-referral-icon:       linear-gradient(90deg, var(--raw-gradient-icon-start) 0%, var(--raw-gradient-icon-end) 100%);
+  --color-gradient-referral-panel:      linear-gradient(90deg, var(--mono-300) 0%, var(--mono-300) 100%);
+  --color-gradient-side-menu-brand:     linear-gradient(90deg, var(--raw-gradient-cam-icon-start) 0%, var(--raw-gradient-cam-icon-end) 100%);
   --color-gradient-side-menu-warm:      linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
-  --color-gradient-sidenav-highlight:   linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
+  --color-gradient-sidenav-highlight:   linear-gradient(90deg, var(--raw-gradient-cam-highlight-start) 0%, var(--raw-gradient-cam-highlight-end) 100%);
   --color-gradient-sidenav-info:        linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
   --color-gradient-sidenav-scrim:       linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
   --color-gradient-slot-panel:          linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
   --color-gradient-sports-button:       linear-gradient(90deg, var(--raw-gradient-sports-button-start) 0%, var(--raw-gradient-sports-button-end) 100%);
   --color-gradient-sports-card:         linear-gradient(90deg, var(--raw-gradient-sports-card-start) 0%, var(--raw-gradient-sports-card-end) 100%);
   /* missing start/end for color/gradient/sports/stage */
-  --color-gradient-table:               linear-gradient(90deg, var(--brand-700) 0%, var(--mono-720) 100%);
+  --color-gradient-table:               linear-gradient(90deg, var(--raw-surface-cam-base) 0%, var(--raw-surface-cam-base) 100%);
   --color-gradient-tag:                 linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
 
   /* table */
