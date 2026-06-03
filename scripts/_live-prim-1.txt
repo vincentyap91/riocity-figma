@@ -1,4 +1,3 @@
-mono/862	#27282b
 mono/865	#2e2f33
 mono/867	#2d3035
 mono/868	#2e2f2f
@@ -71,6 +70,7 @@ raw-icon-rank-alert-highlight	#ef5350
 raw-icon-rank-first-mark	#dd810e
 raw-icon-rank-second-mark	#e9e9e9
 raw-icon-rank-third-mark	#623c16
+raw-input-muted	#b0baea
 raw-muted	#b6b6b6
 raw-muted-text	#737373
 raw-progress-bar	#8995d3
@@ -85,6 +85,7 @@ raw-surface-cam-muted	#717fc3
 raw-surface-cam-panel	#eeeeff
 raw-surface-cam-table	#f6ecff
 raw-surface-game-stage	#090909
+raw-surface-hover	#8995d3
 raw-surface-sports-button	#152d0e
 raw-text-cam-primary	#0c162f
 raw-text-muted	#34393a

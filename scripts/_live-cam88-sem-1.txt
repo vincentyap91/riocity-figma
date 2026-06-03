@@ -1,4 +1,3 @@
-color/gradient/check-in/reward/end	accent/476
 color/gradient/check-in/reward/start	accent/475
 color/gradient/dashboard/warm/end	accent/orange-700
 color/gradient/dashboard/warm/start	accent/orange-500
@@ -8,8 +7,10 @@ color/gradient/home/card/end	raw-gradient-rank-selected-end
 color/gradient/home/card/start	raw-gradient-rank-selected-start
 color/gradient/home/cta/end	raw-gradient/home-cta-edge
 color/gradient/home/cta/start	brand/500
-color/gradient/home/highlight/end	brand/500
-color/gradient/home/highlight/start	brand/500
+color/gradient/home/dashboard/end	raw-surface-cam-base
+color/gradient/home/dashboard/start	raw-surface-cam-base
+color/gradient/home/highlight/end	color/gradient/button/cta/end
+color/gradient/home/highlight/start	color/gradient/button/cta/start
 color/gradient/home/muted/end	mono/604
 color/gradient/home/muted/start	mono/542
 color/gradient/rank/first/end	raw-gradient-rank-first-end
@@ -47,8 +48,8 @@ color/gradient/sports/button/start	raw-gradient-sports-button-start
 color/gradient/sports/card/end	raw-gradient-sports-card-end
 color/gradient/sports/card/start	raw-gradient-sports-card-start
 color/gradient/sports/stage/end	raw-gradient-sports-stage-end
-color/gradient/tag/end	support/danger-maroon
-color/gradient/tag/start	support/error-bright
+color/gradient/tag/end	color/danger/maroon
+color/gradient/tag/start	color/error/bright
 color/icon/action	mono/580
 color/icon/check-in/active	raw-gradient-cam-icon-end
 color/icon/check-in/muted	raw-surface-cam-highlight
@@ -71,7 +72,7 @@ color/popup/body	raw-surface-cam-panel
 color/popup/head	mono/300
 color/primary	raw-brand-cam
 color/progress/bar/bg	raw-progress-bar
-color/progress/bar/fill	brand/500
+color/progress/bar/fill	color/primary
 color/secondary	mono/0
 color/success	support/success
 color/success/light	support/success-light

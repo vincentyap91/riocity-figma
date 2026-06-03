@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-05-29 | Primitives: Value | Semantic: Default
+ * Exported: 2026-06-03 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -292,6 +292,7 @@
   --raw-icon-rank-first-mark: #dd810e;
   --raw-icon-rank-second-mark: #e9e9e9;
   --raw-icon-rank-third-mark: #623c16;
+  --raw-input-muted: #b0baea;
   --raw-muted: #b6b6b6;
   --raw-muted-text: #737373;
   --raw-progress-bar: #8995d3;
@@ -306,6 +307,7 @@
   --raw-surface-cam-panel: #eeeeff;
   --raw-surface-cam-table: #f6ecff;
   --raw-surface-game-stage: #090909;
+  --raw-surface-hover: #8995d3;
   --raw-surface-sports-button: #152d0e;
   --raw-text-cam-primary: #0c162f;
   --raw-text-muted: #34393a;
@@ -318,6 +320,7 @@
   /* text */
   --color-text-accent: var(--accent-460);
   --color-text-accent-deep: var(--accent-420);
+  --color-text-accent-light: var(--accent-460);
   --color-text-card-text: var(--mono-0);
   --color-text-check-in-day-active: var(--brand-862);
   --color-text-check-in-day-muted: var(--mono-475);
@@ -334,6 +337,7 @@
   --color-text-fourth: var(--mono-750);
   --color-text-game-title: var(--mono-660);
   --color-text-highlight: var(--raw-promo-date);
+  --color-text-hover: var(--mono-950);
   --color-text-label: var(--mono-490);
   --color-text-light: var(--mono-488);
   --color-text-link: var(--support-link);
@@ -366,6 +370,7 @@
   /* surface */
   --color-surface: var(--mono-900);
   --color-surface-accent: var(--mono-330);
+  --color-surface-accent-hover: var(--brand-700);
   --color-surface-base: var(--mono-910);
   --color-surface-base-dark: var(--mono-808);
   --color-surface-border: var(--mono-870);
@@ -388,6 +393,7 @@
   --color-surface-chip: var(--mono-632);
   --color-surface-chip-hover: var(--brand-500);
   --color-surface-chip-info: var(--brand-839);
+  --color-surface-chip-muted: var(--mono-640);
   --color-surface-code: var(--mono-622);
   --color-surface-coloful-deep: var(--brand-850);
   --color-surface-colorful: var(--brand-700);
@@ -506,7 +512,8 @@
   --color-button-cta-secondary-text: var(--mono-0);
   --color-button-cta-tertiary: var(--mono-330);
   --color-button-cta-tertiary-text: var(--mono-0);
-  --color-button-dashboard: var(--brand-500);
+  --color-button-dashboard-primary-end: var(--brand-500);
+  --color-button-dashboard-primary-start: var(--brand-500);
   --color-button-disabled: var(--brand-830);
   --color-button-hover: var(--brand-630);
   --color-button-hover-text: var(--brand-500);
@@ -609,37 +616,39 @@
   --color-secondary: var(--mono-0);
 
   /* gradient */
-  --color-gradient-button-cta:          linear-gradient(90deg, var(--brand-500) 0%, var(--brand-500) 100%);
-  --color-gradient-card-brand:          linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
-  --color-gradient-check-in-card:       linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
-  --color-gradient-check-in-day:        linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
-  --color-gradient-check-in-reward:     linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
-  --color-gradient-dashboard-warm:      linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
-  --color-gradient-header-balance:      linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
-  --color-gradient-home-card:           linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-home-cta:            linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
-  --color-gradient-home-highlight:      linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
-  --color-gradient-home-muted:          linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
-  --color-gradient-rank-first:          linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
-  --color-gradient-rank-second:         linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);
-  --color-gradient-rank-third:          linear-gradient(90deg, var(--raw-gradient-rank-third-start) 0%, var(--raw-gradient-rank-third-end) 100%);
-  --color-gradient-referral-card:       linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
-  --color-gradient-referral-commission: linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
-  --color-gradient-referral-deposit:    linear-gradient(90deg, var(--accent-brown-700) 0%, var(--support-danger-maroon) 100%);
-  --color-gradient-referral-icon:       linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
-  --color-gradient-referral-panel:      linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-side-menu-brand:     linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
-  --color-gradient-side-menu-warm:      linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
-  --color-gradient-sidenav-daily-bonus: linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
-  --color-gradient-sidenav-highlight:   linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
-  --color-gradient-sidenav-info:        linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
-  --color-gradient-sidenav-scrim:       linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
-  --color-gradient-slot-panel:          linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
-  --color-gradient-sports-button:       linear-gradient(90deg, var(--raw-gradient-sports-button-start) 0%, var(--raw-gradient-sports-button-end) 100%);
-  --color-gradient-sports-card:         linear-gradient(90deg, var(--raw-gradient-sports-card-start) 0%, var(--raw-gradient-sports-card-end) 100%);
+  --color-gradient-button-cta:             linear-gradient(90deg, var(--brand-500) 0%, var(--brand-500) 100%);
+  --color-gradient-card-brand:             linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
+  --color-gradient-check-in-card:          linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
+  --color-gradient-check-in-day:           linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
+  --color-gradient-check-in-reward:        linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
+  /* missing start/end for color/gradient/dashboard/button/brand */
+  --color-gradient-dashboard-warm:         linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
+  --color-gradient-header-balance:         linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
+  --color-gradient-home-card:              linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-home-cta:               linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
+  --color-gradient-home-dashboard:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-home-highlight:         linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-muted:             linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
+  --color-gradient-rank-first:             linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
+  --color-gradient-rank-second:            linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);
+  --color-gradient-rank-third:             linear-gradient(90deg, var(--raw-gradient-rank-third-start) 0%, var(--raw-gradient-rank-third-end) 100%);
+  --color-gradient-referral-card:          linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
+  --color-gradient-referral-commission:    linear-gradient(90deg, var(--brand-826) 0%, var(--brand-820) 100%);
+  --color-gradient-referral-deposit:       linear-gradient(90deg, var(--accent-brown-700) 0%, var(--support-danger-maroon) 100%);
+  --color-gradient-referral-icon:          linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
+  --color-gradient-referral-panel:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-side-menu-brand:        linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
+  --color-gradient-side-menu-warm:         linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
+  --color-gradient-sidenav-daily-bonus:    linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
+  --color-gradient-sidenav-highlight:      linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
+  --color-gradient-sidenav-info:           linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
+  --color-gradient-sidenav-scrim:          linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
+  --color-gradient-slot-panel:             linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
+  --color-gradient-sports-button:          linear-gradient(90deg, var(--raw-gradient-sports-button-start) 0%, var(--raw-gradient-sports-button-end) 100%);
+  --color-gradient-sports-card:            linear-gradient(90deg, var(--raw-gradient-sports-card-start) 0%, var(--raw-gradient-sports-card-end) 100%);
   /* missing start/end for color/gradient/sports/stage */
-  --color-gradient-table:               linear-gradient(90deg, var(--brand-700) 0%, var(--mono-720) 100%);
-  --color-gradient-tag:                 linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
+  --color-gradient-table:                  linear-gradient(90deg, var(--brand-700) 0%, var(--mono-720) 100%);
+  --color-gradient-tag:                    linear-gradient(90deg, var(--support-error-bright) 0%, var(--support-danger-maroon) 100%);
 
   /* table */
   --color-table-highlight: var(--color-gradient-table);
