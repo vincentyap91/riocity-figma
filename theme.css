@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-06-03 | Primitives: Value | Semantic: Default
+ * Exported: 2026-05-29 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -334,6 +334,7 @@
   --color-text-fourth: var(--mono-750);
   --color-text-game-title: var(--mono-660);
   --color-text-highlight: var(--raw-promo-date);
+  --color-text-hover: var(--mono-950);
   --color-text-label: var(--mono-490);
   --color-text-light: var(--mono-488);
   --color-text-link: var(--support-link);
@@ -386,7 +387,7 @@
   --color-surface-check-in-inverse: var(--accent-450);
   --color-surface-check-in-text: var(--brand-500);
   --color-surface-chip: var(--mono-632);
-  --color-surface-chip-hover: var(--mono-640);
+  --color-surface-chip-hover: var(--accent-420);
   --color-surface-chip-info: var(--brand-839);
   --color-surface-code: var(--mono-622);
   --color-surface-coloful-deep: var(--brand-850);

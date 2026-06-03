@@ -47,6 +47,7 @@ color/text/four-title	raw-brand-cam
 color/text/fourth	mono/750
 color/text/game-title	mono/660
 color/text/highlight	raw-highlight-cam
+color/text/hover	mono/0
 color/text/label	mono/490
 color/text/light	mono/0
 color/text/link	raw-brand-cam

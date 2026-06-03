@@ -476,7 +476,7 @@ color/surface/check-in/icon\tmono/650
 color/surface/check-in/inverse\taccent/450
 color/surface/check-in/text\tbrand/500
 color/surface/chip\tmono/632
-color/surface/chip-hover\tmono/640
+color/surface/chip-hover\taccent/420
 color/surface/chip-info\tbrand/839
 color/surface/code\tmono/622
 color/surface/coloful-deep\tbrand/850
@@ -574,6 +574,7 @@ color/text/four-title\taccent/450
 color/text/fourth\tmono/750
 color/text/game-title\tmono/660
 color/text/highlight\traw-promo-date
+color/text/hover\tmono/950
 color/text/label\tmono/490
 color/text/light\tmono/488
 color/text/link\tsupport/link
