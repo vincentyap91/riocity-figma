@@ -1,4 +1,3 @@
-color/success/lime-deep	support/lime-deep
 color/success/lime-medium	support/lime-medium
 color/success/mid	support/success-mid
 color/success/positive	support/success-bright
@@ -6,7 +5,7 @@ color/success/strong	raw-rank-border
 color/success/vivid	support/lime-vivid
 color/success/vivid-green	support/success-vivid
 color/surface	raw-surface-cam
-color/surface/accent	mono/750
+color/surface/accent	mono/300
 color/surface/base	raw-surface-cam-base
 color/surface/base-dark	mono/808
 color/surface/border	mono/870
@@ -29,6 +28,7 @@ color/surface/check-in/text	raw-gradient-cam-icon-end
 color/surface/chip	brand/500
 color/surface/chip-hover	raw-brand-cam-strong
 color/surface/chip-info	brand/839
+color/surface/chip-muted	raw-surface-cam-base
 color/surface/code	mono/622
 color/surface/coloful-deep	brand/850
 color/surface/colorful	raw-progress-bar
@@ -76,3 +76,4 @@ color/surface/mid/color	brand/500
 color/surface/mid/container	raw-text-cam-primary
 color/surface/mid/text	mono/0
 color/surface/nav	raw-surface-cam-menu
+color/surface/navy	support/navy

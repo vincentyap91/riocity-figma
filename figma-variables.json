@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-05-29",
+  "exportedAt": "2026-06-03",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -3048,7 +3048,7 @@
       },
       {
         "name": "color/surface/accent",
-        "aliasTo": "mono/750"
+        "aliasTo": "mono/300"
       },
       {
         "name": "color/surface/base",
@@ -3137,6 +3137,10 @@
       {
         "name": "color/surface/chip-info",
         "aliasTo": "brand/839"
+      },
+      {
+        "name": "color/surface/chip-muted",
+        "aliasTo": "raw-surface-cam-base"
       },
       {
         "name": "color/surface/code",
@@ -3360,11 +3364,11 @@
       },
       {
         "name": "color/surface/panel-border",
-        "aliasTo": "mono/750"
+        "aliasTo": "mono/300"
       },
       {
         "name": "color/surface/primary-shape",
-        "aliasTo": "support/success-strong"
+        "aliasTo": "mono/0909"
       },
       {
         "name": "color/surface/qrcode",
@@ -3495,16 +3499,16 @@
         "aliasTo": "mono/565"
       },
       {
-        "name": "color/text/footer",
-        "aliasTo": "mono/0"
-      },
-      {
         "name": "color/text/fifth",
         "aliasTo": "mono/950"
       },
       {
         "name": "color/text/fifth-title",
         "aliasTo": "mono/660"
+      },
+      {
+        "name": "color/text/footer",
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/text/four-title",
@@ -3521,6 +3525,10 @@
       {
         "name": "color/text/highlight",
         "aliasTo": "raw-highlight-cam"
+      },
+      {
+        "name": "color/text/hover",
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/text/label",

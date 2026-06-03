@@ -76,3 +76,4 @@ color/secondary	mono/0
 color/success	support/success
 color/success/light	support/success-light
 color/success/lime-bright	support/lime-bright
+color/success/lime-deep	support/lime-deep

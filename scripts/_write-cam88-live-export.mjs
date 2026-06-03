@@ -247,7 +247,7 @@ color/surface/notify\tmono/750
 color/surface/overlay-dark\tmono/775
 color/surface/pale-blue\tmono/112
 color/surface/panel\traw-surface-cam-panel
-color/surface/panel-border\tmono/750
+color/surface/panel-border\tmono/300
 color/surface/qrcode\tmono/0
 color/surface/referral-card\tmono/750
 color/surface/referral-input\traw-surface-cam-input
