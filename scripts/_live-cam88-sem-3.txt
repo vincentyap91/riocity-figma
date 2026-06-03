@@ -40,6 +40,7 @@ color/text/dim	mono/604
 color/text/disabled	raw-disabled-text
 color/text/download	mono/0
 color/text/faded	mono/565
+color/text/footer	mono/0
 color/text/fifth	mono/950
 color/text/fifth-title	mono/660
 color/text/four-title	raw-brand-cam

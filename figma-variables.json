@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-06-03",
+  "exportedAt": "2026-05-29",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -2234,6 +2234,10 @@
         "aliasTo": "mono/565"
       },
       {
+        "name": "color/text/footer",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/text/fifth",
         "aliasTo": "mono/950"
       },
@@ -3489,6 +3493,10 @@
       {
         "name": "color/text/faded",
         "aliasTo": "mono/565"
+      },
+      {
+        "name": "color/text/footer",
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/text/fifth",

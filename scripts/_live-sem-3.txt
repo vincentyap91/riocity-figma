@@ -38,6 +38,7 @@ color/text/dim	mono/604
 color/text/disabled	mono/220
 color/text/download	support/link
 color/text/faded	mono/565
+color/text/footer	mono/0
 color/text/fifth	mono/950
 color/text/fifth-title	brand/500
 color/text/four-title	accent/450

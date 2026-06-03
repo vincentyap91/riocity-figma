@@ -329,6 +329,7 @@
   --color-text-faded: var(--mono-565);
   --color-text-fifth: var(--mono-950);
   --color-text-fifth-title: var(--brand-500);
+  --color-text-footer: var(--mono-0);
   --color-text-four-title: var(--accent-450);
   --color-text-fourth: var(--mono-750);
   --color-text-game-title: var(--mono-660);

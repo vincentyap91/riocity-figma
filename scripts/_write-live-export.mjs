@@ -567,6 +567,7 @@ color/text/dim\tmono/604
 color/text/disabled\tmono/220
 color/text/download\tsupport/link
 color/text/faded\tmono/565
+color/text/footer\tmono/0
 color/text/fifth\tmono/950
 color/text/fifth-title\tbrand/500
 color/text/four-title\taccent/450
