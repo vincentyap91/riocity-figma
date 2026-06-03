@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-05-29",
+  "exportedAt": "2026-06-03",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -110,7 +110,7 @@
       },
       {
         "name": "brand/500-soft",
-        "css": "rgba(69, 255, 139, 0.2)"
+        "css": "#45ff8b33"
       },
       {
         "name": "brand/600",
@@ -266,7 +266,7 @@
       },
       {
         "name": "mono/0909",
-        "css": "rgba(255, 255, 255, 0)"
+        "css": "#ffffff00"
       },
       {
         "name": "mono/105",
@@ -322,7 +322,7 @@
       },
       {
         "name": "mono/330-a0",
-        "css": "rgba(51, 51, 51, 0)"
+        "css": "#33333300"
       },
       {
         "name": "mono/350",
@@ -618,7 +618,7 @@
       },
       {
         "name": "mono/950-a25",
-        "css": "rgba(0, 0, 0, 0.25)"
+        "css": "#00000040"
       },
       {
         "name": "mono/990",
@@ -626,31 +626,31 @@
       },
       {
         "name": "overlay/default",
-        "css": "rgba(0, 0, 0, 0.6)"
+        "css": "#00000099"
       },
       {
         "name": "overlay/hairline",
-        "css": "rgba(255, 255, 255, 0.1)"
+        "css": "#ffffff1a"
       },
       {
         "name": "overlay/scrim",
-        "css": "rgba(0, 0, 0, 0.2)"
+        "css": "#00000033"
       },
       {
         "name": "overlay/shadow-soft",
-        "css": "rgba(29, 34, 37, 0.1)"
+        "css": "#1d22251a"
       },
       {
         "name": "overlay/sports-card",
-        "css": "rgba(7, 13, 24, 0.4)"
+        "css": "#070d1866"
       },
       {
         "name": "overlay/sports-event",
-        "css": "rgba(7, 24, 9, 0.4)"
+        "css": "#07180966"
       },
       {
         "name": "overlay/strong",
-        "css": "rgba(0, 0, 0, 0.8)"
+        "css": "#000000cc"
       },
       {
         "name": "raw-bar",
@@ -694,7 +694,7 @@
       },
       {
         "name": "raw-effect-cam-glow",
-        "css": "rgba(69, 100, 255, 0.2)"
+        "css": "#4564ff33"
       },
       {
         "name": "raw-gradient-cam-highlight-end",
@@ -711,6 +711,14 @@
       {
         "name": "raw-gradient-cam-icon-start",
         "css": "#1f223c"
+      },
+      {
+        "name": "raw-gradient-fourth-end",
+        "css": "#b3520c"
+      },
+      {
+        "name": "raw-gradient-fourth-start",
+        "css": "#433300"
       },
       {
         "name": "raw-gradient-icon-end",
@@ -793,8 +801,16 @@
         "css": "#925624"
       },
       {
-        "name": "raw-gradient/tag-start",
+        "name": "raw-gradient-tag-start",
         "css": "#eea45f"
+      },
+      {
+        "name": "raw-gradient-tertiery-end",
+        "css": "#771405"
+      },
+      {
+        "name": "raw-gradient-tertiery-start",
+        "css": "#430000"
       },
       {
         "name": "raw-gradient/home-cta-edge",
@@ -1562,6 +1578,14 @@
         "aliasTo": "accent/brown-800"
       },
       {
+        "name": "color/gradient/sidenav/daily-bonus/end",
+        "aliasTo": "brand/760"
+      },
+      {
+        "name": "color/gradient/sidenav/daily-bonus/start",
+        "aliasTo": "brand/810"
+      },
+      {
         "name": "color/gradient/sidenav/highlight/end",
         "aliasTo": "accent/310"
       },
@@ -2202,6 +2226,10 @@
         "aliasTo": "mono/220"
       },
       {
+        "name": "color/text/download",
+        "aliasTo": "support/link"
+      },
+      {
         "name": "color/text/faded",
         "aliasTo": "mono/565"
       },
@@ -2801,6 +2829,14 @@
       {
         "name": "color/gradient/side-menu/warm/start",
         "aliasTo": "accent/brown-800"
+      },
+      {
+        "name": "color/gradient/sidenav/daily-bonus/end",
+        "aliasTo": "raw-gradient-tertiery-end"
+      },
+      {
+        "name": "color/gradient/sidenav/daily-bonus/start",
+        "aliasTo": "raw-gradient-tertiery-start"
       },
       {
         "name": "color/gradient/sidenav/highlight/end",
@@ -3425,6 +3461,10 @@
       {
         "name": "color/text/disabled",
         "aliasTo": "raw-disabled-text"
+      },
+      {
+        "name": "color/text/download",
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/text/faded",
