@@ -486,7 +486,7 @@
 
   /* button */
   --color-button-accent: var(--brand-500);
-  --color-button-accent-deep: var(--support-error-warm);
+  --color-button-accent-deep: var(--support-error-strong);
   --color-button-accordian-head: var(--raw-brand-cam);
   --color-button-back: var(--raw-cam-muted);
   --color-button-cta: var(--raw-brand-cam);
