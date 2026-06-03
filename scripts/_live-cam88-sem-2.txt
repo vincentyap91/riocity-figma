@@ -27,7 +27,7 @@ color/surface/check-in/icon	raw-disabled-color
 color/surface/check-in/inverse	mono/0
 color/surface/check-in/text	raw-gradient-cam-icon-end
 color/surface/chip	brand/500
-color/surface/chip-hover	brand/500
+color/surface/chip-hover	raw-brand-cam-strong
 color/surface/chip-info	brand/839
 color/surface/code	mono/622
 color/surface/coloful-deep	brand/850

@@ -26,7 +26,7 @@ color/surface/check-in/icon	mono/650
 color/surface/check-in/inverse	accent/450
 color/surface/check-in/text	brand/500
 color/surface/chip	mono/632
-color/surface/chip-hover	accent/420
+color/surface/chip-hover	brand/500
 color/surface/chip-info	brand/839
 color/surface/code	mono/622
 color/surface/coloful-deep	brand/850

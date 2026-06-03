@@ -333,7 +333,6 @@
   --color-text-fourth: var(--mono-750);
   --color-text-game-title: var(--mono-660);
   --color-text-highlight: var(--raw-highlight-cam);
-  --color-text-hover: var(--mono-0);
   --color-text-label: var(--mono-490);
   --color-text-light: var(--mono-0);
   --color-text-link: var(--raw-brand-cam);
@@ -386,7 +385,7 @@
   --color-surface-check-in-inverse: var(--mono-0);
   --color-surface-check-in-text: var(--raw-gradient-cam-icon-end);
   --color-surface-chip: var(--brand-500);
-  --color-surface-chip-hover: var(--brand-500);
+  --color-surface-chip-hover: var(--raw-brand-cam-strong);
   --color-surface-chip-info: var(--brand-839);
   --color-surface-code: var(--mono-622);
   --color-surface-coloful-deep: var(--brand-850);

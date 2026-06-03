@@ -45,7 +45,6 @@ color/text/four-title	accent/450
 color/text/fourth	mono/750
 color/text/game-title	mono/660
 color/text/highlight	raw-promo-date
-color/text/hover	mono/950
 color/text/label	mono/490
 color/text/light	mono/488
 color/text/link	support/link

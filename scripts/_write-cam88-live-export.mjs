@@ -190,7 +190,7 @@ color/surface/check-in/footer\traw-surface-cam-highlight
 color/surface/check-in/icon\traw-disabled-color
 color/surface/check-in/text\traw-gradient-cam-icon-end
 color/surface/chip\tbrand/500
-color/surface/chip-hover\tbrand/500
+color/surface/chip-hover\traw-brand-cam-strong
 color/surface/chip-info\tbrand/839
 color/surface/code\tmono/622
 color/surface/coloful-deep\tbrand/850
@@ -285,7 +285,6 @@ color/text/four-title\traw-brand-cam
 color/text/fourth\tmono/750
 color/text/game-title\tmono/660
 color/text/highlight\traw-highlight-cam
-color/text/hover\tmono/0
 color/text/label\tmono/490
 color/text/light\tmono/0
 color/text/link\traw-brand-cam

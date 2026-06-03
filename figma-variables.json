@@ -1871,7 +1871,7 @@
       },
       {
         "name": "color/surface/chip-hover",
-        "aliasTo": "accent/420"
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/surface/chip-info",
@@ -2260,10 +2260,6 @@
       {
         "name": "color/text/highlight",
         "aliasTo": "raw-promo-date"
-      },
-      {
-        "name": "color/text/hover",
-        "aliasTo": "mono/950"
       },
       {
         "name": "color/text/label",
@@ -3136,7 +3132,7 @@
       },
       {
         "name": "color/surface/chip-hover",
-        "aliasTo": "brand/500"
+        "aliasTo": "raw-brand-cam-strong"
       },
       {
         "name": "color/surface/chip-info",
@@ -3525,10 +3521,6 @@
       {
         "name": "color/text/highlight",
         "aliasTo": "raw-highlight-cam"
-      },
-      {
-        "name": "color/text/hover",
-        "aliasTo": "mono/0"
       },
       {
         "name": "color/text/label",
