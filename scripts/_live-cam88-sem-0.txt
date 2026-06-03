@@ -1,6 +1,7 @@
 color/accent	support/error
 color/accent/check-in/reward	accent/470
 color/accent/chip	accent/420
+color/accent/glow	accent/200
 color/accent/gold	accent/360
 color/accent/gold-light	accent/200
 color/accent/gold-mid	accent/330
@@ -18,7 +19,7 @@ color/border/sports-market	raw-border-sports-market
 color/border/strong	raw-text-cam-primary
 color/border/subtle	mono/255
 color/button/accent	brand/500
-color/button/accent-deep	support/error-warm
+color/button/accent-deep	support/error-strong
 color/button/accordian-head	raw-brand-cam
 color/button/back	raw-cam-muted
 color/button/cta	raw-brand-cam
@@ -75,3 +76,4 @@ color/gradient/card/brand/start	raw-surface-cam-panel
 color/gradient/check-in/card/end	raw-gradient-primary-card-end
 color/gradient/check-in/card/start	raw-brand-cam
 color/gradient/check-in/day/end	brand/811
+color/gradient/check-in/day/start	brand/846

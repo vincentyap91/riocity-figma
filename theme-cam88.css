@@ -381,6 +381,7 @@
   --color-surface-check-in-day-current: var(--brand-847);
   --color-surface-check-in-footer: var(--raw-surface-cam-highlight);
   --color-surface-check-in-icon: var(--raw-disabled-color);
+  --color-surface-check-in-inverse: var(--mono-0);
   --color-surface-check-in-text: var(--raw-gradient-cam-icon-end);
   --color-surface-chip: var(--brand-500);
   --color-surface-chip-hover: var(--raw-surface-cam-base);
@@ -441,12 +442,15 @@
   --color-surface-pale-blue: var(--mono-112);
   --color-surface-panel: var(--raw-surface-cam-panel);
   --color-surface-panel-border: var(--mono-750);
+  --color-surface-primary-shape: var(--support-success-strong);
   --color-surface-qrcode: var(--mono-0);
   --color-surface-referral-card: var(--mono-750);
   --color-surface-referral-input: var(--raw-surface-cam-input);
   --color-surface-rtp-card: var(--brand-500);
   --color-surface-scrim-dark: var(--mono-798);
   --color-surface-search: var(--mono-896);
+  --color-surface-secondary-chip: var(--mono-632);
+  --color-surface-secondary-shape: var(--support-danger-maroon);
   --color-surface-secondary-table-head: var(--mono-697);
   --color-surface-sheet: var(--mono-697);
   --color-surface-sidebar: var(--mono-710);
@@ -476,6 +480,7 @@
   --color-accent: var(--support-error);
   --color-accent-check-in-reward: var(--accent-470);
   --color-accent-chip: var(--accent-420);
+  --color-accent-glow: var(--accent-200);
   --color-accent-gold: var(--accent-360);
   --color-accent-gold-light: var(--accent-200);
   --color-accent-gold-mid: var(--accent-330);

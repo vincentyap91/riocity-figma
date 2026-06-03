@@ -2395,6 +2395,10 @@
         "aliasTo": "accent/420"
       },
       {
+        "name": "color/accent/glow",
+        "aliasTo": "accent/200"
+      },
+      {
         "name": "color/accent/gold",
         "aliasTo": "accent/360"
       },
@@ -2464,7 +2468,7 @@
       },
       {
         "name": "color/button/accent-deep",
-        "aliasTo": "support/error-warm"
+        "aliasTo": "support/error-strong"
       },
       {
         "name": "color/button/accordian-head",
@@ -3111,6 +3115,10 @@
         "aliasTo": "raw-disabled-color"
       },
       {
+        "name": "color/surface/check-in/inverse",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/surface/check-in/text",
         "aliasTo": "raw-gradient-cam-icon-end"
       },
@@ -3351,6 +3359,10 @@
         "aliasTo": "mono/750"
       },
       {
+        "name": "color/surface/primary-shape",
+        "aliasTo": "support/success-strong"
+      },
+      {
         "name": "color/surface/qrcode",
         "aliasTo": "mono/0"
       },
@@ -3373,6 +3385,14 @@
       {
         "name": "color/surface/search",
         "aliasTo": "mono/896"
+      },
+      {
+        "name": "color/surface/secondary-chip",
+        "aliasTo": "mono/632"
+      },
+      {
+        "name": "color/surface/secondary-shape",
+        "aliasTo": "support/danger-maroon"
       },
       {
         "name": "color/surface/secondary-table-head",

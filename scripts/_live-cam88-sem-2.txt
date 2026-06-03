@@ -1,5 +1,3 @@
-color/success/light	support/success-light
-color/success/lime-bright	support/lime-bright
 color/success/lime-deep	support/lime-deep
 color/success/lime-medium	support/lime-medium
 color/success/mid	support/success-mid
@@ -26,6 +24,7 @@ color/surface/check-in/day-bg	raw-gradient-cam-icon-start
 color/surface/check-in/day-current	brand/847
 color/surface/check-in/footer	raw-surface-cam-highlight
 color/surface/check-in/icon	raw-disabled-color
+color/surface/check-in/inverse	mono/0
 color/surface/check-in/text	raw-gradient-cam-icon-end
 color/surface/chip	brand/500
 color/surface/chip-hover	raw-surface-cam-base
@@ -75,3 +74,5 @@ color/surface/mid	mono/660
 color/surface/mid-dark	raw-surface-cam-base
 color/surface/mid/color	brand/500
 color/surface/mid/container	raw-text-cam-primary
+color/surface/mid/text	mono/0
+color/surface/nav	raw-surface-cam-menu

@@ -1,4 +1,3 @@
-color/gradient/check-in/day/start	brand/846
 color/gradient/check-in/reward/end	accent/476
 color/gradient/check-in/reward/start	accent/475
 color/gradient/dashboard/warm/end	accent/orange-700
@@ -75,3 +74,5 @@ color/progress/bar/bg	raw-progress-bar
 color/progress/bar/fill	brand/500
 color/secondary	mono/0
 color/success	support/success
+color/success/light	support/success-light
+color/success/lime-bright	support/lime-bright
