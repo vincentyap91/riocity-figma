@@ -25,10 +25,14 @@ color/button/accent-deep	accent/360
 color/button/accordian-head	mono/0
 color/button/back	mono/510
 color/button/cta	color/primary
+color/button/cta-arrow	color/primary
+color/button/cta-arrow-selected	mono/0
 color/button/cta-fifth	color/surface
 color/button/cta-fifth-text	mono/0
 color/button/cta-fourth	color/button/accent
 color/button/cta-fourth-text	color/text/tertiary
+color/button/cta-pagination	mono/310
+color/button/cta-pagination-selected	color/surface/colorful
 color/button/cta-primary	color/text/tertiary
 color/button/cta-secondary	support/success-strong
 color/button/cta-secondary-text	color/text/primary

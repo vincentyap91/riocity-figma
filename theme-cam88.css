@@ -509,10 +509,14 @@
   --color-button-accordian-head: var(--mono-0);
   --color-button-back: var(--raw-cam-muted);
   --color-button-cta: var(--raw-brand-cam);
+  --color-button-cta-arrow: var(--raw-brand-cam);
+  --color-button-cta-arrow-selected: var(--mono-0);
   --color-button-cta-fifth: var(--mono-697);
   --color-button-cta-fifth-text: var(--mono-0);
   --color-button-cta-fourth: var(--raw-brand-cam);
   --color-button-cta-fourth-text: var(--mono-0);
+  --color-button-cta-pagination: var(--mono-300);
+  --color-button-cta-pagination-selected: var(--raw-brand-cam);
   --color-button-cta-primary: var(--mono-0);
   --color-button-cta-secondary: var(--raw-brand-cam);
   --color-button-cta-secondary-text: var(--mono-0);

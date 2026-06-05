@@ -25,10 +25,14 @@ color/button/accent-deep	support/error-strong
 color/button/accordian-head	mono/0
 color/button/back	raw-cam-muted
 color/button/cta	raw-brand-cam
+color/button/cta-arrow	color/primary
+color/button/cta-arrow-selected	mono/0
 color/button/cta-fifth	mono/697
 color/button/cta-fifth-text	mono/0
 color/button/cta-fourth	color/primary
 color/button/cta-fourth-text	mono/0
+color/button/cta-pagination	mono/300
+color/button/cta-pagination-selected	color/primary
 color/button/cta-primary	mono/0
 color/button/cta-secondary	raw-brand-cam
 color/button/cta-secondary-text	mono/0

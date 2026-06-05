@@ -1246,6 +1246,14 @@
         "aliasTo": "color/primary"
       },
       {
+        "name": "color/button/cta-arrow",
+        "aliasTo": "color/primary"
+      },
+      {
+        "name": "color/button/cta-arrow-selected",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/button/cta-fifth",
         "aliasTo": "color/surface"
       },
@@ -1260,6 +1268,14 @@
       {
         "name": "color/button/cta-fourth-text",
         "aliasTo": "color/text/tertiary"
+      },
+      {
+        "name": "color/button/cta-pagination",
+        "aliasTo": "mono/310"
+      },
+      {
+        "name": "color/button/cta-pagination-selected",
+        "aliasTo": "color/surface/colorful"
       },
       {
         "name": "color/button/cta-primary",
@@ -2587,6 +2603,14 @@
         "aliasTo": "raw-brand-cam"
       },
       {
+        "name": "color/button/cta-arrow",
+        "aliasTo": "color/primary"
+      },
+      {
+        "name": "color/button/cta-arrow-selected",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/button/cta-fifth",
         "aliasTo": "mono/697"
       },
@@ -2601,6 +2625,14 @@
       {
         "name": "color/button/cta-fourth-text",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/button/cta-pagination",
+        "aliasTo": "mono/300"
+      },
+      {
+        "name": "color/button/cta-pagination-selected",
+        "aliasTo": "color/primary"
       },
       {
         "name": "color/button/cta-primary",
