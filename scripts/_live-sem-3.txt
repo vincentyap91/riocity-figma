@@ -67,6 +67,7 @@ color/text/small	mono/400
 color/text/soft	mono/472
 color/text/sports-muted	raw-text-sports-muted
 color/text/sports-primary	raw-text-sports-primary
+color/text/sticky-nav-text	mono/0
 color/text/sub-highlight	accent/460
 color/text/sub-title	color/warning
 color/text/subtle	mono/542

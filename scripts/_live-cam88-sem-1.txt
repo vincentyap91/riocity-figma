@@ -74,7 +74,7 @@ color/primary	raw-brand-cam
 color/progress/bar/bg	raw-progress-bar
 color/progress/bar/fill	color/primary
 color/secondary	mono/0
+color/sticky-nav	raw-brand-cam
 color/success	support/success
 color/success/light	support/success-light
 color/success/lime-bright	support/lime-bright
-color/success/lime-deep	support/lime-deep

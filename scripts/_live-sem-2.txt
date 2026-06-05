@@ -1,3 +1,4 @@
+color/success/lime-deep	support/lime-deep
 color/success/lime-medium	support/lime-medium
 color/success/mid	support/success-mid
 color/success/positive	support/success-bright

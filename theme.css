@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-06-03 | Primitives: Value | Semantic: Default
+ * Exported: 2026-06-05 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -358,6 +358,7 @@
   --color-text-soft: var(--mono-472);
   --color-text-sports-muted: var(--raw-text-sports-muted);
   --color-text-sports-primary: var(--raw-text-sports-primary);
+  --color-text-sticky-nav-text: var(--mono-0);
   --color-text-sub-highlight: var(--accent-460);
   --color-text-sub-title: var(--support-warning);
   --color-text-subtle: var(--mono-542);
@@ -615,6 +616,9 @@
   /* secondary */
   --color-secondary: var(--mono-0);
 
+  /* sticky-nav */
+  --color-sticky-nav: var(--mono-910);
+
   /* gradient */
   --color-gradient-button-cta:             linear-gradient(90deg, var(--brand-500) 0%, var(--brand-500) 100%);
   --color-gradient-card-brand:             linear-gradient(90deg, var(--brand-700) 0%, var(--brand-826) 100%);
@@ -627,7 +631,7 @@
   --color-gradient-home-card:              linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
   --color-gradient-home-cta:               linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
   --color-gradient-home-dashboard:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-home-highlight:         linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-highlight:         linear-gradient(180deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
   --color-gradient-home-muted:             linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
   --color-gradient-rank-first:             linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:            linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);

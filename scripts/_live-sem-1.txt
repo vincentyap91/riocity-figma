@@ -75,7 +75,7 @@ color/primary	brand/500
 color/progress/bar/bg	color/surface/deep-dark
 color/progress/bar/fill	color/primary
 color/secondary	mono/0
+color/sticky-nav	mono/910
 color/success	support/success
 color/success/light	support/success-light
 color/success/lime-bright	support/lime-bright
-color/success/lime-deep	support/lime-deep
