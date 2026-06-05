@@ -1,4 +1,3 @@
-mono/865	#2e2f33
 mono/867	#2d3035
 mono/868	#2e2f2f
 mono/870	#3a3a3a
@@ -15,6 +14,7 @@ mono/950-a25	rgba(0, 0, 0, 0.25)
 mono/990	#99a4b0
 overlay/default	rgba(0, 0, 0, 0.6)
 overlay/hairline	rgba(255, 255, 255, 0.1)
+overlay/inverse	rgba(255, 255, 255, 0.6)
 overlay/scrim	rgba(0, 0, 0, 0.2)
 overlay/shadow-soft	rgba(29, 34, 37, 0.1)
 overlay/sports-card	rgba(7, 13, 24, 0.4)

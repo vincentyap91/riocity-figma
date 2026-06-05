@@ -63,6 +63,7 @@ color/icon/rank/first	raw-icon-rank-first-mark
 color/icon/rank/second	raw-icon-rank-second-mark
 color/icon/rank/third	raw-icon-rank-third-mark
 color/icon/subtle	mono/560
+color/icon/um	brand/500
 color/info/icon	mono/648
 color/info/steel-light	support/steel-light
 color/muted	mono/510

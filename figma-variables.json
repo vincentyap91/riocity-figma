@@ -633,6 +633,10 @@
         "css": "rgba(255, 255, 255, 0.1)"
       },
       {
+        "name": "overlay/inverse",
+        "css": "rgba(255, 255, 255, 0.6)"
+      },
+      {
         "name": "overlay/scrim",
         "css": "rgba(0, 0, 0, 0.2)"
       },
@@ -1326,6 +1330,14 @@
         "aliasTo": "mono/0"
       },
       {
+        "name": "color/button/pagination",
+        "aliasTo": "mono/310"
+      },
+      {
+        "name": "color/button/pagination-arrow",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/button/pagination-disabled",
         "aliasTo": "mono/666"
       },
@@ -1724,6 +1736,10 @@
       {
         "name": "color/icon/subtle",
         "aliasTo": "mono/560"
+      },
+      {
+        "name": "color/icon/um",
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/info/icon",
@@ -2655,6 +2671,14 @@
         "aliasTo": "mono/0"
       },
       {
+        "name": "color/button/pagination",
+        "aliasTo": "raw-content-cam-nav"
+      },
+      {
+        "name": "color/button/pagination-arrow",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/button/pagination-disabled",
         "aliasTo": "raw-cam-muted"
       },
@@ -3051,6 +3075,10 @@
         "aliasTo": "raw-content-cam-nav"
       },
       {
+        "name": "color/icon/um",
+        "aliasTo": "raw-brand-cam"
+      },
+      {
         "name": "color/info/icon",
         "aliasTo": "mono/648"
       },
@@ -3064,7 +3092,7 @@
       },
       {
         "name": "color/overlay",
-        "aliasTo": "overlay/default"
+        "aliasTo": "overlay/inverse"
       },
       {
         "name": "color/overlay/sports-card",

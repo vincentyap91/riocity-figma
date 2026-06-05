@@ -233,6 +233,7 @@
   /* overlay */
   --overlay-default: rgba(0, 0, 0, 0.6);
   --overlay-hairline: rgba(255, 255, 255, 0.1);
+  --overlay-inverse: rgba(255, 255, 255, 0.6);
   --overlay-scrim: rgba(0, 0, 0, 0.2);
   --overlay-shadow-soft: rgba(29, 34, 37, 0.1);
   --overlay-sports-card: rgba(7, 13, 24, 0.4);
@@ -530,6 +531,8 @@
   --color-button-menu-active: var(--brand-500);
   --color-button-muted: var(--mono-510);
   --color-button-muted-text: var(--mono-0);
+  --color-button-pagination: var(--mono-310);
+  --color-button-pagination-arrow: var(--mono-0);
   --color-button-pagination-disabled: var(--mono-666);
   --color-button-referral-cta: var(--support-warning);
   --color-button-referral-cta-text: var(--accent-brown-800);
@@ -612,6 +615,7 @@
   --color-icon-rank-second: var(--raw-icon-rank-second-mark);
   --color-icon-rank-third: var(--raw-icon-rank-third-mark);
   --color-icon-subtle: var(--mono-560);
+  --color-icon-um: var(--brand-500);
 
   /* transparent */
   --color-transparent: var(--mono-0909);
@@ -639,8 +643,8 @@
   --color-gradient-header-balance:         linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
   --color-gradient-home-card:              linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
   --color-gradient-home-cta:               linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
-  --color-gradient-home-dashboard:         linear-gradient(180deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-home-highlight:         linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-dashboard:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
+  --color-gradient-home-highlight:         linear-gradient(180deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
   --color-gradient-home-muted:             linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
   --color-gradient-rank-first:             linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:            linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);

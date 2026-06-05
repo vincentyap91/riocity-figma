@@ -232,6 +232,7 @@
   /* overlay */
   --overlay-default: rgba(0, 0, 0, 0.6);
   --overlay-hairline: rgba(255, 255, 255, 0.1);
+  --overlay-inverse: rgba(255, 255, 255, 0.6);
   --overlay-scrim: rgba(0, 0, 0, 0.2);
   --overlay-shadow-soft: rgba(29, 34, 37, 0.1);
   --overlay-sports-card: rgba(7, 13, 24, 0.4);
@@ -529,6 +530,8 @@
   --color-button-menu-active: var(--raw-brand-cam);
   --color-button-muted: var(--raw-cam-muted);
   --color-button-muted-text: var(--mono-0);
+  --color-button-pagination: var(--raw-content-cam-nav);
+  --color-button-pagination-arrow: var(--mono-0);
   --color-button-pagination-disabled: var(--raw-cam-muted);
   --color-button-referral-cta: var(--raw-brand-cam);
   --color-button-referral-cta-text: var(--mono-0);
@@ -582,7 +585,7 @@
   --color-warning: var(--support-warning);
 
   /* overlay */
-  --color-overlay: var(--overlay-default);
+  --color-overlay: var(--overlay-inverse);
   --color-overlay-sports-card: var(--overlay-sports-card);
   --color-overlay-sports-event: var(--overlay-sports-event);
   --color-overlay-strong: var(--overlay-strong);
@@ -611,6 +614,7 @@
   --color-icon-rank-second: var(--raw-icon-rank-second-mark);
   --color-icon-rank-third: var(--raw-icon-rank-third-mark);
   --color-icon-subtle: var(--raw-content-cam-nav);
+  --color-icon-um: var(--raw-brand-cam);
 
   /* transparent */
   --color-transparent: var(--mono-0909);

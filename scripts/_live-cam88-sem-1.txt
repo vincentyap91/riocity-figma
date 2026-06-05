@@ -62,10 +62,11 @@ color/icon/rank/first	raw-icon-rank-first-mark
 color/icon/rank/second	raw-icon-rank-second-mark
 color/icon/rank/third	raw-icon-rank-third-mark
 color/icon/subtle	raw-content-cam-nav
+color/icon/um	raw-brand-cam
 color/info/icon	mono/648
 color/info/steel-light	support/steel-light
 color/muted	mono/510
-color/overlay	overlay/default
+color/overlay	overlay/inverse
 color/overlay/sports-card	overlay/sports-card
 color/overlay/sports-event	overlay/sports-event
 color/overlay/strong	overlay/strong
