@@ -626,14 +626,29 @@
   /* bar */
   --color-bar: var(--raw-bar);
 
+  /* primary-tag */
+  --color-primary-tag: var(--support-error-medium);
+
+  /* primary-tag-text */
+  --color-primary-tag-text: var(--mono-0);
+
   /* scrollbar */
   --color-scrollbar: var(--raw-brand-cam);
 
   /* secondary */
   --color-secondary: var(--mono-0);
 
+  /* secondary-tag */
+  --color-secondary-tag: var(--accent-pale-100);
+
+  /* secondary-tag-text */
+  --color-secondary-tag-text: var(--support-success-vivid);
+
   /* sticky-nav */
   --color-sticky-nav: var(--raw-brand-cam);
+
+  /* thumbnail */
+  --color-thumbnail: var(--raw-progress-bar);
 
   /* gradient */
   --color-gradient-button-cta:          linear-gradient(90deg, var(--support-error) 0%, var(--support-danger-dark) 100%);

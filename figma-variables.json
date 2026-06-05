@@ -1798,6 +1798,14 @@
         "aliasTo": "brand/500"
       },
       {
+        "name": "color/primary-tag",
+        "aliasTo": "support/error-medium"
+      },
+      {
+        "name": "color/primary-tag-text",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/progress/bar/bg",
         "aliasTo": "color/surface/deep-dark"
       },
@@ -1812,6 +1820,14 @@
       {
         "name": "color/secondary",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/secondary-tag",
+        "aliasTo": "color/accent/pale"
+      },
+      {
+        "name": "color/secondary-tag-text",
+        "aliasTo": "support/success-vivid"
       },
       {
         "name": "color/sticky-nav",
@@ -2480,6 +2496,10 @@
       {
         "name": "color/text/warm",
         "aliasTo": "accent/brown-800"
+      },
+      {
+        "name": "color/thumbnail",
+        "aliasTo": "mono/950"
       },
       {
         "name": "color/transparent",
@@ -3151,6 +3171,14 @@
         "aliasTo": "raw-brand-cam"
       },
       {
+        "name": "color/primary-tag",
+        "aliasTo": "color/error/medium"
+      },
+      {
+        "name": "color/primary-tag-text",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/progress/bar/bg",
         "aliasTo": "raw-progress-bar"
       },
@@ -3165,6 +3193,14 @@
       {
         "name": "color/secondary",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/secondary-tag",
+        "aliasTo": "color/accent/pale"
+      },
+      {
+        "name": "color/secondary-tag-text",
+        "aliasTo": "support/success-vivid"
       },
       {
         "name": "color/sticky-nav",
@@ -3833,6 +3869,10 @@
       {
         "name": "color/text/warm",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/thumbnail",
+        "aliasTo": "raw-progress-bar"
       },
       {
         "name": "color/transparent",

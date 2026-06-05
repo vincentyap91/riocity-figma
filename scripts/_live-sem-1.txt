@@ -74,10 +74,14 @@ color/overlay/strong	overlay/strong
 color/popup/body	color/surface
 color/popup/head	mono/910
 color/primary	brand/500
+color/primary-tag	support/error-medium
+color/primary-tag-text	mono/0
 color/progress/bar/bg	color/surface/deep-dark
 color/progress/bar/fill	color/primary
 color/scrollbar	brand/500
 color/secondary	mono/0
+color/secondary-tag	color/accent/pale
+color/secondary-tag-text	support/success-vivid
 color/sticky-nav	mono/910
 color/success	support/success
 color/success/light	support/success-light

@@ -78,5 +78,6 @@ color/text/tertiary	mono/950
 color/text/third-title	brand/500
 color/text/title	color/accent
 color/text/warm	accent/brown-800
+color/thumbnail	mono/950
 color/transparent	mono/0909
 color/warning	support/warning

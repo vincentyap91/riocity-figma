@@ -77,5 +77,6 @@ color/text/tertiary	mono/0
 color/text/third-title	raw-brand-cam-strong
 color/text/title	support/error
 color/text/warm	mono/0
+color/thumbnail	raw-progress-bar
 color/transparent	mono/0909
 color/warning	support/warning

@@ -73,10 +73,14 @@ color/overlay/strong	overlay/strong
 color/popup/body	raw-surface-cam-panel
 color/popup/head	mono/300
 color/primary	raw-brand-cam
+color/primary-tag	color/error/medium
+color/primary-tag-text	mono/0
 color/progress/bar/bg	raw-progress-bar
 color/progress/bar/fill	color/primary
 color/scrollbar	raw-brand-cam
 color/secondary	mono/0
+color/secondary-tag	color/accent/pale
+color/secondary-tag-text	support/success-vivid
 color/sticky-nav	raw-brand-cam
 color/success	support/success
 color/success/light	support/success-light
