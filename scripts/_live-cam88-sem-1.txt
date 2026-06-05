@@ -1,3 +1,4 @@
+color/gradient/check-in/reward/end	accent/476
 color/gradient/check-in/reward/start	accent/475
 color/gradient/dashboard/warm/end	accent/orange-700
 color/gradient/dashboard/warm/start	accent/orange-500
@@ -5,12 +6,12 @@ color/gradient/header/balance/end	raw-brand-cam
 color/gradient/header/balance/start	raw-brand-cam
 color/gradient/home/card/end	raw-gradient-rank-selected-end
 color/gradient/home/card/start	raw-gradient-rank-selected-start
-color/gradient/home/cta/end	raw-gradient/home-cta-edge
-color/gradient/home/cta/start	brand/500
+color/gradient/home/cta/end	raw-brand-cam
+color/gradient/home/cta/start	raw-brand-cam
 color/gradient/home/dashboard/end	raw-surface-cam-base
 color/gradient/home/dashboard/start	raw-surface-cam-base
-color/gradient/home/highlight/end	color/gradient/button/cta/end
-color/gradient/home/highlight/start	color/gradient/button/cta/start
+color/gradient/home/highlight/end	color/transparent
+color/gradient/home/highlight/start	color/transparent
 color/gradient/home/muted/end	mono/604
 color/gradient/home/muted/start	mono/542
 color/gradient/rank/first/end	raw-gradient-rank-first-end
@@ -73,8 +74,10 @@ color/popup/head	mono/300
 color/primary	raw-brand-cam
 color/progress/bar/bg	raw-progress-bar
 color/progress/bar/fill	color/primary
+color/scrollbar	raw-brand-cam
 color/secondary	mono/0
 color/sticky-nav	raw-brand-cam
 color/success	support/success
 color/success/light	support/success-light
 color/success/lime-bright	support/lime-bright
+color/success/lime-deep	support/lime-deep

@@ -12,12 +12,14 @@ color/accent/yellow	accent/460
 color/bar	raw-bar
 color/border	mono/700
 color/border/brand	brand/500
+color/border/danger	brand/500
 color/border/divider	mono/540
 color/border/line	mono/628
 color/border/sports-card	raw-border-sports-card
 color/border/sports-market	raw-border-sports-market
 color/border/strong	mono/650
 color/border/subtle	mono/255
+color/border/tabs	color/transparent
 color/button/accent	accent/400
 color/button/accent-deep	accent/360
 color/button/accordian-head	mono/0
@@ -35,6 +37,7 @@ color/button/cta-tertiary-text	color/text/primary
 color/button/dashboard/primary/end	brand/500
 color/button/dashboard/primary/start	brand/500
 color/button/disabled	brand/830
+color/button/dot	color/primary
 color/button/hover	brand/630
 color/button/hover-text	color/primary
 color/button/lang-border	mono/650
@@ -78,4 +81,3 @@ color/gradient/check-in/card/end	brand/810
 color/gradient/check-in/card/start	support/success-strong
 color/gradient/check-in/day/end	brand/811
 color/gradient/check-in/day/start	brand/846
-color/gradient/check-in/reward/end	accent/476

@@ -1,3 +1,4 @@
+color/gradient/check-in/reward/end	accent/476
 color/gradient/check-in/reward/start	accent/475
 color/gradient/dashboard/button/brand/start	color/primary
 color/gradient/dashboard/warm/end	accent/orange-700
@@ -74,6 +75,7 @@ color/popup/head	mono/910
 color/primary	brand/500
 color/progress/bar/bg	color/surface/deep-dark
 color/progress/bar/fill	color/primary
+color/scrollbar	brand/500
 color/secondary	mono/0
 color/sticky-nav	mono/910
 color/success	support/success

@@ -11,15 +11,15 @@ mono/920	#1d1d1d
 mono/930	#111111
 mono/940	#0f0f0f
 mono/950	#000000
-mono/950-a25	#00000040
+mono/950-a25	rgba(0, 0, 0, 0.25)
 mono/990	#99a4b0
-overlay/default	#00000099
-overlay/hairline	#ffffff1a
-overlay/scrim	#00000033
-overlay/shadow-soft	#1d22251a
-overlay/sports-card	#070d1866
-overlay/sports-event	#07180966
-overlay/strong	#000000cc
+overlay/default	rgba(0, 0, 0, 0.6)
+overlay/hairline	rgba(255, 255, 255, 0.1)
+overlay/scrim	rgba(0, 0, 0, 0.2)
+overlay/shadow-soft	rgba(29, 34, 37, 0.1)
+overlay/sports-card	rgba(7, 13, 24, 0.4)
+overlay/sports-event	rgba(7, 24, 9, 0.4)
+overlay/strong	rgba(0, 0, 0, 0.8)
 raw-bar	#3a3a3a
 raw-border-cam-panel	#5162b3
 raw-border-sports-card	#0e192d
@@ -30,7 +30,7 @@ raw-cam-muted	#7b90d0
 raw-content-cam-nav	#1a1755
 raw-disabled-color	#5d68a2
 raw-disabled-text	#8995d3
-raw-effect-cam-glow	#4564ff33
+raw-effect-cam-glow	rgba(69, 100, 255, 0.2)
 raw-gradient-cam-highlight-end	#eef2ca
 raw-gradient-cam-highlight-start	#e0ddc3
 raw-gradient-cam-icon-end	#110d35

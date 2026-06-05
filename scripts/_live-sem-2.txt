@@ -80,3 +80,4 @@ color/surface/mid/text	mono/0
 color/surface/nav	mono/720
 color/surface/navy	support/navy
 color/surface/near-black	mono/770
+color/surface/near-black-alt	mono/768

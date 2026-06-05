@@ -1,5 +1,3 @@
-color/surface/near-black-alt	mono/697
-color/surface/neutral-light	mono/114
 color/surface/notify	color/surface/float
 color/surface/overlay-dark	mono/775
 color/surface/pale-blue	mono/112
@@ -10,6 +8,7 @@ color/surface/qrcode	mono/0
 color/surface/referral-card	color/surface/float
 color/surface/referral-input	raw-surface-cam-input
 color/surface/rtp-card	color/primary
+color/surface/rtp-secondary-card	raw-brand-cam
 color/surface/scrim-dark	mono/798
 color/surface/search	mono/896
 color/surface/secondary-chip	color/surface
@@ -35,6 +34,8 @@ color/text/check-in/day-active	raw-border-cam-panel
 color/text/check-in/day-muted	mono/475
 color/text/check-in/day-past	raw-disabled-text
 color/text/check-in/reward	raw-disabled-color
+color/text/cta-inverse	mono/0
+color/text/cta-transparent	raw-brand-cam
 color/text/dim	mono/604
 color/text/disabled	raw-disabled-text
 color/text/download	mono/0

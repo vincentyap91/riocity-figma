@@ -12,12 +12,14 @@ color/accent/yellow	accent/460
 color/bar	raw-bar
 color/border	mono/630
 color/border/brand	raw-border-cam-panel
+color/border/danger	raw-brand-cam-strong
 color/border/divider	mono/540
 color/border/line	mono/565
 color/border/sports-card	raw-border-sports-card
 color/border/sports-market	raw-border-sports-market
 color/border/strong	raw-text-cam-primary
 color/border/subtle	mono/255
+color/border/tabs	raw-border-cam-panel
 color/button/accent	color/primary
 color/button/accent-deep	support/error-strong
 color/button/accordian-head	mono/0
@@ -35,6 +37,7 @@ color/button/cta-tertiary-text	raw-content-cam-nav
 color/button/dashboard/primary/end	support/danger-dark
 color/button/dashboard/primary/start	support/error
 color/button/disabled	raw-disabled-color
+color/button/dot	raw-brand-cam-strong
 color/button/hover	raw-brand-cam
 color/button/hover-text	color/text/light
 color/button/lang-border	mono/650
@@ -78,4 +81,3 @@ color/gradient/check-in/card/end	raw-gradient-primary-card-end
 color/gradient/check-in/card/start	raw-brand-cam
 color/gradient/check-in/day/end	brand/811
 color/gradient/check-in/day/start	brand/846
-color/gradient/check-in/reward/end	accent/476
