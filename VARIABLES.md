@@ -62,8 +62,8 @@
 | 类型 | 数量 |
 |------|------|
 | 01 Primitives（原始色） | 286 |
-| 02 Semantic Default | 347 |
-| 02 Semantic CAM88 | 345 |
+| 02 Semantic Default | 348 |
+| 02 Semantic CAM88 | 346 |
 | 渐变合成（`--color-gradient-*`） | 31 |
 
 ### 仅存在于某一 Mode 的语义变量
@@ -459,7 +459,7 @@
 | `--color-border-subtle` | `color/border/subtle` | `mono/255` | `mono/255` |
 | `--color-border-tabs` | `color/border/tabs` | `color/transparent` | `raw-border-cam-panel` |
 
-### `color/button/*`（43）
+### `color/button/*`（44）
 
 | CSS 变量 | Figma 名 | Default alias | CAM88 alias |
 |----------|----------|---------------|-------------|
@@ -495,6 +495,7 @@
 | `--color-button-menu-active` | `color/button/menu-active` | `color/primary` | `color/primary` |
 | `--color-button-muted` | `color/button/muted` | `mono/510` | `raw-cam-muted` |
 | `--color-button-muted-text` | `color/button/muted-text` | `mono/0` | `mono/0` |
+| `--color-button-nav` | `color/button/nav` | `mono/750` | `mono/300` |
 | `--color-button-pagination` | `color/button/pagination` | `mono/310` | `raw-content-cam-nav` |
 | `--color-button-pagination-arrow` | `color/button/pagination-arrow` | `mono/0` | `mono/0` |
 | `--color-button-pagination-disabled` | `color/button/pagination-disabled` | `mono/666` | `raw-cam-muted` |

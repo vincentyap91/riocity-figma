@@ -1374,6 +1374,10 @@
         "aliasTo": "mono/0"
       },
       {
+        "name": "color/button/nav",
+        "aliasTo": "mono/750"
+      },
+      {
         "name": "color/button/pagination",
         "aliasTo": "mono/310"
       },
@@ -2761,6 +2765,10 @@
       {
         "name": "color/button/muted-text",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/button/nav",
+        "aliasTo": "mono/300"
       },
       {
         "name": "color/button/pagination",

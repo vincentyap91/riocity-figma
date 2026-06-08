@@ -546,6 +546,7 @@
   --color-button-menu-active: var(--raw-brand-cam);
   --color-button-muted: var(--raw-cam-muted);
   --color-button-muted-text: var(--mono-0);
+  --color-button-nav: var(--mono-300);
   --color-button-pagination: var(--raw-content-cam-nav);
   --color-button-pagination-arrow: var(--mono-0);
   --color-button-pagination-disabled: var(--raw-cam-muted);

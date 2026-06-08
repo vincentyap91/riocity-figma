@@ -548,6 +548,7 @@
   --color-button-menu-active: var(--brand-500);
   --color-button-muted: var(--mono-510);
   --color-button-muted-text: var(--mono-0);
+  --color-button-nav: var(--mono-750);
   --color-button-pagination: var(--mono-310);
   --color-button-pagination-arrow: var(--mono-0);
   --color-button-pagination-disabled: var(--mono-666);

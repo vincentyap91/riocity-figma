@@ -52,6 +52,7 @@ color/button/lang-text	color/text/primary
 color/button/menu-active	color/primary
 color/button/muted	mono/510
 color/button/muted-text	mono/0
+color/button/nav	mono/750
 color/button/pagination	mono/310
 color/button/pagination-arrow	mono/0
 color/button/pagination-disabled	mono/666

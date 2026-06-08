@@ -51,6 +51,7 @@ color/button/lang-text	color/text/primary
 color/button/menu-active	color/primary
 color/button/muted	raw-cam-muted
 color/button/muted-text	mono/0
+color/button/nav	mono/300
 color/button/pagination	raw-content-cam-nav
 color/button/pagination-arrow	mono/0
 color/button/pagination-disabled	raw-cam-muted
