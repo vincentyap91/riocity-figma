@@ -469,6 +469,7 @@
   --color-surface-referral-input: var(--raw-surface-cam-input);
   --color-surface-rtp-card: var(--raw-brand-cam);
   --color-surface-rtp-secondary-card: var(--raw-brand-cam);
+  --color-surface-rtp-secondary-card-text: var(--mono-0);
   --color-surface-scrim-dark: var(--mono-798);
   --color-surface-search: var(--mono-896);
   --color-surface-secondary-chip: var(--raw-surface-cam);
@@ -672,7 +673,7 @@
   --color-gradient-home-card:           linear-gradient(90deg, var(--raw-gradient-rank-selected-start) 0%, var(--raw-gradient-rank-selected-end) 100%);
   --color-gradient-home-cta:            linear-gradient(90deg, var(--raw-brand-cam) 0%, var(--raw-brand-cam) 100%);
   --color-gradient-home-dashboard:      linear-gradient(90deg, var(--raw-surface-cam-base) 0%, var(--raw-surface-cam-base) 100%);
-  --color-gradient-home-highlight:      linear-gradient(180deg, var(--mono-0909) 0%, var(--mono-0909) 100%);
+  --color-gradient-home-highlight:      linear-gradient(90deg, var(--mono-0909) 0%, var(--mono-0909) 100%);
   --color-gradient-home-muted:          linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
   --color-gradient-rank-first:          linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:         linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);

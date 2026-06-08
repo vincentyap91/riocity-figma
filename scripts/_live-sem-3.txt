@@ -11,6 +11,7 @@ color/surface/referral-card	brand/600
 color/surface/referral-input	brand/750
 color/surface/rtp-card	color/surface/float
 color/surface/rtp-secondary-card	accent/450
+color/surface/rtp-secondary-card-text	mono/950
 color/surface/scrim-dark	mono/798
 color/surface/search	mono/896
 color/surface/secondary-chip	mono/632

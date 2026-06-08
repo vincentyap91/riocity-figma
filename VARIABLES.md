@@ -62,8 +62,8 @@
 | 类型 | 数量 |
 |------|------|
 | 01 Primitives（原始色） | 286 |
-| 02 Semantic Default | 346 |
-| 02 Semantic CAM88 | 344 |
+| 02 Semantic Default | 347 |
+| 02 Semantic CAM88 | 345 |
 | 渐变合成（`--color-gradient-*`） | 31 |
 
 ### 仅存在于某一 Mode 的语义变量
@@ -666,7 +666,7 @@
 | `--color-success-vivid` | `color/success/vivid` | `support/lime-vivid` | `support/lime-vivid` |
 | `--color-success-vivid-green` | `color/success/vivid-green` | `support/success-vivid` | `support/success-vivid` |
 
-### `color/surface/*`（102）
+### `color/surface/*`（103）
 
 | CSS 变量 | Figma 名 | Default alias | CAM88 alias |
 |----------|----------|---------------|-------------|
@@ -757,6 +757,7 @@
 | `--color-surface-referral-input` | `color/surface/referral-input` | `brand/750` | `raw-surface-cam-input` |
 | `--color-surface-rtp-card` | `color/surface/rtp-card` | `color/surface/float` | `color/primary` |
 | `--color-surface-rtp-secondary-card` | `color/surface/rtp-secondary-card` | `accent/450` | `raw-brand-cam` |
+| `--color-surface-rtp-secondary-card-text` | `color/surface/rtp-secondary-card-text` | `mono/950` | `mono/0` |
 | `--color-surface-scrim-dark` | `color/surface/scrim-dark` | `mono/798` | `mono/798` |
 | `--color-surface-search` | `color/surface/search` | `mono/896` | `mono/896` |
 | `--color-surface-secondary-chip` | `color/surface/secondary-chip` | `mono/632` | `color/surface` |

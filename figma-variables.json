@@ -2254,6 +2254,10 @@
         "aliasTo": "accent/450"
       },
       {
+        "name": "color/surface/rtp-secondary-card-text",
+        "aliasTo": "mono/950"
+      },
+      {
         "name": "color/surface/scrim-dark",
         "aliasTo": "mono/798"
       },
@@ -3633,6 +3637,10 @@
       {
         "name": "color/surface/rtp-secondary-card",
         "aliasTo": "raw-brand-cam"
+      },
+      {
+        "name": "color/surface/rtp-secondary-card-text",
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/surface/scrim-dark",

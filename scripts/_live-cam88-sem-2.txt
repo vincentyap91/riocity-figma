@@ -1,5 +1,3 @@
-color/secondary-tag-text	support/success-vivid
-color/sticky-nav	raw-brand-cam
 color/success	support/success
 color/success/light	support/success-light
 color/success/lime-bright	support/lime-bright
@@ -84,3 +82,6 @@ color/surface/mid/container	raw-text-cam-primary
 color/surface/mid/text	mono/0
 color/surface/nav	raw-surface-cam-menu
 color/surface/navy	support/navy
+color/surface/near-black	mono/770
+color/surface/near-black-alt	mono/697
+color/surface/neutral-light	mono/114

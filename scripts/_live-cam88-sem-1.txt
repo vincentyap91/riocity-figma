@@ -1,4 +1,3 @@
-color/gradient/check-in/card/end	raw-gradient-primary-card-end
 color/gradient/check-in/card/start	raw-brand-cam
 color/gradient/check-in/day/end	brand/811
 color/gradient/check-in/day/start	brand/846
@@ -84,3 +83,5 @@ color/progress/bar/fill	color/primary
 color/scrollbar	raw-brand-cam
 color/secondary	mono/0
 color/secondary-tag	color/accent/pale
+color/secondary-tag-text	support/success-vivid
+color/sticky-nav	raw-brand-cam

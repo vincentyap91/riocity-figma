@@ -470,6 +470,7 @@
   --color-surface-referral-input: var(--brand-750);
   --color-surface-rtp-card: var(--mono-750);
   --color-surface-rtp-secondary-card: var(--accent-450);
+  --color-surface-rtp-secondary-card-text: var(--mono-950);
   --color-surface-scrim-dark: var(--mono-798);
   --color-surface-search: var(--mono-896);
   --color-surface-secondary-chip: var(--mono-632);
