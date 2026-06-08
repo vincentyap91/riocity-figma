@@ -5,6 +5,18 @@
     "mode": "Value",
     "variables": [
       {
+        "name": "KH168/raw-gradient-icon-end",
+        "css": "#a61218"
+      },
+      {
+        "name": "KH168/raw-gradient-icon-start",
+        "css": "#ff6b71"
+      },
+      {
+        "name": "KH168/raw-kh-primary",
+        "css": "#3b1919"
+      },
+      {
         "name": "Surface/Active-Positive",
         "css": "#a7c5c1"
       },
@@ -259,6 +271,14 @@
       {
         "name": "brand/862",
         "css": "#72e0a0"
+      },
+      {
+        "name": "color-button-cta-end",
+        "css": "#961900"
+      },
+      {
+        "name": "color-button-cta-start",
+        "css": "#ff2a00"
       },
       {
         "name": "mono/0",
@@ -2470,6 +2490,10 @@
         "aliasTo": "raw-text-sports-primary"
       },
       {
+        "name": "color/text/sticky-nav-active",
+        "aliasTo": "mono/0"
+      },
+      {
         "name": "color/text/sticky-nav-text",
         "aliasTo": "mono/0"
       },
@@ -3845,6 +3869,10 @@
       {
         "name": "color/text/sports-primary",
         "aliasTo": "raw-text-sports-primary"
+      },
+      {
+        "name": "color/text/sticky-nav-active",
+        "aliasTo": "mono/0"
       },
       {
         "name": "color/text/sticky-nav-text",

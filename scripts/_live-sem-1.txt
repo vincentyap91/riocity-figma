@@ -1,3 +1,7 @@
+color/gradient/check-in/card/end	brand/810
+color/gradient/check-in/card/start	support/success-strong
+color/gradient/check-in/day/end	brand/811
+color/gradient/check-in/day/start	brand/846
 color/gradient/check-in/reward/end	accent/476
 color/gradient/check-in/reward/start	accent/475
 color/gradient/dashboard/button/brand/start	color/primary
@@ -81,8 +85,3 @@ color/progress/bar/fill	color/primary
 color/scrollbar	brand/500
 color/secondary	mono/0
 color/secondary-tag	color/accent/pale
-color/secondary-tag-text	support/success-vivid
-color/sticky-nav	mono/910
-color/success	support/success
-color/success/light	support/success-light
-color/success/lime-bright	support/lime-bright

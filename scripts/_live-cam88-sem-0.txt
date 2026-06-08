@@ -84,7 +84,3 @@ color/gradient/button/cta/end	support/danger-dark
 color/gradient/button/cta/start	support/error
 color/gradient/card/brand/end	raw-surface-cam-panel
 color/gradient/card/brand/start	raw-surface-cam-panel
-color/gradient/check-in/card/end	raw-gradient-primary-card-end
-color/gradient/check-in/card/start	raw-brand-cam
-color/gradient/check-in/day/end	brand/811
-color/gradient/check-in/day/start	brand/846

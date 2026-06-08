@@ -1,3 +1,6 @@
+KH168/raw-gradient-icon-end	#a61218
+KH168/raw-gradient-icon-start	#ff6b71
+KH168/raw-kh-primary	#3b1919
 Surface/Active-Positive	#a7c5c1
 accent/200	#fdd182
 accent/280	#7e6f52
@@ -62,6 +65,8 @@ brand/855	#348641
 brand/856	#2eac61
 brand/858	#2f8856
 brand/862	#72e0a0
+color-button-cta-end	#961900
+color-button-cta-start	#ff2a00
 mono/0	#ffffff
 mono/0909	rgba(255, 255, 255, 0)
 mono/105	#f0f0f0
@@ -136,6 +141,3 @@ mono/818	#323a38
 mono/825	#28292c
 mono/850	#252525
 mono/855	#353535
-mono/860	#2b2d33
-mono/862	#27282b
-mono/865	#2e2f33

@@ -1,3 +1,8 @@
+color/secondary-tag-text	support/success-vivid
+color/sticky-nav	mono/910
+color/success	support/success
+color/success/light	support/success-light
+color/success/lime-bright	support/lime-bright
 color/success/lime-deep	support/lime-deep
 color/success/lime-medium	support/lime-medium
 color/success/mid	support/success-mid
@@ -80,4 +85,3 @@ color/surface/mid/text	mono/0
 color/surface/nav	mono/720
 color/surface/navy	support/navy
 color/surface/near-black	mono/770
-color/surface/near-black-alt	mono/768

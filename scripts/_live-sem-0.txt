@@ -85,7 +85,3 @@ color/gradient/button/cta/end	color/primary
 color/gradient/button/cta/start	color/primary
 color/gradient/card/brand/end	color/surface/forest-4
 color/gradient/card/brand/start	brand/700
-color/gradient/check-in/card/end	brand/810
-color/gradient/check-in/card/start	support/success-strong
-color/gradient/check-in/day/end	brand/811
-color/gradient/check-in/day/start	brand/846

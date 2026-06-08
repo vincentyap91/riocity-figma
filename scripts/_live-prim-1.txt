@@ -1,3 +1,6 @@
+mono/860	#2b2d33
+mono/862	#27282b
+mono/865	#2e2f33
 mono/867	#2d3035
 mono/868	#2e2f2f
 mono/870	#3a3a3a

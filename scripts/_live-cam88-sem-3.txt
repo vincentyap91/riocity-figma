@@ -1,3 +1,6 @@
+color/surface/near-black	mono/770
+color/surface/near-black-alt	mono/697
+color/surface/neutral-light	mono/114
 color/surface/notify	color/surface/float
 color/surface/overlay-dark	mono/775
 color/surface/pale-blue	mono/112
@@ -68,6 +71,7 @@ color/text/small	mono/450
 color/text/soft	mono/472
 color/text/sports-muted	raw-text-sports-muted
 color/text/sports-primary	raw-text-sports-primary
+color/text/sticky-nav-active	mono/0
 color/text/sticky-nav-text	mono/0
 color/text/sub-highlight	raw-highlight-cam
 color/text/sub-title	raw-brand-cam

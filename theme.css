@@ -245,6 +245,15 @@
   --raw-gradient-home-highlight-end: #ebb614;
   --raw-gradient-home-highlight-start: #ffd963;
 
+  /* color */
+  --color-button-cta-end: #961900;
+  --color-button-cta-start: #ff2a00;
+
+  /* KH168 */
+  --KH168-raw-gradient-icon-end: #a61218;
+  --KH168-raw-gradient-icon-start: #ff6b71;
+  --KH168-raw-kh-primary: #3b1919;
+
   /* raw */
   --raw-bar: #3a3a3a;
   --raw-border-cam-panel: #5162b3;
@@ -361,6 +370,7 @@
   --color-text-soft: var(--mono-472);
   --color-text-sports-muted: var(--raw-text-sports-muted);
   --color-text-sports-primary: var(--raw-text-sports-primary);
+  --color-text-sticky-nav-active: var(--mono-0);
   --color-text-sticky-nav-text: var(--mono-0);
   --color-text-sub-highlight: var(--accent-460);
   --color-text-sub-title: var(--support-warning);
@@ -659,7 +669,7 @@
   --color-gradient-check-in-card:          linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
   --color-gradient-check-in-day:           linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
   --color-gradient-check-in-reward:        linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
-
+  /* missing start/end for color/gradient/dashboard/button/brand */
   --color-gradient-dashboard-warm:         linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
   --color-gradient-header-balance:         linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
   --color-gradient-home-card:              linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);

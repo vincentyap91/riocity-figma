@@ -1,3 +1,4 @@
+color/surface/near-black-alt	mono/768
 color/surface/neutral-light	mono/114
 color/surface/notify	color/surface/float
 color/surface/overlay-dark	mono/775
@@ -69,6 +70,7 @@ color/text/small	mono/400
 color/text/soft	mono/472
 color/text/sports-muted	raw-text-sports-muted
 color/text/sports-primary	raw-text-sports-primary
+color/text/sticky-nav-active	mono/0
 color/text/sticky-nav-text	mono/0
 color/text/sub-highlight	accent/460
 color/text/sub-title	color/warning

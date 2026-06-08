@@ -244,6 +244,15 @@
   --raw-gradient-home-highlight-end: #ebb614;
   --raw-gradient-home-highlight-start: #ffd963;
 
+  /* color */
+  --color-button-cta-end: #961900;
+  --color-button-cta-start: #ff2a00;
+
+  /* KH168 */
+  --KH168-raw-gradient-icon-end: #a61218;
+  --KH168-raw-gradient-icon-start: #ff6b71;
+  --KH168-raw-kh-primary: #3b1919;
+
   /* raw */
   --raw-bar: #3a3a3a;
   --raw-border-cam-panel: #5162b3;
@@ -360,6 +369,7 @@
   --color-text-soft: var(--mono-472);
   --color-text-sports-muted: var(--raw-text-sports-muted);
   --color-text-sports-primary: var(--raw-text-sports-primary);
+  --color-text-sticky-nav-active: var(--mono-0);
   --color-text-sticky-nav-text: var(--mono-0);
   --color-text-sub-highlight: var(--raw-highlight-cam);
   --color-text-sub-title: var(--raw-brand-cam);
