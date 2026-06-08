@@ -27,6 +27,7 @@ color/button/back	raw-cam-muted
 color/button/cta	raw-brand-cam
 color/button/cta-arrow	color/primary
 color/button/cta-arrow-selected	mono/0
+color/button/cta-category-text	raw-brand-cam
 color/button/cta-fifth	mono/697
 color/button/cta-fifth-text	mono/0
 color/button/cta-fourth	color/primary

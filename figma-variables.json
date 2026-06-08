@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-06-05",
+  "exportedAt": "2026-06-08",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -1252,6 +1252,14 @@
       {
         "name": "color/button/cta-arrow-selected",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/button/cta-category",
+        "aliasTo": "mono/510"
+      },
+      {
+        "name": "color/button/cta-category-text",
+        "aliasTo": "brand/500"
       },
       {
         "name": "color/button/cta-fifth",
@@ -2629,6 +2637,10 @@
       {
         "name": "color/button/cta-arrow-selected",
         "aliasTo": "mono/0"
+      },
+      {
+        "name": "color/button/cta-category-text",
+        "aliasTo": "raw-brand-cam"
       },
       {
         "name": "color/button/cta-fifth",

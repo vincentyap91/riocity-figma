@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-06-05 | Primitives: Value | Semantic: Default
+ * Exported: 2026-06-08 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -512,6 +512,8 @@
   --color-button-cta: var(--brand-500);
   --color-button-cta-arrow: var(--brand-500);
   --color-button-cta-arrow-selected: var(--mono-0);
+  --color-button-cta-category: var(--mono-510);
+  --color-button-cta-category-text: var(--brand-500);
   --color-button-cta-fifth: var(--mono-900);
   --color-button-cta-fifth-text: var(--mono-0);
   --color-button-cta-fourth: var(--accent-400);
@@ -657,13 +659,13 @@
   --color-gradient-check-in-card:          linear-gradient(90deg, var(--support-success-strong) 0%, var(--brand-810) 100%);
   --color-gradient-check-in-day:           linear-gradient(90deg, var(--brand-846) 0%, var(--brand-811) 100%);
   --color-gradient-check-in-reward:        linear-gradient(90deg, var(--accent-475) 0%, var(--accent-476) 100%);
-  /* missing start/end for color/gradient/dashboard/button/brand */
+
   --color-gradient-dashboard-warm:         linear-gradient(90deg, var(--accent-orange-500) 0%, var(--accent-orange-700) 100%);
   --color-gradient-header-balance:         linear-gradient(90deg, var(--mono-550) 0%, var(--mono-600) 100%);
   --color-gradient-home-card:              linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
   --color-gradient-home-cta:               linear-gradient(90deg, var(--brand-500) 0%, var(--raw-gradient-home-cta-edge) 100%);
   --color-gradient-home-dashboard:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
-  --color-gradient-home-highlight:         linear-gradient(180deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
+  --color-gradient-home-highlight:         linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
   --color-gradient-home-muted:             linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
   --color-gradient-rank-first:             linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:            linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);

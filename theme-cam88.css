@@ -1,6 +1,6 @@
 /**
  * theme-cam88.css — design tokens from Figma
- * Exported: 2026-06-05 | Primitives: Value | Semantic: CAM88
+ * Exported: 2026-06-08 | Primitives: Value | Semantic: CAM88
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -511,6 +511,7 @@
   --color-button-cta: var(--raw-brand-cam);
   --color-button-cta-arrow: var(--raw-brand-cam);
   --color-button-cta-arrow-selected: var(--mono-0);
+  --color-button-cta-category-text: var(--raw-brand-cam);
   --color-button-cta-fifth: var(--mono-697);
   --color-button-cta-fifth-text: var(--mono-0);
   --color-button-cta-fourth: var(--raw-brand-cam);

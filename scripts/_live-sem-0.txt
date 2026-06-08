@@ -27,6 +27,8 @@ color/button/back	mono/510
 color/button/cta	color/primary
 color/button/cta-arrow	color/primary
 color/button/cta-arrow-selected	mono/0
+color/button/cta-category	mono/510
+color/button/cta-category-text	brand/500
 color/button/cta-fifth	color/surface
 color/button/cta-fifth-text	mono/0
 color/button/cta-fourth	color/button/accent
