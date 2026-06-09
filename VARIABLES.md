@@ -2,6 +2,8 @@
 
 > 自动生成自 `figma-variables.json`，导出日期：**2026-06-08**
 > 重新生成：`node scripts/generate-variables-doc.mjs`（Figma 同步后建议重跑）
+>
+> **命名与跨网站复用规则（手写、稳定）：** [VARIABLE-RULES.md](./VARIABLE-RULES.md)
 
 ## 1. 在其他网页如何使用
 

@@ -68,6 +68,10 @@ lines.push(`> 自动生成自 \`figma-variables.json\`，导出日期：**${expo
 lines.push(
   "> 重新生成：`node scripts/generate-variables-doc.mjs`（Figma 同步后建议重跑）"
 );
+lines.push(">");
+lines.push(
+  "> **命名与跨网站复用规则（手写、稳定）：** [VARIABLE-RULES.md](./VARIABLE-RULES.md)"
+);
 lines.push("");
 
 lines.push("## 1. 在其他网页如何使用");
