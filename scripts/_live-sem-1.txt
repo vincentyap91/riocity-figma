@@ -37,8 +37,8 @@ color/gradient/referral/panel/end	brand/850
 color/gradient/referral/panel/start	brand/700
 color/gradient/side-menu/brand/end	brand/760
 color/gradient/side-menu/brand/start	brand/810
-color/gradient/side-menu/warm/end	accent/brown-700
-color/gradient/side-menu/warm/start	accent/brown-800
+color/gradient/menu/warm/end	accent/brown-700
+color/gradient/menu/warm/start	accent/brown-800
 color/gradient/sidenav/daily-bonus/end	brand/760
 color/gradient/sidenav/daily-bonus/start	brand/810
 color/gradient/sidenav/highlight/end	accent/310

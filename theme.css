@@ -1,6 +1,6 @@
 /**
  * theme.css — design tokens from Figma
- * Exported: 2026-06-08 | Primitives: Value | Semantic: Default
+ * Exported: 2026-06-10 | Primitives: Value | Semantic: Default
  *
  * Palette (raw):  --mono-*, --brand-*, --accent-*, --support-*, --overlay-*
  * UI (semantic):  --color-*  →  var(--mono-*) / var(--brand-*) / …
@@ -549,12 +549,12 @@
   --color-button-muted: var(--mono-510);
   --color-button-muted-text: var(--mono-0);
   --color-button-nav: var(--mono-750);
+  --color-button-nav-text: var(--brand-500);
   --color-button-pagination: var(--mono-310);
   --color-button-pagination-arrow: var(--mono-0);
   --color-button-pagination-disabled: var(--mono-666);
   --color-button-referral-cta: var(--support-warning);
   --color-button-referral-cta-text: var(--accent-brown-800);
-  --color-button-sidenav-text: var(--brand-500);
   --color-button-sports: var(--raw-surface-sports-button);
   --color-button-tabs: var(--mono-660);
   --color-button-tabs-muted: var(--mono-800);
@@ -679,6 +679,7 @@
   --color-gradient-home-dashboard:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
   --color-gradient-home-highlight:         linear-gradient(90deg, var(--raw-gradient-home-highlight-start) 0%, var(--raw-gradient-home-highlight-end) 100%);
   --color-gradient-home-muted:             linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
+  --color-gradient-menu-warm:              linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
   --color-gradient-rank-first:             linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:            linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);
   --color-gradient-rank-third:             linear-gradient(90deg, var(--raw-gradient-rank-third-start) 0%, var(--raw-gradient-rank-third-end) 100%);
@@ -688,7 +689,6 @@
   --color-gradient-referral-icon:          linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
   --color-gradient-referral-panel:         linear-gradient(90deg, var(--brand-700) 0%, var(--brand-850) 100%);
   --color-gradient-side-menu-brand:        linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
-  --color-gradient-side-menu-warm:         linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
   --color-gradient-sidenav-daily-bonus:    linear-gradient(90deg, var(--brand-810) 0%, var(--brand-760) 100%);
   --color-gradient-sidenav-highlight:      linear-gradient(90deg, var(--accent-340) 0%, var(--accent-310) 100%);
   --color-gradient-sidenav-info:           linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);

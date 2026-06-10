@@ -1,6 +1,6 @@
 {
   "source": "Figma MCP export — 01 Primitives (Value) + 02 Semantic (Default)",
-  "exportedAt": "2026-06-08",
+  "exportedAt": "2026-06-10",
   "01 Primitives": {
     "mode": "Value",
     "variables": [
@@ -1378,6 +1378,10 @@
         "aliasTo": "mono/750"
       },
       {
+        "name": "color/button/nav-text",
+        "aliasTo": "color/primary"
+      },
+      {
         "name": "color/button/pagination",
         "aliasTo": "mono/310"
       },
@@ -1396,10 +1400,6 @@
       {
         "name": "color/button/referral-cta-text",
         "aliasTo": "color/text/warm"
-      },
-      {
-        "name": "color/button/sidenav-text",
-        "aliasTo": "color/primary"
       },
       {
         "name": "color/button/sports",
@@ -1666,11 +1666,11 @@
         "aliasTo": "brand/810"
       },
       {
-        "name": "color/gradient/side-menu/warm/end",
+        "name": "color/gradient/menu/warm/end",
         "aliasTo": "accent/brown-700"
       },
       {
-        "name": "color/gradient/side-menu/warm/start",
+        "name": "color/gradient/menu/warm/start",
         "aliasTo": "accent/brown-800"
       },
       {
@@ -2771,6 +2771,10 @@
         "aliasTo": "mono/300"
       },
       {
+        "name": "color/button/nav-text",
+        "aliasTo": "raw-content-cam-nav"
+      },
+      {
         "name": "color/button/pagination",
         "aliasTo": "raw-content-cam-nav"
       },
@@ -2789,10 +2793,6 @@
       {
         "name": "color/button/referral-cta-text",
         "aliasTo": "mono/0"
-      },
-      {
-        "name": "color/button/sidenav-text",
-        "aliasTo": "raw-content-cam-nav"
       },
       {
         "name": "color/button/sports",
@@ -3055,11 +3055,11 @@
         "aliasTo": "raw-gradient-cam-icon-start"
       },
       {
-        "name": "color/gradient/side-menu/warm/end",
+        "name": "color/gradient/menu/warm/end",
         "aliasTo": "accent/brown-700"
       },
       {
-        "name": "color/gradient/side-menu/warm/start",
+        "name": "color/gradient/menu/warm/start",
         "aliasTo": "accent/brown-800"
       },
       {

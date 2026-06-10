@@ -1,6 +1,6 @@
 # Riocity 设计变量参考（CSS Custom Properties）
 
-> 自动生成自 `figma-variables.json`，导出日期：**2026-06-08**
+> 自动生成自 `figma-variables.json`，导出日期：**2026-06-10**
 > 重新生成：`node scripts/generate-variables-doc.mjs`（Figma 同步后建议重跑）
 >
 > **命名与跨网站复用规则（手写、稳定）：** [VARIABLE-RULES.md](./VARIABLE-RULES.md)
@@ -498,12 +498,12 @@
 | `--color-button-muted` | `color/button/muted` | `mono/510` | `raw-cam-muted` |
 | `--color-button-muted-text` | `color/button/muted-text` | `mono/0` | `mono/0` |
 | `--color-button-nav` | `color/button/nav` | `mono/750` | `mono/300` |
+| `--color-button-nav-text` | `color/button/nav-text` | `color/primary` | `raw-content-cam-nav` |
 | `--color-button-pagination` | `color/button/pagination` | `mono/310` | `raw-content-cam-nav` |
 | `--color-button-pagination-arrow` | `color/button/pagination-arrow` | `mono/0` | `mono/0` |
 | `--color-button-pagination-disabled` | `color/button/pagination-disabled` | `mono/666` | `raw-cam-muted` |
 | `--color-button-referral-cta` | `color/button/referral-cta` | `color/warning` | `color/primary` |
 | `--color-button-referral-cta-text` | `color/button/referral-cta-text` | `color/text/warm` | `mono/0` |
-| `--color-button-sidenav-text` | `color/button/sidenav-text` | `color/primary` | `raw-content-cam-nav` |
 | `--color-button-sports` | `color/button/sports` | `raw-surface-sports-button` | `raw-surface-sports-button` |
 | `--color-button-tabs` | `color/button/tabs` | `mono/660` | `raw-brand-cam` |
 | `--color-button-tabs-muted` | `color/button/tabs-muted` | `mono/800` | `raw-cam-muted` |
@@ -571,6 +571,8 @@
 | `--color-gradient-home-highlight-start` | `color/gradient/home/highlight/start` | `raw-gradient/home-highlight-start` | `color/transparent` |
 | `--color-gradient-home-muted-end` | `color/gradient/home/muted/end` | `mono/604` | `mono/604` |
 | `--color-gradient-home-muted-start` | `color/gradient/home/muted/start` | `mono/542` | `mono/542` |
+| `--color-gradient-menu-warm-end` | `color/gradient/menu/warm/end` | `accent/brown-700` | `accent/brown-700` |
+| `--color-gradient-menu-warm-start` | `color/gradient/menu/warm/start` | `accent/brown-800` | `accent/brown-800` |
 | `--color-gradient-rank-first-end` | `color/gradient/rank/first/end` | `raw-gradient-rank-first-end` | `raw-gradient-rank-first-end` |
 | `--color-gradient-rank-first-start` | `color/gradient/rank/first/start` | `raw-gradient-rank-first-start` | `raw-gradient-rank-first-start` |
 | `--color-gradient-rank-second-end` | `color/gradient/rank/second/end` | `raw-gradient-rank-second-end` | `raw-gradient-rank-second-end` |
@@ -589,8 +591,6 @@
 | `--color-gradient-referral-panel-start` | `color/gradient/referral/panel/start` | `brand/700` | `mono/300` |
 | `--color-gradient-side-menu-brand-end` | `color/gradient/side-menu/brand/end` | `brand/760` | `raw-gradient-cam-icon-end` |
 | `--color-gradient-side-menu-brand-start` | `color/gradient/side-menu/brand/start` | `brand/810` | `raw-gradient-cam-icon-start` |
-| `--color-gradient-side-menu-warm-end` | `color/gradient/side-menu/warm/end` | `accent/brown-700` | `accent/brown-700` |
-| `--color-gradient-side-menu-warm-start` | `color/gradient/side-menu/warm/start` | `accent/brown-800` | `accent/brown-800` |
 | `--color-gradient-sidenav-daily-bonus-end` | `color/gradient/sidenav/daily-bonus/end` | `brand/760` | `raw-gradient-tertiery-end` |
 | `--color-gradient-sidenav-daily-bonus-start` | `color/gradient/sidenav/daily-bonus/start` | `brand/810` | `raw-gradient-tertiery-start` |
 | `--color-gradient-sidenav-highlight-end` | `color/gradient/sidenav/highlight/end` | `accent/310` | `raw-gradient-cam-highlight-end` |
@@ -859,6 +859,7 @@
 | `--color-gradient-home-dashboard` |
 | `--color-gradient-home-highlight` |
 | `--color-gradient-home-muted` |
+| `--color-gradient-menu-warm` |
 | `--color-gradient-rank-first` |
 | `--color-gradient-rank-second` |
 | `--color-gradient-rank-third` |
@@ -868,7 +869,6 @@
 | `--color-gradient-referral-icon` |
 | `--color-gradient-referral-panel` |
 | `--color-gradient-side-menu-brand` |
-| `--color-gradient-side-menu-warm` |
 | `--color-gradient-sidenav-daily-bonus` |
 | `--color-gradient-sidenav-highlight` |
 | `--color-gradient-sidenav-info` |

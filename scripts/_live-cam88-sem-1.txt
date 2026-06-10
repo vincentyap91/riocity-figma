@@ -35,8 +35,8 @@ color/gradient/referral/panel/end	mono/300
 color/gradient/referral/panel/start	mono/300
 color/gradient/side-menu/brand/end	raw-gradient-cam-icon-end
 color/gradient/side-menu/brand/start	raw-gradient-cam-icon-start
-color/gradient/side-menu/warm/end	accent/brown-700
-color/gradient/side-menu/warm/start	accent/brown-800
+color/gradient/menu/warm/end	accent/brown-700
+color/gradient/menu/warm/start	accent/brown-800
 color/gradient/sidenav/daily-bonus/end	raw-gradient-tertiery-end
 color/gradient/sidenav/daily-bonus/start	raw-gradient-tertiery-start
 color/gradient/sidenav/highlight/end	raw-gradient-cam-highlight-end

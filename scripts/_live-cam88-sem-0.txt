@@ -52,12 +52,12 @@ color/button/menu-active	color/primary
 color/button/muted	raw-cam-muted
 color/button/muted-text	mono/0
 color/button/nav	mono/300
+color/button/nav-text	raw-content-cam-nav
 color/button/pagination	raw-content-cam-nav
 color/button/pagination-arrow	mono/0
 color/button/pagination-disabled	raw-cam-muted
 color/button/referral-cta	color/primary
 color/button/referral-cta-text	mono/0
-color/button/sidenav-text	raw-content-cam-nav
 color/button/sports	raw-surface-sports-button
 color/button/tabs	raw-brand-cam
 color/button/tabs-muted	raw-cam-muted
