@@ -64,9 +64,9 @@
 | 类型 | 数量 |
 |------|------|
 | 01 Primitives（原始色） | 286 |
-| 02 Semantic Default | 348 |
-| 02 Semantic CAM88 | 346 |
-| 渐变合成（`--color-gradient-*`） | 31 |
+| 02 Semantic Default | 346 |
+| 02 Semantic CAM88 | 344 |
+| 渐变合成（`--color-gradient-*`） | 30 |
 
 ### 仅存在于某一 Mode 的语义变量
 
@@ -542,7 +542,7 @@
 | `--color-error-strong` | `color/error/strong` | `support/error-strong` | `support/error-strong` |
 | `--color-error-warm` | `color/error/warm` | `support/error-warm` | `support/error-warm` |
 
-### `color/gradient/*`（62）
+### `color/gradient/*`（60）
 
 | CSS 变量 | Figma 名 | Default alias | CAM88 alias |
 |----------|----------|---------------|-------------|
@@ -571,8 +571,16 @@
 | `--color-gradient-home-highlight-start` | `color/gradient/home/highlight/start` | `raw-gradient/home-highlight-start` | `color/transparent` |
 | `--color-gradient-home-muted-end` | `color/gradient/home/muted/end` | `mono/604` | `mono/604` |
 | `--color-gradient-home-muted-start` | `color/gradient/home/muted/start` | `mono/542` | `mono/542` |
+| `--color-gradient-menu-brand-end` | `color/gradient/menu/brand/end` | `brand/760` | `raw-gradient-cam-icon-end` |
+| `--color-gradient-menu-brand-start` | `color/gradient/menu/brand/start` | `brand/810` | `raw-gradient-cam-icon-start` |
 | `--color-gradient-menu-warm-end` | `color/gradient/menu/warm/end` | `accent/brown-700` | `accent/brown-700` |
 | `--color-gradient-menu-warm-start` | `color/gradient/menu/warm/start` | `accent/brown-800` | `accent/brown-800` |
+| `--color-gradient-nav-daily-bonus-end` | `color/gradient/nav/daily-bonus/end` | `brand/760` | `raw-gradient-tertiery-end` |
+| `--color-gradient-nav-daily-bonus-start` | `color/gradient/nav/daily-bonus/start` | `brand/810` | `raw-gradient-tertiery-start` |
+| `--color-gradient-nav-highlight-end` | `color/gradient/nav/highlight/end` | `accent/310` | `raw-gradient-cam-highlight-end` |
+| `--color-gradient-nav-highlight-start` | `color/gradient/nav/highlight/start` | `accent/340` | `raw-gradient-cam-highlight-start` |
+| `--color-gradient-nav-info-end` | `color/gradient/nav/info/end` | `support/navy-mid` | `support/navy-mid` |
+| `--color-gradient-nav-info-start` | `color/gradient/nav/info/start` | `support/navy-deep` | `support/navy-deep` |
 | `--color-gradient-rank-first-end` | `color/gradient/rank/first/end` | `raw-gradient-rank-first-end` | `raw-gradient-rank-first-end` |
 | `--color-gradient-rank-first-start` | `color/gradient/rank/first/start` | `raw-gradient-rank-first-start` | `raw-gradient-rank-first-start` |
 | `--color-gradient-rank-second-end` | `color/gradient/rank/second/end` | `raw-gradient-rank-second-end` | `raw-gradient-rank-second-end` |
@@ -589,16 +597,6 @@
 | `--color-gradient-referral-icon-start` | `color/gradient/referral/icon/start` | `accent/340` | `raw-gradient-icon-start` |
 | `--color-gradient-referral-panel-end` | `color/gradient/referral/panel/end` | `brand/850` | `mono/300` |
 | `--color-gradient-referral-panel-start` | `color/gradient/referral/panel/start` | `brand/700` | `mono/300` |
-| `--color-gradient-side-menu-brand-end` | `color/gradient/side-menu/brand/end` | `brand/760` | `raw-gradient-cam-icon-end` |
-| `--color-gradient-side-menu-brand-start` | `color/gradient/side-menu/brand/start` | `brand/810` | `raw-gradient-cam-icon-start` |
-| `--color-gradient-sidenav-daily-bonus-end` | `color/gradient/sidenav/daily-bonus/end` | `brand/760` | `raw-gradient-tertiery-end` |
-| `--color-gradient-sidenav-daily-bonus-start` | `color/gradient/sidenav/daily-bonus/start` | `brand/810` | `raw-gradient-tertiery-start` |
-| `--color-gradient-sidenav-highlight-end` | `color/gradient/sidenav/highlight/end` | `accent/310` | `raw-gradient-cam-highlight-end` |
-| `--color-gradient-sidenav-highlight-start` | `color/gradient/sidenav/highlight/start` | `accent/340` | `raw-gradient-cam-highlight-start` |
-| `--color-gradient-sidenav-info-end` | `color/gradient/sidenav/info/end` | `support/navy-mid` | `support/navy-mid` |
-| `--color-gradient-sidenav-info-start` | `color/gradient/sidenav/info/start` | `support/navy-deep` | `support/navy-deep` |
-| `--color-gradient-sidenav-scrim-end` | `color/gradient/sidenav/scrim/end` | `mono/330-a0` | `mono/330-a0` |
-| `--color-gradient-sidenav-scrim-start` | `color/gradient/sidenav/scrim/start` | `mono/330` | `mono/330` |
 | `--color-gradient-slot-panel-end` | `color/gradient/slot/panel/end` | `mono/750` | `mono/750` |
 | `--color-gradient-slot-panel-start` | `color/gradient/slot/panel/start` | `mono/750` | `mono/750` |
 | `--color-gradient-sports-button-end` | `color/gradient/sports/button/end` | `raw-gradient-sports-button-end` | `raw-gradient-sports-button-end` |
@@ -859,7 +857,11 @@
 | `--color-gradient-home-dashboard` |
 | `--color-gradient-home-highlight` |
 | `--color-gradient-home-muted` |
+| `--color-gradient-menu-brand` |
 | `--color-gradient-menu-warm` |
+| `--color-gradient-nav-daily-bonus` |
+| `--color-gradient-nav-highlight` |
+| `--color-gradient-nav-info` |
 | `--color-gradient-rank-first` |
 | `--color-gradient-rank-second` |
 | `--color-gradient-rank-third` |
@@ -868,11 +870,6 @@
 | `--color-gradient-referral-deposit` |
 | `--color-gradient-referral-icon` |
 | `--color-gradient-referral-panel` |
-| `--color-gradient-side-menu-brand` |
-| `--color-gradient-sidenav-daily-bonus` |
-| `--color-gradient-sidenav-highlight` |
-| `--color-gradient-sidenav-info` |
-| `--color-gradient-sidenav-scrim` |
 | `--color-gradient-slot-panel` |
 | `--color-gradient-sports-button` |
 | `--color-gradient-sports-card` |

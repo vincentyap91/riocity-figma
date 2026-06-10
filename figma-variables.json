@@ -1658,11 +1658,11 @@
         "aliasTo": "brand/700"
       },
       {
-        "name": "color/gradient/side-menu/brand/end",
+        "name": "color/gradient/menu/brand/end",
         "aliasTo": "brand/760"
       },
       {
-        "name": "color/gradient/side-menu/brand/start",
+        "name": "color/gradient/menu/brand/start",
         "aliasTo": "brand/810"
       },
       {
@@ -1674,36 +1674,28 @@
         "aliasTo": "accent/brown-800"
       },
       {
-        "name": "color/gradient/sidenav/daily-bonus/end",
+        "name": "color/gradient/nav/daily-bonus/end",
         "aliasTo": "brand/760"
       },
       {
-        "name": "color/gradient/sidenav/daily-bonus/start",
+        "name": "color/gradient/nav/daily-bonus/start",
         "aliasTo": "brand/810"
       },
       {
-        "name": "color/gradient/sidenav/highlight/end",
+        "name": "color/gradient/nav/highlight/end",
         "aliasTo": "accent/310"
       },
       {
-        "name": "color/gradient/sidenav/highlight/start",
+        "name": "color/gradient/nav/highlight/start",
         "aliasTo": "accent/340"
       },
       {
-        "name": "color/gradient/sidenav/info/end",
+        "name": "color/gradient/nav/info/end",
         "aliasTo": "support/navy-mid"
       },
       {
-        "name": "color/gradient/sidenav/info/start",
+        "name": "color/gradient/nav/info/start",
         "aliasTo": "support/navy-deep"
-      },
-      {
-        "name": "color/gradient/sidenav/scrim/end",
-        "aliasTo": "mono/330-a0"
-      },
-      {
-        "name": "color/gradient/sidenav/scrim/start",
-        "aliasTo": "mono/330"
       },
       {
         "name": "color/gradient/slot/panel/end",
@@ -3047,11 +3039,11 @@
         "aliasTo": "mono/300"
       },
       {
-        "name": "color/gradient/side-menu/brand/end",
+        "name": "color/gradient/menu/brand/end",
         "aliasTo": "raw-gradient-cam-icon-end"
       },
       {
-        "name": "color/gradient/side-menu/brand/start",
+        "name": "color/gradient/menu/brand/start",
         "aliasTo": "raw-gradient-cam-icon-start"
       },
       {
@@ -3063,36 +3055,28 @@
         "aliasTo": "accent/brown-800"
       },
       {
-        "name": "color/gradient/sidenav/daily-bonus/end",
+        "name": "color/gradient/nav/daily-bonus/end",
         "aliasTo": "raw-gradient-tertiery-end"
       },
       {
-        "name": "color/gradient/sidenav/daily-bonus/start",
+        "name": "color/gradient/nav/daily-bonus/start",
         "aliasTo": "raw-gradient-tertiery-start"
       },
       {
-        "name": "color/gradient/sidenav/highlight/end",
+        "name": "color/gradient/nav/highlight/end",
         "aliasTo": "raw-gradient-cam-highlight-end"
       },
       {
-        "name": "color/gradient/sidenav/highlight/start",
+        "name": "color/gradient/nav/highlight/start",
         "aliasTo": "raw-gradient-cam-highlight-start"
       },
       {
-        "name": "color/gradient/sidenav/info/end",
+        "name": "color/gradient/nav/info/end",
         "aliasTo": "support/navy-mid"
       },
       {
-        "name": "color/gradient/sidenav/info/start",
+        "name": "color/gradient/nav/info/start",
         "aliasTo": "support/navy-deep"
-      },
-      {
-        "name": "color/gradient/sidenav/scrim/end",
-        "aliasTo": "mono/330-a0"
-      },
-      {
-        "name": "color/gradient/sidenav/scrim/start",
-        "aliasTo": "mono/330"
       },
       {
         "name": "color/gradient/slot/panel/end",

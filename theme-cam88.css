@@ -676,7 +676,11 @@
   --color-gradient-home-dashboard:      linear-gradient(90deg, var(--raw-surface-cam-base) 0%, var(--raw-surface-cam-base) 100%);
   --color-gradient-home-highlight:      linear-gradient(90deg, var(--mono-0909) 0%, var(--mono-0909) 100%);
   --color-gradient-home-muted:          linear-gradient(90deg, var(--mono-542) 0%, var(--mono-604) 100%);
+  --color-gradient-menu-brand:          linear-gradient(90deg, var(--raw-gradient-cam-icon-start) 0%, var(--raw-gradient-cam-icon-end) 100%);
   --color-gradient-menu-warm:           linear-gradient(90deg, var(--accent-brown-800) 0%, var(--accent-brown-700) 100%);
+  --color-gradient-nav-daily-bonus:     linear-gradient(90deg, var(--raw-gradient-tertiery-start) 0%, var(--raw-gradient-tertiery-end) 100%);
+  --color-gradient-nav-highlight:       linear-gradient(90deg, var(--raw-gradient-cam-highlight-start) 0%, var(--raw-gradient-cam-highlight-end) 100%);
+  --color-gradient-nav-info:            linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
   --color-gradient-rank-first:          linear-gradient(90deg, var(--raw-gradient-rank-first-start) 0%, var(--raw-gradient-rank-first-end) 100%);
   --color-gradient-rank-second:         linear-gradient(90deg, var(--raw-gradient-rank-second-start) 0%, var(--raw-gradient-rank-second-end) 100%);
   --color-gradient-rank-third:          linear-gradient(90deg, var(--raw-gradient-rank-third-start) 0%, var(--raw-gradient-rank-third-end) 100%);
@@ -685,11 +689,6 @@
   --color-gradient-referral-deposit:    linear-gradient(90deg, var(--raw-gradient-secondary-card-start) 0%, var(--raw-gradient-secondary-card-end) 100%);
   --color-gradient-referral-icon:       linear-gradient(90deg, var(--raw-gradient-icon-start) 0%, var(--raw-gradient-icon-end) 100%);
   --color-gradient-referral-panel:      linear-gradient(90deg, var(--mono-300) 0%, var(--mono-300) 100%);
-  --color-gradient-side-menu-brand:     linear-gradient(90deg, var(--raw-gradient-cam-icon-start) 0%, var(--raw-gradient-cam-icon-end) 100%);
-  --color-gradient-sidenav-daily-bonus: linear-gradient(90deg, var(--raw-gradient-tertiery-start) 0%, var(--raw-gradient-tertiery-end) 100%);
-  --color-gradient-sidenav-highlight:   linear-gradient(90deg, var(--raw-gradient-cam-highlight-start) 0%, var(--raw-gradient-cam-highlight-end) 100%);
-  --color-gradient-sidenav-info:        linear-gradient(90deg, var(--support-navy-deep) 0%, var(--support-navy-mid) 100%);
-  --color-gradient-sidenav-scrim:       linear-gradient(90deg, var(--mono-330) 0%, var(--mono-330-a0) 100%);
   --color-gradient-slot-panel:          linear-gradient(90deg, var(--mono-750) 0%, var(--mono-750) 100%);
   --color-gradient-sports-button:       linear-gradient(90deg, var(--raw-gradient-sports-button-start) 0%, var(--raw-gradient-sports-button-end) 100%);
   --color-gradient-sports-card:         linear-gradient(90deg, var(--raw-gradient-sports-card-start) 0%, var(--raw-gradient-sports-card-end) 100%);
